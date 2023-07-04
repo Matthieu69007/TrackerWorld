@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tracker around the world',
+  title: 'Trace around the world',
   tagline: 'Le tour du monde depuis chez soi!',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/Terre.ico',
 
   // Set the production url of your site here
   url: 'https://matthieu69007.github.io/',
@@ -64,10 +64,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Home',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Home Logo',
+          src: 'img/terre.svg',
         },
         items: [
           {
