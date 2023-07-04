@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Let's race a tracker around the world! ⏱️
+            Un tour du monde collaboratif! 🌍
           </Link>
         </div>
       </div>

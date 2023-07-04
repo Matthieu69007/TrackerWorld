@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Collaboratif',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Une mascotte équipée d'un traceur a pour objectif de faire le tour du monde.
+        Pour cela, elle compte sur vous pour la faire avancer de quelques pas!
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Convivial',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Chaque porteur du traceur devient membre à part entière de l'équipe.
+        Rejoins le forum et aide nous à faire avancer la mascotte vers la prochaine étape!
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Découverte',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Chaque membre de l'équipe peut envoyer des photos ou vidéos du périple.
+        Une vidéo sera réalisée à l'issue du tour du monde pour tous nous réunir et découvrir les pérégrinations de la mascotte.
       </>
     ),
   },
