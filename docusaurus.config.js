@@ -31,6 +31,8 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  
+  plugins: ['cesium-loader'],
 
   presets: [
     [
@@ -52,7 +54,10 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve("./static/cesium/Widgets/widgets.css")
+          ]
         },
       }),
     ],
