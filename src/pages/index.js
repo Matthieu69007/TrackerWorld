@@ -93,7 +93,7 @@ export default function Home() {
                 <Viewer timeline={false} animation={false} >
                   <GeoJsonDataSource
                     data={consigneParcoursData}
-                    markerColor={Color.RED}
+                    markerColor={Color.Blue}
                   />
                 </Viewer>
               </div>
