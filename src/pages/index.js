@@ -1,18 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
-import data from "./data.xml"
-import { Viewer, KmlDataSource, GeoJsonDataSource } from "resium";
+import { Viewer, GeoJsonDataSource } from "resium";
+import { Color } from "cesium";
+/*
+Cesium.Ion.defaultAccessToken =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
+*/
+
+const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:H/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
+
 
 
 
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -32,6 +40,50 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
+  const [consigneParcoursData, setConsigneParcoursData] = useState(null);
+
+  useEffect(() => {
+    fetch(urlConsigneParcours).then(x=>x.json()).then(x=>{
+      console.log(x)
+
+      let data = {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "LineString",
+              "coordinates": []
+            }
+          }
+        ]
+      }
+
+      for(let i=1;i<x.values.length;i++){
+        let coordinates = [parseFloat(x.values[i][4]),  parseFloat(x.values[i][5]) ]
+
+        data.features[0].geometry.coordinates.push(coordinates) // ajout des points à la ligne
+
+        // ajout des étiquettes
+        data.features.push({
+          "type": "Feature",
+          "properties": {
+            "name": x.values[i][6]
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": coordinates
+          }
+        })
+      }
+
+      setConsigneParcoursData(data)
+    })
+  }, []);
+
+
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -44,7 +96,10 @@ export default function Home() {
             <div className={clsx('col')}>
               <div className="text--center">
                 <Viewer >
-                  <KmlDataSource data={data}  />
+                  <GeoJsonDataSource
+                    data={consigneParcoursData}
+                    markerColor={Color.RED}
+                  />
                 </Viewer>
               </div>
             </div>
