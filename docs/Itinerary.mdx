@@ -1,43 +1,39 @@
----
-sidebar_position: 3
----
-
-# Suivi de Trace
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-
 export default function ActionAreaCard() {
   return (
-    <div className="text-center"> {/* Ajout de la classe text-center */}
-      <Typography variant="h4" gutterBottom>
-        Prochaine étape :
-      </Typography>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            image="\img\Etapes\Paris.png"
-            alt="Paris"
-            sx={{
-              height: 200, // Hauteur souhaitée en pixels
-              objectFit: 'contain', // Optionnel, pour contrôler comment l'image s'adapte
-            }}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Paris
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              France, Tour Eiffel
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+    <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
+      <div>
+        <Typography variant="h4" gutterBottom>
+          Prochaine étape :
+        </Typography>
+        <br/><br/>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image="\img\Etapes\Paris.png"
+              alt="Paris"
+              sx={{
+                height: 200,
+                objectFit: 'contain',
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Paris
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                France, Tour Eiffel
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </div>
     </div>
   );
 };

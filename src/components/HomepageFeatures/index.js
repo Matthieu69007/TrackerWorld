@@ -8,7 +8,8 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        La mascotte Trace est équipée d'un traceur. Elle a pour objectif de faire le tour du monde.
+        Trace est une mascotte équipée d'un traceur qui a pour objectif de faire le tour du monde.
+        <br/>
         Pour cela, elle compte sur toi pour la faire avancer de quelques pas!
       </>
     ),
@@ -18,8 +19,10 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Chaque porteur du traceur devient membre à part entière de l'équipe.
+        Chaque porteur de la mascotte devient membre à part entière de l'équipe.
         Rejoins le forum et aide nous à faire avancer Trace vers la prochaine étape!
+        <br/>
+        Tu peux suivre son périple en ligne depuis ce site!
       </>
     ),
   },
