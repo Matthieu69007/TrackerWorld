@@ -96,6 +96,7 @@ export default function Home() {
                     markerColor={Color.Blue}
                   />
                 </Viewer>
+                <br/> <br/>
               </div>
             </div>
           </div>
