@@ -14,13 +14,6 @@ export default function ListAllCities() {
         fetch(urlConsigneParcours).then(x => x.json()).then(x => {
             let data = {
                 "Places": [
-                    {
-                        "city": "city",
-                        "country": "country",
-                        "place": "place",
-                        "img": "img",
-                        "srcImg":"srcImg"
-                    }
                 ]
             }
             for (let i = 1; i < x.values.length; i++) {
@@ -32,7 +25,8 @@ export default function ListAllCities() {
                     "city": city,
                     "country": country,
                     "place": place,
-                    "srcImg":'\\img\\Etapes\\'+ city +'.jpg'
+                    "srcImg":'\\img\\Etapes\\'+ city +'.jpg',
+                    "etape" : i
                 })
             }
             setCitiesData(data)
@@ -40,8 +34,7 @@ export default function ListAllCities() {
     }, []);
 
     return <>
-        <Typography variant="body2" color="text.secondary">France, Tour Eiffel jojhn </Typography>
-        <ImageList sx={{ width: 700, height: 900 }}>
+        <ImageList sx={{ width: 900, height: 900 }}>
       {citiesData?.Places?.map((item) => (
         <ImageListItem key={item.srcImg}>
           <img
@@ -51,7 +44,7 @@ export default function ListAllCities() {
             loading="lazy"
           />
           <ImageListItemBar
-            title={item.place}
+            title={<span>Etape {item.etape} : {item.place}</span>}
             subtitle={<span>{item.city},{item.country}</span>}
             position="below"
           />

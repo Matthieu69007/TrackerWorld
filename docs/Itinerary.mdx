@@ -4,40 +4,25 @@ sidebar_position: 3
 
 # Itinéraire
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import ListAllCities from "../src/Components/ListAllCities";
+import NextCity from "../src/Components/NextCity";
+
 
 
 
 <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
       <div>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h1" gutterBottom>
           Prochaine étape :
         </Typography>
         <br/><br/>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              image="\img\Etapes\Paris.jpg"
-              alt="Paris"
-              sx={{
-                height: 200,
-                objectFit: 'contain',
-              }}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Paris
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                France, Tour Eiffel
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+        <NextCity/>
       </div>
-    </div>
+</div>
+<div>
+<ListAllCities />
+</div>
+
+
+
+   
