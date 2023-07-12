@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'Collaboratif',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/collaboration-svgrepo-com.svg').default,
     description: (
       <>
         Chaque porteur de la mascotte devient membre à part entière de l'équipe.
