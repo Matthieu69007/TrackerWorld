@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import Typography from '@mui/material/Typography';
-import { Carousel } from "react-responsive-carousel";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
