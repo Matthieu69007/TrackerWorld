@@ -58,7 +58,8 @@ export default function ListAllCities() {
 
     return (
       <Container maxWidth="lg">
-        <Typography variant="body2" color="text.secondary">France, Tour Eiffel jojhn </Typography>
+        <br/>
+        <Typography variant="body2" color="text.secondary"></Typography>
         <ImageList cols={cols} sx={{ width: '100%', height: 'auto' }}>
             {citiesData?.Places?.map((item) => (
                 <ImageListItem key={item.srcImg}>

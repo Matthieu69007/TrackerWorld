@@ -6,21 +6,51 @@ sidebar_position: 3
 
 import ListAllCities from "../src/Components/ListAllCities";
 import NextCity from "../src/Components/NextCity";
+import Home from '../src/Components/Home'
+import Typography from '@mui/material/Typography';
 
 
 
 
 <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
       <div>
-        <Typography variant="h1" gutterBottom>
-          Prochaine étape :
+        <Typography variant="h4" gutterBottom>
+         Prochaine étape
         </Typography>
         <br/><br/>
         <NextCity/>
       </div>
 </div>
 <div>
-<ListAllCities />
+
+<br/><br/>
+
+<div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
+      <div>
+        <Typography variant="h4" gutterBottom>
+         Le parcours
+        </Typography>
+        <br/><br/>
+        
+      </div>
+</div>
+
+<Home />
+
+<br/><br/>
+
+<div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
+      <div>
+        <Typography variant="h4" gutterBottom>
+         Aperçu des étapes
+        </Typography>
+        <ListAllCities />
+      </div>
+</div>
+
+
+
+
 </div>
 
 

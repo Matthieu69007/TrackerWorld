@@ -7,6 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 import { Viewer, GeoJsonDataSource } from "resium";
 import { Color, Ion } from "cesium";
+import ViewerComponent from '../components/ViewerComponent';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
 
@@ -38,47 +39,6 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
-  const [consigneParcoursData, setConsigneParcoursData] = useState(null);
-
-  useEffect(() => {
-    fetch(urlConsigneParcours).then(x => x.json()).then(x => {
-      let data = {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": []
-            }
-          }
-        ]
-      }
-
-      for (let i = 1; i < x.values.length; i++) {
-        let coordinates = [parseFloat(x.values[i][4]), parseFloat(x.values[i][5])]
-
-        data.features[0].geometry.coordinates.push(coordinates) // ajout des points à la ligne
-
-        // ajout des étiquettes
-        data.features.push({
-          "type": "Feature",
-          "properties": {
-            "name": x.values[i][6]
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": coordinates
-          }
-        })
-      }
-
-      setConsigneParcoursData(data)
-    })
-  }, []);
-
-
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -90,12 +50,7 @@ export default function Home() {
           <div className="row">
             <div className={clsx('col')}>
               <div className="text--center">
-                <Viewer timeline={false} animation={false} >
-                  <GeoJsonDataSource
-                    data={consigneParcoursData}
-                    markerColor={Color.Blue}
-                  />
-                </Viewer>
+                <ViewerComponent />
                 <br/> <br/>
               </div>
             </div>
@@ -105,8 +60,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-
-
-
-
