@@ -48,25 +48,23 @@ export default function ViewerComponent() {
 
   const enterFullscreen = () => {
     if (viewerRef.current) {
-      if (viewerRef.current.cesiumElement) {
-        const cesiumViewer = viewerRef.current.cesiumElement;
-        if (cesiumViewer.canvas) {
-          if (cesiumViewer.canvas.requestFullscreen) {
-            cesiumViewer.canvas.requestFullscreen();
-          } else if (cesiumViewer.canvas.mozRequestFullScreen) {
-            cesiumViewer.canvas.mozRequestFullScreen();
-          } else if (cesiumViewer.canvas.webkitRequestFullscreen) {
-            cesiumViewer.canvas.webkitRequestFullscreen();
-          } else if (cesiumViewer.canvas.msRequestFullscreen) {
-            cesiumViewer.canvas.msRequestFullscreen();
-          }
+      const element = viewerRef.current.cesiumElement?.canvas;
+      if (element) {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+          element.msRequestFullscreen();
         }
       }
     }
   };
 
   return (
-    <div style={{ height: '100vh' }}>
+    <div style={{ height: '40vh' }}>
       <button onClick={enterFullscreen}>Plein écran</button>
       <Viewer ref={viewerRef} timeline={false} animation={false}>
         <GeoJsonDataSource
