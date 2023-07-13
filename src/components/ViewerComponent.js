@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Viewer, GeoJsonDataSource } from "resium";
 import { Color } from "cesium";
 
@@ -6,6 +6,7 @@ const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9
 
 export default function ViewerComponent() {
   const [consigneParcoursData, setConsigneParcoursData] = useState(null);
+  const viewerRef = useRef(null);
 
   useEffect(() => {
     fetch(urlConsigneParcours).then(x => x.json()).then(x => {
@@ -45,12 +46,34 @@ export default function ViewerComponent() {
     })
   }, []);
 
+  const enterFullscreen = () => {
+    if (viewerRef.current) {
+      if (viewerRef.current.cesiumElement) {
+        const cesiumViewer = viewerRef.current.cesiumElement;
+        if (cesiumViewer.canvas) {
+          if (cesiumViewer.canvas.requestFullscreen) {
+            cesiumViewer.canvas.requestFullscreen();
+          } else if (cesiumViewer.canvas.mozRequestFullScreen) {
+            cesiumViewer.canvas.mozRequestFullScreen();
+          } else if (cesiumViewer.canvas.webkitRequestFullscreen) {
+            cesiumViewer.canvas.webkitRequestFullscreen();
+          } else if (cesiumViewer.canvas.msRequestFullscreen) {
+            cesiumViewer.canvas.msRequestFullscreen();
+          }
+        }
+      }
+    }
+  };
+
   return (
-    <Viewer timeline={false} animation={false} >
-      <GeoJsonDataSource
-        data={consigneParcoursData}
-        markerColor={Color.Blue}
-      />
-    </Viewer>
+    <div style={{ height: '100vh' }}>
+      <button onClick={enterFullscreen}>Plein écran</button>
+      <Viewer ref={viewerRef} timeline={false} animation={false}>
+        <GeoJsonDataSource
+          data={consigneParcoursData}
+          markerColor={Color.Blue}
+        />
+      </Viewer>
+    </div>
   );
 }
