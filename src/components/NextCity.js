@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import React, { useState, useEffect } from "react"
 
-const urlNextcity = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B:D/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
+export const urlNextcity = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B:F/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
 
 export default function NextCity() {
