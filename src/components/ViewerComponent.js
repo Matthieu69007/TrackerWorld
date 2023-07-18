@@ -6,6 +6,9 @@ import { urlNextcity } from "./NextCity";
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:H/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 
+const PreviouslineColor = Color.fromCssColorString("#D5720E"); 
+const NextlineColor = Color.fromCssColorString("#572C3A"); 
+
 export default function ViewerComponent() {
   const [consigneParcoursPreviousData, setConsigneParcoursPreviousData] =
     useState(null);
@@ -115,14 +118,14 @@ export default function ViewerComponent() {
         <GeoJsonDataSource
           markerSymbol=""
           data={consigneParcoursPreviousData}
-          stroke={Color.GREEN}
+          stroke={PreviouslineColor}
           // hide markers
           markerColor={Color.TRANSPARENT}
         />
         <GeoJsonDataSource
           markerSymbol=""
           data={consigneParcoursNextData}
-          stroke={Color.RED}
+          stroke={NextlineColor}
           // hide markers
           markerColor={Color.TRANSPARENT}
         />
