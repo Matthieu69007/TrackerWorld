@@ -8,6 +8,7 @@ import styles from './index.module.css';
 import { Viewer, GeoJsonDataSource } from "resium";
 import { Color, Ion } from "cesium";
 import ViewerComponent from '../components/ViewerComponent';
+import StylesForLinkText from './index.module.css';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
 
@@ -26,10 +27,11 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className={`button button--secondary button--lg ${styles.customLinkText}`}
             to="/docs/Presentation">
             Un tour du monde collaboratif! 🌍
           </Link>
+
         </div>
       </div>
     </header>

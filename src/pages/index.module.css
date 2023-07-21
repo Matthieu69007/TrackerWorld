@@ -13,6 +13,8 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: contain;
   background-color: #A992FE;
+  color: White;
+  text-shadow: 2px 2px 0px black;
 }
 
 @media screen and (max-width: 996px) {
@@ -25,4 +27,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.customLinkText {
+  color: Black; /* Change the color to what you want */
+  font-size: 20px; /* Change the font size to what you want */
+  text-decoration: none; /* Remove the underline from the link */
+  text-shadow: 0px 0px 0px black;
+  /* Add other styles as needed */
 }
