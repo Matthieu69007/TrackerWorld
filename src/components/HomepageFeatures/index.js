@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Connectée',
+    title: 'Connecté',
     Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputerdetoure.svg').default,
     description: (
       <>
