@@ -8,6 +8,11 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url('@site/static/img/Mascotte/Resize/tracefullbodydetoure.svg');
+  background-position: right; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain;
+  background-color: #A992FE;
 }
 
 @media screen and (max-width: 996px) {

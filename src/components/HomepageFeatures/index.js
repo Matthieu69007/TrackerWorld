@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Connectée',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputerdetoure.svg').default,
     description: (
       <>
         Trace est une mascotte équipée d'un traceur qui a pour objectif de faire le tour du monde.
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'Collaboratif',
-    Svg: require('@site/static/img/collaboration-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/Mascotte/Resize/lamastogetherdetoure.svg').default,
     description: (
       <>
         Chaque porteur de la mascotte devient membre à part entière de l'équipe.
@@ -28,7 +28,7 @@ const FeatureList = [
   },
   {
     title: 'Immersif',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/Mascotte/Resize/lamatajmahaldetoure.svg').default,
     description: (
       <>
         Chaque membre de l'équipe peut partager photos et vidéos du périple de Trace en sa compagnie.
