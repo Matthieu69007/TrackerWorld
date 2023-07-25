@@ -8,7 +8,6 @@ import styles from '../pages/index.module.css';
 import { Typography } from '@mui/material/Typography';
 import ViewerComponent from './ViewerComponent';
 
-
 export default function Home() {
     return (
       <div>

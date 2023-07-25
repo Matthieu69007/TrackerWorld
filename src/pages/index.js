@@ -9,6 +9,7 @@ import { Viewer, GeoJsonDataSource } from "resium";
 import { Color, Ion } from "cesium";
 import ViewerComponent from '../components/ViewerComponent';
 import StylesForLinkText from './index.module.css';
+import CustomizedTimeline from '../components/TimeLine';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
 
@@ -53,6 +54,7 @@ export default function Home() {
             <div className={clsx('col')}>
               <div className="text--center">
                 <ViewerComponent />
+                <CustomizedTimeline />
                 <br/> <br/>
               </div>
             </div>
