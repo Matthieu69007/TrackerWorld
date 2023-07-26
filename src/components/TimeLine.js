@@ -15,8 +15,13 @@ import LamaBikingIcon from './LamaRunningBikePicture';
 import LamaFriendsIcon from './LamaWithFriends';
 import LamaInstagramIcon from './LamaInstagram';
 import LamaSelfieIcon from './LamaTakingSelfie';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function CustomizedTimeline() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <>
       <br />
@@ -26,7 +31,7 @@ export default function CustomizedTimeline() {
         sx={{ m: 'auto 0' }}
         align="right"
         >
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
             Step 1
           </Typography>
         </TimelineOppositeContent>
@@ -38,10 +43,12 @@ export default function CustomizedTimeline() {
           <TimelineConnector sx={{ height: '1em'}} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h4" component="span">
+          <Typography variant={matches ? 'h6' : 'h4'} component="span">
             Take a selfie
           </Typography>
-          <Typography>With the person who gave Trace to you</Typography>
+          <br/>
+          <Typography variant={matches ? 'body2' : 'body1'} >
+          With the person who gave Trace to you</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -49,7 +56,7 @@ export default function CustomizedTimeline() {
         sx={{ m: 'auto 0' }}
         align="right"
         >
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
             Step 2
           </Typography>
         </TimelineOppositeContent>
@@ -61,10 +68,12 @@ export default function CustomizedTimeline() {
           <TimelineConnector sx={{ height: '1em'}} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h4" component="span">
+          <Typography variant={matches ? 'h6' : 'h4'} component="span">
             Share it on Instagram
           </Typography>
-          <Typography>To present yourself to other teammates and enable them to follow Trace&apos;s journey</Typography>
+          <br/>
+          <Typography variant={matches ? 'body2' : 'body1'} >
+            To present yourself to other teammates and enable them to follow Trace&apos;s journey</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -72,7 +81,7 @@ export default function CustomizedTimeline() {
           sx={{ m: 'auto 0' }}
           align="right"
           >
-            <Typography variant="h5" color="text.secondary">
+            <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
               Step 3
             </Typography>
         </TimelineOppositeContent>
@@ -84,10 +93,12 @@ export default function CustomizedTimeline() {
           <TimelineConnector sx={{ height: '1em'}} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h4" component="span">
+          <Typography variant={matches ? 'h6' : 'h4'} component="span">
             Travel with Trace
           </Typography>
-          <Typography>To help Trace to get closer to next step </Typography>
+          <br/>
+          <Typography variant={matches ? 'body2' : 'body1'} >
+            To help Trace to get closer to next step </Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -95,7 +106,7 @@ export default function CustomizedTimeline() {
           sx={{ m: 'auto 0' }}
           align="right"
           >
-            <Typography variant="h5" color="text.secondary">
+            <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
               Step 4
             </Typography>
         </TimelineOppositeContent>
@@ -107,10 +118,12 @@ export default function CustomizedTimeline() {
           <TimelineConnector sx={{ height: '1em'}} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h4" component="span">
+          <Typography variant={matches ? 'h6' : 'h4'} component="span">
             Ask your community
           </Typography>
-          <Typography>To find someone who can carry Trace for few more kilometers</Typography>
+          <br/>
+          <Typography variant={matches ? 'body2' : 'body1'} >
+            To find someone who can carry Trace for few more kilometers</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>

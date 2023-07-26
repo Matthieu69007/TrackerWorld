@@ -1,13 +1,22 @@
 import * as React from "react";
-const SvgTest = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlSpace="preserve"
-    width="10em"
-    height="10em"
-    viewBox="0 0 400 400"
-    {...props}
-  >
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+  const SvgTest = (props) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const iconSize = isSmallScreen ? '5em' : '10em';
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlSpace="preserve"
+      width={iconSize}
+      height={iconSize}
+      viewBox="0 0 400 400"
+      {...props}
+    >
     <image
       width={400}
       height={400}
@@ -15,4 +24,5 @@ const SvgTest = (props) => (
     />
   </svg>
 );
+};
 export default SvgTest;
