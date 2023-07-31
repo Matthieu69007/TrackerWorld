@@ -23,7 +23,7 @@ export default function ViewerComponent() {
       .then((x) => x.json())
       .then((x) => {
         const cityId = (x?.values && parseFloat(x.values[1][3])) || 1;
-        setNextCityId(cityId);
+        setNextCityId(cityId-1);
       });
 
     fetch(urlConsigneParcours)
