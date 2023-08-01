@@ -53,6 +53,12 @@ export default function Home() {
           <div className="row">
             <div className={clsx('col')}>
               <div className="text--center">
+                 <Link
+                  className={`button button--secondary button--lg ${styles.customLinkText}`}
+                  to="/docs/Rules">
+                  Voir les règles! 📜
+                </Link>
+                <br/> <br/><br/> <br/>
                 <ViewerComponent />
                 <CustomizedTimeline />
                 <br/> <br/>

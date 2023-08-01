@@ -5,6 +5,8 @@ import { urlNextcity } from "./NextCity";
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:H/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
+const urlTraceReelle =
+  "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:C100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 
 const PreviouslineColor = Color.fromCssColorString("#D5720E"); 
 const NextlineColor = Color.fromCssColorString("#572C3A"); 
@@ -14,6 +16,9 @@ export default function ViewerComponent() {
     useState(null);
   const [consigneParcoursNextData, setConsigneParcoursNextData] =
     useState(null);
+  const [traceReelleData, setTraceReelleData] =
+    useState(null);
+
   const [nextCityId, setNextCityId] = useState(1);
 
   const viewerRef = useRef(null);
@@ -59,8 +64,8 @@ export default function ViewerComponent() {
 
         for (let i = 1; i < x.values.length; i++) {
           let coordinates = [
-            parseFloat(x.values[i][4]),
             parseFloat(x.values[i][5]),
+            parseFloat(x.values[i][4]),
           ];
 
           const properties = {
@@ -91,6 +96,34 @@ export default function ViewerComponent() {
         }
         setConsigneParcoursPreviousData(previousData);
         setConsigneParcoursNextData(nextData);
+      });
+
+    fetch(urlTraceReelle)
+      .then((x) => x.json())
+      .then((x) => {
+        let traceData = {
+          type: "FeatureCollection",
+          features: [
+            {
+              type: "Feature",
+              properties: {},
+              geometry: {
+                type: "LineString",
+                coordinates: [],
+              },
+            },
+          ],
+        };
+
+        for (let i = 1; i < x.values.length; i++) {
+          let coordinates = [
+            parseFloat(x.values[i][1]),
+            parseFloat(x.values[i][0]),
+          ];
+          traceData.features[0].geometry.coordinates.push(coordinates);
+        }
+        
+        setTraceReelleData(traceData);
       });
   }, [nextCityId]);
 
@@ -129,6 +162,13 @@ export default function ViewerComponent() {
           // hide markers
           markerColor={Color.TRANSPARENT}
         />
+         <GeoJsonDataSource
+          markerSymbol=""
+          data={traceReelleData}
+          stroke={Color.BLUE} // Vous pouvez utiliser n'importe quelle couleur de votre choix pour la ligne de la trace réelle.
+          // hide markers
+          markerColor={Color.TRANSPARENT}
+          />
         {/* Loop through consigneParcoursData and create point entities */}
         {[
           ...(consigneParcoursPreviousData?.features || []),

@@ -15,6 +15,7 @@ import LamaBikingIcon from './LamaRunningBikePicture';
 import LamaFriendsIcon from './LamaWithFriends';
 import LamaInstagramIcon from './LamaInstagram';
 import LamaSelfieIcon from './LamaTakingSelfie';
+import LamaComputer2Icon from './LamaComputer2';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -26,54 +27,29 @@ export default function CustomizedTimeline() {
     <>
       <br />
     <Timeline position="alternate">
-      <TimelineItem>
+    <TimelineItem>
         <TimelineOppositeContent
-        sx={{ m: 'auto 0' }}
-        align="right"
-        >
-          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
-            Step 1
-          </Typography>
+          sx={{ m: 'auto 0' }}
+          align="right"
+          >
+            <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+              Step 1
+            </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator>
         <TimelineConnector sx={{ height: '1em'}} />
           <TimelineDot style={{backgroundColor: 'transparent'}}>
-            <LamaSelfieIcon />
+            <LamaComputer2Icon />
           </TimelineDot>
           <TimelineConnector sx={{ height: '1em'}} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
           <Typography variant={matches ? 'h6' : 'h4'} component="span">
-            Take a selfie
+            Visit this website
           </Typography>
           <br/>
           <Typography variant={matches ? 'body2' : 'body1'} >
-          With the person who gave Trace to you</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-        sx={{ m: 'auto 0' }}
-        align="right"
-        >
-          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
-            Step 2
-          </Typography>
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector sx={{ height: '1em'}} />
-          <TimelineDot style={{backgroundColor: 'transparent'}}>
-            <LamaInstagramIcon />
-          </TimelineDot>
-          <TimelineConnector sx={{ height: '1em'}} />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant={matches ? 'h6' : 'h4'} component="span">
-            Share it on Instagram
-          </Typography>
-          <br/>
-          <Typography variant={matches ? 'body2' : 'body1'} >
-            To present yourself to other teammates and enable them to follow Trace&apos;s journey</Typography>
+            To discover the project and understand the rules</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -82,7 +58,7 @@ export default function CustomizedTimeline() {
           align="right"
           >
             <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
-              Step 3
+              Step 2
             </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -107,7 +83,7 @@ export default function CustomizedTimeline() {
           align="right"
           >
             <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
-              Step 4
+              Step 3
             </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -124,6 +100,56 @@ export default function CustomizedTimeline() {
           <br/>
           <Typography variant={matches ? 'body2' : 'body1'} >
             To find someone who can carry Trace for few more kilometers</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent
+        sx={{ m: 'auto 0' }}
+        align="right"
+        >
+          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+            Step 4
+          </Typography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+        <TimelineConnector sx={{ height: '1em'}} />
+          <TimelineDot style={{backgroundColor: 'transparent'}}>
+            <LamaSelfieIcon />
+          </TimelineDot>
+          <TimelineConnector sx={{ height: '1em'}} />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant={matches ? 'h6' : 'h4'} component="span">
+            Take a selfie
+          </Typography>
+          <br/>
+          <Typography variant={matches ? 'body2' : 'body1'} >
+          With the person you give Trace to</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent
+        sx={{ m: 'auto 0' }}
+        align="right"
+        >
+          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+            Step 5
+          </Typography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineConnector sx={{ height: '1em'}} />
+          <TimelineDot style={{backgroundColor: 'transparent'}}>
+            <LamaInstagramIcon />
+          </TimelineDot>
+          <TimelineConnector sx={{ height: '1em'}} />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant={matches ? 'h6' : 'h4'} component="span">
+            Share it on Instagram
+          </Typography>
+          <br/>
+          <Typography variant={matches ? 'body2' : 'body1'} >
+            To present yourself to other teammates and enable them to follow Trace&apos;s journey</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>
