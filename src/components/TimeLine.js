@@ -70,11 +70,11 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
           <Typography variant={matches ? 'h6' : 'h4'} component="span">
-            Travel with Trace
+            Travel with Track
           </Typography>
           <br/>
           <Typography variant={matches ? 'body2' : 'body1'} >
-            To help Trace to get closer to next step </Typography>
+            To help Track to get closer to next step </Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -99,7 +99,7 @@ export default function CustomizedTimeline() {
           </Typography>
           <br/>
           <Typography variant={matches ? 'body2' : 'body1'} >
-            To find someone who can carry Trace for few more kilometers</Typography>
+            To find someone who can carry Track for few more kilometers</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -124,7 +124,7 @@ export default function CustomizedTimeline() {
           </Typography>
           <br/>
           <Typography variant={matches ? 'body2' : 'body1'} >
-          With the person you give Trace to</Typography>
+          With the person you give Track to</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -149,7 +149,7 @@ export default function CustomizedTimeline() {
           </Typography>
           <br/>
           <Typography variant={matches ? 'body2' : 'body1'} >
-            To present yourself to other teammates and enable them to follow Trace&apos;s journey</Typography>
+            To present yourself to other teammates and enable them to follow Track&apos;s journey</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>

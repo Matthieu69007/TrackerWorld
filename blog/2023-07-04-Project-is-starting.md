@@ -3,7 +3,7 @@ slug: project-is-starting
 title: Project is starting
 authors: 
   name: Matthieu
-  title: Trace project team
+  title: Track project team
   url: https://github.com/Matthieu69007
   image_url: https://github.com/Matthieu69007.png
 

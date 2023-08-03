@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Trace across the world',
+  title: 'Track around the world',
   tagline: 'Le tour du monde depuis chez soi!',
   favicon: 'img/Mascotte/Resize/lamatetedetoure.ico',
 
@@ -67,7 +67,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img//Mascotte/TraceSocialCard.jpg',
+      image: 'img//Mascotte/TrackSocialCard.jpg',
       navbar: {
         title: 'Home',
         logo: {
@@ -83,7 +83,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://www.instagram.com/traceacrosstheworld/',
+            href: 'https://www.instagram.com/trackaroundtheworld/',
             label: 'Instagram',
             position: 'right',
           },
@@ -110,7 +110,7 @@ const config = {
               },
               {
                 label: 'Instagram',
-                href: 'https://www.instagram.com/traceacrosstheworld/',
+                href: 'https://www.instagram.com/trackaroundtheworld/',
               },
             ],
           },
