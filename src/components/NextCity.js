@@ -32,7 +32,7 @@ export default function NextCity() {
             <CardActionArea>
               <CardMedia
                 component="img"
-                image={'\\img\\Etapes\\'+ nextCityData?.city +'.jpg'}
+                image={'../img/Etapes/'+ nextCityData?.city +'.jpg'}
                 alt={nextCityData?.city}
                 sx={{
                   height: 200,

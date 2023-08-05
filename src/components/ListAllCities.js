@@ -27,7 +27,7 @@ export default function ListAllCities() {
                     "city": city,
                     "country": country,
                     "place": place,
-                    "srcImg":'\\img\\Etapes\\'+ city +'.jpg',
+                    "srcImg":'../img/Etapes/'+ city +'.jpg',
                     "etape" : i
                 })
             }
