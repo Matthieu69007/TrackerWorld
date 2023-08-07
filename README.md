@@ -39,3 +39,25 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+### Crowdin workflow
+
+
+Gen Localisation :
+```
+npm run write-translations
+```
+Copy all docs to the target source locale folder
+```
+```
+Upload
+```
+npm run crowdin upload
+```
+
+translate in crowdin...
+
+download translated files
+```
+npm run crowdin download
+```
