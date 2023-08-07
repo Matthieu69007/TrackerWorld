@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:G/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
+const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:H/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
 export default function ListAllCities() {
     const [citiesData, setCitiesData] = useState(null);
@@ -23,6 +23,7 @@ export default function ListAllCities() {
                 let country = x.values[i][2]
                 let place = x.values[i][3]
                 let city_accent = x.values[i][6]
+                let URLCredit = x.values[i][7]
                 // ajout des étiquettes
                 data.Places.push({
                     "city": city,
@@ -30,7 +31,8 @@ export default function ListAllCities() {
                     "place": place,
                     "srcImg":'../img/Etapes/'+ city +'.jpg',
                     "etape" : i,
-                    "city_accent": city_accent
+                    "city_accent": city_accent,
+                    "URLCredit": URLCredit
                 })
             }
             setCitiesData(data)
@@ -70,6 +72,7 @@ export default function ListAllCities() {
                         srcSet={`${item.srcImg}?w=248&fit=crop&auto=format&dpr=2 2x`}
                         alt={item.city}
                         loading="lazy"
+                        onClick={() => window.open(item.URLCredit, "URLCredit")}
                     />
                     <ImageListItemBar
                         title={item.place}
