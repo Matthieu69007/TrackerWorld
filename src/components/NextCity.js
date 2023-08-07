@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import React, { useState, useEffect } from "react"
 
-export const urlNextcity = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B:F/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
+export const urlNextcity = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B:G/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
 
 export default function NextCity() {
@@ -21,6 +21,7 @@ export default function NextCity() {
             data.city=x.values[1][0]
             data.country=x.values[1][1]
             data.place=x.values[1][2]
+            data.city_accent=x.values[1][5]
 
             setNextCityData(data)
         })
@@ -33,7 +34,7 @@ export default function NextCity() {
               <CardMedia
                 component="img"
                 image={'../img/Etapes/'+ nextCityData?.city +'.jpg'}
-                alt={nextCityData?.city}
+                alt={nextCityData?.city_accent}
                 sx={{
                   height: 200,
                   objectFit: 'contain',
@@ -41,7 +42,7 @@ export default function NextCity() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {nextCityData?.city}
+                  {nextCityData?.city_accent}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {nextCityData?.country}, {nextCityData?.place}
