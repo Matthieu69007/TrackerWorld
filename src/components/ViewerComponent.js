@@ -10,6 +10,7 @@ const urlTraceReelle =
 
 const PreviouslineColor = Color.fromCssColorString("#D5720E"); 
 const NextlineColor = Color.fromCssColorString("#572C3A"); 
+const SOME_ZOOM_THRESHOLD = 500000; // Ajustez cette valeur selon vos besoins
 
 export default function ViewerComponent() {
   const [consigneParcoursPreviousData, setConsigneParcoursPreviousData] =
@@ -18,10 +19,10 @@ export default function ViewerComponent() {
     useState(null);
   const [traceReelleData, setTraceReelleData] =
     useState(null);
-
   const [nextCityId, setNextCityId] = useState(1);
-
   const viewerRef = useRef(null);
+  const cityEntitiesRef = useRef([]);
+
 
   useEffect(async () => {
     await fetch(urlNextcity)
