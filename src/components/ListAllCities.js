@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
+const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:G/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
 export default function ListAllCities() {
     const [citiesData, setCitiesData] = useState(null);
@@ -22,7 +22,7 @@ export default function ListAllCities() {
                 let city = x.values[i][1]
                 let country = x.values[i][2]
                 let place = x.values[i][3]
-                let city_accent = x.values[i][8]
+                let city_accent = x.values[i][6]
                 // ajout des étiquettes
                 data.Places.push({
                     "city": city,
