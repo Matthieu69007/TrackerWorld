@@ -7,11 +7,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Trace across the world',
-  tagline: 'Le tour du monde depuis chez soi!',
+  tagline: 'Le tour du monde depuis chez soi !',
   favicon: 'img/Mascotte/Resize/lamatetedetoure.ico',
 
   // Set the production url of your site here
-  url: 'https://matthieu69007.github.io/',
+  url: 'https://traceacrosstheworld.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',

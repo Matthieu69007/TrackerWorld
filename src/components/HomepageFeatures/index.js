@@ -20,7 +20,7 @@ const FeatureList = [
     description: (
       <>
         Chaque porteur de la mascotte devient membre à part entière de l'équipe.
-        Rejoins le <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">groupe What's App</a> et aide nous à faire avancer Trace vers la prochaine étape!
+        Rejoins le <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">groupe WhatsApp</a> et aide nous à faire avancer Trace vers la prochaine étape!
         <br/>
         Tu peux suivre son périple en ligne depuis ce site!
       </>
