@@ -28,7 +28,7 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
     locales: ['en','fr'],
   },
   
@@ -78,11 +78,11 @@ const config = {
           {
             href: 'https://www.instagram.com/traceacrosstheworld/',
             label: 'Instagram',
-            position: 'right',
+            position: 'left',
           },
           {
             type: 'localeDropdown',
-            position: 'right',
+            position: 'left',
           }
         ],
       },
