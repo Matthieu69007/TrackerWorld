@@ -26,6 +26,9 @@ export default function CustomizedTimeline() {
   return (
     <>
       <br />
+      <Typography fontSize={50}>
+        Le projet en une timeline...
+      </Typography>
     <Timeline position="alternate">
     <TimelineItem>
         <TimelineOppositeContent

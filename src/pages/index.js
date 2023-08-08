@@ -48,24 +48,27 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
         <div className="container">
           <div className="row">
             <div className={clsx('col')}>
               <div className="text--center">
-                 <Link
+                <br /> 
+                <CustomizedTimeline />
+                <Link
                   className={`button button--secondary button--lg ${styles.customLinkText}`}
                   to="/docs/Rules">
-                  Voir les règles! 📜
+                  Voir les règles en détail ! 📜
                 </Link>
-                <br/> <br/><br/> <br/>
+                <br /><br /> <br />
+                <HomepageFeatures />
+                <br /><br />
                 <ViewerComponent />
-                <CustomizedTimeline />
-                <br/> <br/>
+                <br /> <br />
               </div>
             </div>
           </div>
         </div>
+        
       </main>
     </Layout>
   );
