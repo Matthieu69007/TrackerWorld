@@ -26,13 +26,16 @@ export default function CustomizedTimeline() {
   return (
     <>
       <br />
+      <Typography fontSize={50}>
+        Le projet en une timeline...
+      </Typography>
     <Timeline position="alternate">
     <TimelineItem>
         <TimelineOppositeContent
           sx={{ m: 'auto 0' }}
           align="right"
           >
-            <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+            <Typography variant={matches ? 'h7' : 'h5'} component="span">
               Step 1
             </Typography>
         </TimelineOppositeContent>
@@ -57,7 +60,7 @@ export default function CustomizedTimeline() {
           sx={{ m: 'auto 0' }}
           align="right"
           >
-            <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+            <Typography variant={matches ? 'h7' : 'h5'} component="span">
               Step 2
             </Typography>
         </TimelineOppositeContent>
@@ -82,7 +85,7 @@ export default function CustomizedTimeline() {
           sx={{ m: 'auto 0' }}
           align="right"
           >
-            <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+            <Typography variant={matches ? 'h7' : 'h5'} component="span">
               Step 3
             </Typography>
         </TimelineOppositeContent>
@@ -107,7 +110,7 @@ export default function CustomizedTimeline() {
         sx={{ m: 'auto 0' }}
         align="right"
         >
-          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+          <Typography variant={matches ? 'h7' : 'h5'} component="span">
             Step 4
           </Typography>
         </TimelineOppositeContent>
@@ -132,7 +135,7 @@ export default function CustomizedTimeline() {
         sx={{ m: 'auto 0' }}
         align="right"
         >
-          <Typography variant={matches ? 'h7' : 'h5'} color="text.secondary">
+          <Typography variant={matches ? 'h7' : 'h5'} component="span">
             Step 5
           </Typography>
         </TimelineOppositeContent>
