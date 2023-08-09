@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/Mascotte/Resize/lamatetedetoure.ico',
 
   // Set the production url of your site here
-  url: 'https://matthieu69007.github.io/',
+  url: 'https://traceacrosstheworld.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
