@@ -9,7 +9,6 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import TimeLine from '/src/Components/TimeLine'
 import Typography from '@mui/material/Typography';
 import NextCity from "/src/Components/NextCity";
 
@@ -18,71 +17,43 @@ import NextCity from "/src/Components/NextCity";
 <h2 style={{ textAlign: "center" }}>Welcome!</h2>
 
 <br/>
-You just received the Trace mascot. Tu rejoins donc l'équipe TraceAroundTheWorld qui tente la folle aventure de lui faire faire un tour du monde!
 
-<br/>
-<br/>
+You've just received the Trace mascot. You have joined the TraceAcrossTheWorld team as they embark on the crazy adventure of **touring the world with it!**
 
-Voici les quelques règles qui vont t'aiguiller sur la manière dont tu peux nous aider!
+Here are a few rules to help you understand how you can help us!
 
-<TimeLine />
+-   This is Trace's **next destination**:
 
-<h2 style={{ textAlign: "center" }}>En détail :</h2>
-
-<br/>
-<br/>
-
-<ArrowForwardIosIcon /> Renseigne toi sur la prochaine destination du trajet de Trace ici :
-
-<br/>
-<br/>
-<br/>
-
-<div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
-    className="button button--secondary button--lg"
-    style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
-    to="/docs/Itinerary">
-    Le parcours de Trace 🧭
-  </Link>
-</div>
 <br/>
 <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
       <div>
-        <Typography variant="h6" gutterBottom>
-         Prochaine étape :
-        </Typography>
-        <br/><br/>
         <NextCity/>
       </div>
 </div>
 
 <br/>
-<ArrowForwardIosIcon /> Tu penses aller dans la bonne direction dans les prochains jours? Garde Trace avec toi et fais la avancer du mieux que tu puisses.
-Ce n'est pas grave si tu ne vas pas exactement jusqu'à la prochaine destination. L'important est de faire avancer Trace dans la bonne direction.
-<br/>
-Même quelques kilomètres sont d'une grande aide pour Trace!
-Sur le trajet, ce serait super si tu pouvais faire une petite vidéo de toi avec la mascotte Trace devant un endroit que tu apprécies particulièrement et que tu souhaites nous montrer!
-<br/>
-Et rappelle toi : Trace ne prend pas l'avion!
 
-<br/>
-<br/>
+-   Tu penses **aller dans la bonne direction** dans les prochains jours? **Garde Trace avec toi** et fais la avancer du mieux que tu puisses.
+    Ce n'est pas grave si tu ne vas pas exactement jusqu'à la prochaine destination. L'important est de **faire avancer Trace dans la bonne direction.**\
+    Même quelques kilomètres sont d'une grande aide pour Trace!
+    Sur le trajet, ce serait super si tu pouvais faire une petite vidéo de toi avec la mascotte Trace devant un endroit que tu apprécies particulièrement et que tu souhaites nous montrer!
+      Et rappelle toi : **Trace ne prend pas l'avion!**
 
-<ArrowForwardIosIcon /> Tu ne penses pas pouvoir aider Trace à avancer, pas de panique! Rends toi directement à la prochaine étape.
+-   Tu ne penses pas pouvoir aider Trace à avancer ? Pas de panique! Rends toi directement à la prochaine étape.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
 </div>
 <br/>
+
+-   Il est maintenant temps de **passer le relais.** Cherche une personne que tu connais qui ira dans la bonne direction pour **rapprocher Trace de sa prochaine destination.**
+
+-   Tu ne connais personne susceptible de nous aider? Trois solutions s'offrent à toi
+
 <br/>
-<ArrowForwardIosIcon /> Il est maintenant temps de passer le relais. Cherche une personne que tu connais qui ira dans la bonne direction pour rapprocher Trace de sa prochaine destination.
-<br/><br/>
-Tu ne connais personne susceptible de nous aider? Trois solutions s'offrent à toi
-<br/><br/>
 <Stack spacing={2} alignItems="center">
   <Item className="contour-ombre" style={{ width: "100%", textAlign: "center"}}>
-    Contacte le groupe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">What's App</a> du projet. <br /> On pourra peut-être t'aider à trouver quelqu'un proche de toi pour t'aider à faire avancer Trace.  
+    Contacte le groupe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a> du projet. <br /> On pourra peut-être t'aider à trouver quelqu'un proche de toi pour t'aider à faire avancer Trace.  
 </Item>
   <Item className="contour-ombre" style={{ width: "100%", textAlign: "center"}}>
     Rends toi dans l'<a href="https://www.hostelworld.com/" target="_blank" rel="noopener noreferrer">auberge de jeunesse</a> la plus proche et explique le projet aux gens présents. <br /> Il y aura surement des voyageurs qui seront intéressés pour prendre part à l'aventure!  
@@ -94,15 +65,12 @@ Tu ne connais personne susceptible de nous aider? Trois solutions s'offrent à t
 
 <br/>
 <br/>
-<ArrowForwardIosIcon /> Au moment de passer la mascotte, soit sûr de la donner à quelqu'un de motivé par le projet. Montre lui ce site avec toutes les explications pour qu'elle ait toutes les informations pour continuer l'aventure!
+
+-   Au moment de passer la mascotte, soit sûr de la donner à **quelqu'un de motivé par le projet.** Montre lui ce site avec toutes les explications pour qu'elle ait toutes les informations pour continuer l'aventure!
+
+-   Avant de vous quitter, prenez une photo de vous deux avec la mascotte et envois la nous <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">ici</a>!
 
 <br/>
-<br/>
-<ArrowForwardIosIcon /> Avant de vous quitter, prenez une photo de vous deux avec la mascotte et envois la nous <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">ici</a>!
-
-<br/>
-<br/>
-
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lamaoncomputerinstagram.svg" alt="Instagram Mascot" />
 </div>
@@ -111,11 +79,9 @@ Tu ne connais personne susceptible de nous aider? Trois solutions s'offrent à t
 
 <br/>
 
-<ArrowForwardIosIcon />  Trace a décidé de ne pas prendre l'avion pour son périple. Pour traverser les mers, il va falloir trouver un marin dévoué dans le port le plus proche!
+-   Trace a décidé de ne pas prendre l'avion pour son périple. Pour traverser les mers, il va falloir trouver un marin dévoué dans le port le plus proche!
 
-<br/>
-
-<ArrowForwardIosIcon /> Si tu as la moindre question, n'hésite pas à envoyer un mail à l'<a href="mailto:traceacrosstheworld@gmail.com">adresse contact</a> (traceacrosstheworld@gmail.com) ou à poster un message sur le <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">What's App</a> du projet!
+-   Si tu as la moindre question, n'hésite pas à envoyer un mail à l'<a href="mailto:traceacrosstheworld@gmail.com">adresse contact</a> (traceacrosstheworld@gmail.com) ou à poster un message sur le <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a> du projet!
 
 <br/>
 <br/>
@@ -124,11 +90,12 @@ Tu ne connais personne susceptible de nous aider? Trois solutions s'offrent à t
 
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
   <Chip
-    label="Groupe What's App de l'équipe"
+    label="Groupe WhatsApp de l'équipe"
     component="a"
     href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE"
     variant="outlined"
     clickable
     target="_blank"
+    color="success"
   />
 </div>

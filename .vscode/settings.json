@@ -1,0 +1,31 @@
+{
+    "deploy.reloaded": {
+        "packages": [
+            {
+                "name" : "Build",
+                "description": "TraceAcrossTheWorldBuild",
+                "files": [
+                    "build/**",
+                    
+                ],
+                "exclude": [
+                    
+                ]
+        }
+        ],
+        "targets": [
+            {
+                {
+                    "type": "local",
+                    "name": "My build folder",
+                    "description": "A local folder",
+    
+                    "dir": "C:\\Users\\stephane\\Documents\\MD\\Matthieu69007.github.io",
+                    "mappings": {
+                        "/build/**": "/"
+                    }
+                },
+            }
+        ]
+    }
+}

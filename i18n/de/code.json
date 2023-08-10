@@ -1,6 +1,6 @@
 {
   "theme.ErrorPageContent.title": {
-    "message": "Diese Seite ist abgestürzt.",
+    "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.NotFound.title": {
