@@ -121,7 +121,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © 2023- TraceAcrossTheWorld.com. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
