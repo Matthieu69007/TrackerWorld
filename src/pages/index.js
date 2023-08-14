@@ -3,11 +3,11 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '../components/HomepageFeatures';
+import HomepageFeatures from '../Components/HomepageFeatures';
 import styles from './index.module.css';
 import {  Ion } from "cesium";
-import ViewerComponent from '../components/ViewerComponent';
-import CustomizedTimeline from '../components/TimeLine';
+import ViewerComponent from '../Components/ViewerComponent';
+import CustomizedTimeline from '../Components/TimeLine';
 import Chip from '@mui/material/Chip';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
