@@ -125,7 +125,6 @@ export default function ViewerComponent() {
           ];
           traceData.features[0].geometry.coordinates.push(coordinates);
         }
-        console.log("set pos ",parseFloat(x.values[x.values.length-1][0]),parseFloat(x.values[x.values.length-1][1]))
         setStartPos([parseFloat(x.values[x.values.length-1][1]),parseFloat(x.values[x.values.length-1][0])])
         setTraceReelleData(traceData);
       });
