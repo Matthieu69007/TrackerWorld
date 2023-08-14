@@ -1,0 +1,59 @@
+---
+sidebar_position: 3
+---
+
+# Itinéraire
+
+import ListAllCities from "@Site/src/Components/ListAllCities";
+import NextCity from "@Site/src/Components/NextCity";
+import Home from '@Site/src/Components/Home'
+import Typography from '@mui/material/Typography';
+
+
+
+
+<div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
+      <div>
+        <Typography variant="h4" gutterBottom>
+         Next destination
+        </Typography>
+        <br/><br/>
+        <NextCity/>
+      </div>
+</div>
+<div>
+
+<br/><br/>
+
+<div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
+      <div>
+        <Typography variant="h4" gutterBottom>
+         Travel plan
+        </Typography>
+        <br/>
+        
+      </div>
+</div>
+
+<Home />
+
+
+
+<br/>
+<div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
+      <div>
+        <Typography variant="h4" gutterBottom>
+         Trip Highlights
+        </Typography>
+        <ListAllCities />
+      </div>
+</div>
+
+
+
+
+</div>
+
+
+
+   
