@@ -151,7 +151,7 @@ export default function ViewerComponent() {
     <div>
       <button onClick={enterFullscreen}>Plein écran</button>
       
-      <Viewer ref={viewerRef} timeline={false} animation={true} >
+      <Viewer ref={viewerRef} timeline={false} animation={false} >
         <CameraFlyTo Clock={false} 
           
           destination={Cartesian3.fromDegrees(StartPos[0],StartPos[1], 1000000)} />
