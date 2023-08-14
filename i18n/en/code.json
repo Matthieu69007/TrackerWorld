@@ -64,11 +64,11 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Article plus récent",
+    "message": "Newer article",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Article plus ancien",
+    "message": "Older article",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.colorToggle.ariaLabel": {
@@ -80,86 +80,86 @@
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "mode clair",
+    "message": "light mode",
     "description": "The name for the light color mode"
   },
   "theme.blog.post.plurals": {
-    "message": "Un article|{count} articles",
+    "message": "One article|{count} articles",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagués avec « {tagName} »",
+    "message": "{nPosts} tagged with \" {tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Voir tous les tags",
+    "message": "View all tags",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} éléments",
+    "message": "{count} elements",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Fil d'Ariane",
+    "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Pages de documentation",
+    "message": "Documentation pages",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "Précédent",
+    "message": "Previous",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "Suivant",
+    "message": "Next",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Un document tagué|{count} documents tagués",
+    "message": "One tagged document|{count} tagged documents",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} avec \"{tagName}\"",
+    "message": "{nDocsTagged} with \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
     "message": "Version: {versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "Ceci est la documentation de la prochaine version {versionLabel} de {siteTitle}.",
+    "message": "This is the documentation for the next version {versionLabel} of {siteTitle}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Ceci est la documentation de {siteTitle} {versionLabel}, qui n'est plus activement maintenue.",
+    "message": "This is the documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Pour une documentation à jour, consultez la {latestVersionLink} ({versionLabel}).",
+    "message": "For up-to-date documentation, visit {latestVersionLink} ({versionLabel}).",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "dernière version",
+    "message": "Latest version",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Éditer cette page",
+    "message": "Edit Page",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Lien direct vers {heading}",
+    "message": "Direct link to {heading}",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " le {date}",
+    "message": " on {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " par {user}",
+    "message": " by: {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Dernière mise à jour{atDate}{byUser}",
+    "message": "Last update{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -167,35 +167,35 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags :",
+    "message": "Tags:",
     "description": "The label alongside a tag list"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Navigation article de blog récent",
+    "message": "Recent blog post navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fermer",
+    "message": "Close",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copié",
+    "message": "Copied",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copier le code",
+    "message": "Copy Code",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copier",
+    "message": "Copy",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Activer/désactiver le retour à la ligne",
+    "message": "Enable/Disable line wrapping",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Plier/Déplier la catégorie '{label}' de la barre latérale",
+    "message": "Fold/Unfold the '{label}' category in the sidebar",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
@@ -203,35 +203,35 @@
     "description": "The ARIA label for the main navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Sur cette page",
+    "message": "On this page",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.blog.post.readMore": {
-    "message": "Lire plus",
+    "message": "Read more",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "En savoir plus sur {title}",
+    "message": "Learn more about {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "Une minute de lecture|{readingTime} minutes de lecture",
+    "message": "One minute reading|{readingTime} minutes reading",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Langues",
+    "message": "Languages",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Page d'accueil",
+    "message": "Homepage",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Réduire le menu latéral",
+    "message": "Collapse side menu",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Réduire le menu latéral",
+    "message": "Collapse side menu",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
@@ -239,31 +239,31 @@
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Retour au menu principal",
+    "message": "← Back to main menu",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Fermer la barre de navigation",
+    "message": "Hide navigation bar",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Ouvrir/fermer la barre de navigation",
+    "message": "Open/Close navigation bar",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Déplier le menu latéral",
+    "message": "Open side menu",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Déplier le menu latéral",
+    "message": "Open side menu",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Réessayer",
+    "message": "Try Again",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
-    "message": "Aller au contenu principal",
+    "message": "Go to main content",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
