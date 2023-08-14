@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Entity, Viewer, GeoJsonDataSource } from "resium";
+import { Entity, Viewer, GeoJsonDataSource, CameraFlyTo, Clock, CameraLookAt } from "resium";
 import { Cartesian2, Cartesian3, Color } from "cesium";
 import { urlNextcity } from "./NextCity";
 
@@ -19,6 +19,8 @@ export default function ViewerComponent() {
     useState(null);
   const [traceReelleData, setTraceReelleData] =
     useState(null);
+  const [StartPos, setStartPos] =
+    useState([4.820163386,45.75749697]);
   const [nextCityId, setNextCityId] = useState(1);
   const viewerRef = useRef(null);
   const cityEntitiesRef = useRef([]);
@@ -123,7 +125,8 @@ export default function ViewerComponent() {
           ];
           traceData.features[0].geometry.coordinates.push(coordinates);
         }
-        
+        console.log("set pos ",parseFloat(x.values[x.values.length-1][0]),parseFloat(x.values[x.values.length-1][1]))
+        setStartPos([parseFloat(x.values[x.values.length-1][1]),parseFloat(x.values[x.values.length-1][0])])
         setTraceReelleData(traceData);
       });
   }, [nextCityId]);
@@ -148,7 +151,11 @@ export default function ViewerComponent() {
   return (
     <div>
       <button onClick={enterFullscreen}>Plein écran</button>
-      <Viewer ref={viewerRef} timeline={false} animation={false}>
+      
+      <Viewer ref={viewerRef} timeline={false} animation={true} >
+        <CameraFlyTo Clock={false} 
+          
+          destination={Cartesian3.fromDegrees(StartPos[0],StartPos[1], 1000000)} />
         <GeoJsonDataSource
           markerSymbol=""
           data={consigneParcoursPreviousData}
@@ -170,6 +177,8 @@ export default function ViewerComponent() {
           // hide markers
           markerColor={Color.TRANSPARENT}
           />
+          
+36      
         {/* Loop through consigneParcoursData and create point entities */}
         {[
           ...(consigneParcoursPreviousData?.features || []),
@@ -180,7 +189,7 @@ export default function ViewerComponent() {
             const city = feature.properties.city;
             const name = feature.properties.name;
             return (
-              <Entity
+              <Entity key={"Feature"+Math.random()}
                 description={name}
                 name={city}
                 point={{ pixelSize: 10 }}
@@ -196,6 +205,7 @@ export default function ViewerComponent() {
             );
           }
         })}
+        
       </Viewer>
     </div>
   );
