@@ -8,4 +8,4 @@ authors:
   image_url: https://github.com/Matthieu69007.png
 ---
 
-Here we are, the project has started! Website is built as we speak, kick off is set for september 2023 from Fourviere basilica in Lyon, France
+The project is launched! The site is under construction, with departure scheduled for September 2023 from Fourvière, Lyon, FRANCE.

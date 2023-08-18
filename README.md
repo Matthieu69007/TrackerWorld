@@ -43,11 +43,12 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 ### Crowdin workflow
 
 
-Gen Localisation :
+Gen Localisation (may need to delete some json files to ensure proper update of existing strings):
 ```
 npm run write-translations
 ```
-Copy all docs to the target source locale folder
+
+Work in /docs for all mdx. They will automatically be inclded in the crowdin workflow
 ```
 ```
 Upload

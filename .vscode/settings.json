@@ -1,36 +1,45 @@
 {
-  "deploy.reloaded": {
+    "deploy.reloaded": {
+      "packages": [
+        {
+            "name": "Build",
+            "description": "Build to GitHubIO",
+            "files": [
+                "build/**",
+            ],
+            "exclude": [
+                
+            ],
+            "deployOnSave": false,
+            "clearOutputOnStartup":true,
+        },
+        
+  
+      ],
+        "targets": [
+            {
+                {
+                    "type": "local",
+                    "name": "sbs dell build folder",
+                    "description": "A local folder",
+    
+                    "dir": "C:\\Users\\stephane\\Documents\\MD\\Matthieu69007.github.io",
+                    "mappings": {
+                        "/build/**": "/"
+                    }
+                },
+                {
 
-    "packages": [
-      {
-          "name": "Build",
-          "description": "Build to GitHubIO",
-          "files": [
-              "build/**",
-          ],
-          "exclude": [
-              
-          ],
-          "deployOnSave": false,
-          "clearOutputOnStartup":true,
-      },
-      
-
-    ],
-    "targets": [
-      {
-
-          "type": "local",
-          "name": "TrackerWorld githubio local",
-          "description": "A SMB shared network folder",
-
-          "dir": "D:\\Projets\\01 - Perso\\WorldTracker MD\\Matthieu69007.github.io",
-          "mappings": {
-            "build/**": "/"
-        }
-      },
-      
-    },
-    ]
-  }
+                  "type": "local",
+                  "name": "sbs hp build folder",
+                  "description": "A SMB shared network folder",
+        
+                  "dir": "D:\\Projets\\01 - Perso\\WorldTracker MD\\Matthieu69007.github.io",
+                  "mappings": {
+                    "build/**": "/"
+                }
+              },
+            }
+        ]
+    }
 }

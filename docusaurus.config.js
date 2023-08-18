@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'TraceAcrossTheWorld', // Usually your GitHub org/user name.
+  projectName: 'TraceAcrossTheWorld', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -121,7 +121,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © 2023- TraceAcrossTheWorld.com. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
