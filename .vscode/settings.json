@@ -1,0 +1,36 @@
+{
+  "deploy.reloaded": {
+
+    "packages": [
+      {
+          "name": "Build",
+          "description": "Build to GitHubIO",
+          "files": [
+              "build/**",
+          ],
+          "exclude": [
+              
+          ],
+          "deployOnSave": false,
+          "clearOutputOnStartup":true,
+      },
+      
+
+    ],
+    "targets": [
+      {
+
+          "type": "local",
+          "name": "TrackerWorld githubio local",
+          "description": "A SMB shared network folder",
+
+          "dir": "D:\\Projets\\01 - Perso\\WorldTracker MD\\Matthieu69007.github.io",
+          "mappings": {
+            "build/**": "/"
+        }
+      },
+      
+    },
+    ]
+  }
+}
