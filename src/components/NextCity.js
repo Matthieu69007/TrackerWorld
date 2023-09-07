@@ -30,7 +30,6 @@ export default function NextCity() {
     
     return <>
           <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
               <CardMedia
                 component="img"
                 image={'../img/Etapes/'+ nextCityData?.city +'.jpg'}
@@ -48,7 +47,6 @@ export default function NextCity() {
                   {nextCityData?.country}, {nextCityData?.place}
                 </Typography>
               </CardContent>
-            </CardActionArea>
           </Card>
     </>
   }
