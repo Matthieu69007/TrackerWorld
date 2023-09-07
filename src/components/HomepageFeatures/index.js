@@ -1,39 +1,57 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import NextCityNameOnly from '../NextCityNameOnly';
+
+
 
 const FeatureList = [
   {
-    title: 'Connecté',
-    Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputerdetoure.svg').default,
+    title: 'Visite ce site web',
+    Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputer2detoure.svg').default,
     description: (
       <>
-        Trace est une mascotte équipée d'un traceur qui fait le tour du monde sans prendre l'avion.
-        <br/>
-        Pour cela, elle compte sur toi pour la faire avancer de quelques pas!
+        Pour décourvrir le projet et comprendre les règles.
       </>
     ),
   },
   {
-    title: 'Collaboratif',
-    Svg: require('@site/static/img/Mascotte/Resize/lamastogetherdetoure.svg').default,
+    title: 'Voyage avec Trace',
+    Svg: require('@site/static/img/Mascotte/Resize/lama-on-a-bike.svg').default,
     description: (
       <>
-        Chaque porteur de la mascotte devient membre à part entière de l'équipe.
-        Rejoins le <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">groupe WhatsApp</a> et aide nous à faire avancer Trace vers la prochaine étape!
-        <br/>
-        Tu peux suivre son périple en ligne depuis ce site!
+         Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.
+         <br/>
+         Attention, Trace ne prends pas l'avion!
+        <br/><br/>
+        <NextCityNameOnly/>
       </>
     ),
   },
   {
-    title: 'Immersif',
-    Svg: require('@site/static/img/Mascotte/Resize/lamatajmahaldetoure.svg').default,
+    title: 'Contacte ta communauté',
+    Svg: require('@site/static/img/Mascotte/Resize/lama-with-friends.svg').default,
     description: (
       <>
-        Chaque membre de l'équipe peut partager photos et vidéos du périple de Trace en sa compagnie sur le compte <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a>.
-        <br/>
-        Une vidéo sera réalisée au retour de Trace pour présenter la diversité du monde rencontré au travers de son périple.
+        Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.
+      </>
+    ),
+  },
+  {
+    title: 'Prend un selfie',
+    Svg: require('@site/static/img/Mascotte/Resize/lamaselfie.svg').default,
+    description: (
+      <> Avec Trace et la personne qui te la confiée.
+      <br/>
+      Ou seul avec Trace, si tu passes près d'une des étapes fixées.        
+      </>
+    ),
+  },
+  {
+    title: 'Partage sur Instagram',
+    Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputerinstagram.svg').default,
+    description: (
+      <> Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.       
       </>
     ),
   },
@@ -53,11 +71,13 @@ function Feature({Svg, title, description}) {
   );
 }
 
+
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
+        
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
