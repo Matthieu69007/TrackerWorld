@@ -269,5 +269,17 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "Trace across the world": {
+    "message": "Trace across the world"
+  },
+  "Le tour du monde depuis chez soi !": {
+    "message": "Le tour du monde depuis chez soi !"
+  },
+  "Le projet en quelques mots": {
+    "message": "Le projet en quelques mots"
+  },
+  "Carte intercative du chemin parcouru et à parcourir par trace": {
+    "message": "Carte intercative du chemin parcouru et à parcourir par trace"
   }
 }
