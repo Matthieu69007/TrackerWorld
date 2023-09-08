@@ -8,7 +8,7 @@ import React, { useState, useEffect } from "react"
 export const urlNextcity = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B:G/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
 
-export default function NextCity() {
+export default function NextCityNameOnly() {
     const [nextCityData, setNextCityData] = useState(null);
 
     useEffect(() => {
@@ -29,24 +29,9 @@ export default function NextCity() {
     
     
     return <>
-          <Card sx={{ maxWidth: 345 }}>
-              <CardMedia
-                component="img"
-                image={'../img/Etapes/'+ nextCityData?.city +'.jpg'}
-                alt={nextCityData?.city_accent}
-                sx={{
-                  height: 200,
-                  objectFit: 'contain',
-                }}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {nextCityData?.city_accent}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {nextCityData?.country}, {nextCityData?.place}
-                </Typography>
-              </CardContent>
-          </Card>
+          
+      <Typography gutterBottom variant="body1" component="div">
+        Prochaine étape : {nextCityData?.city_accent},{nextCityData?.country}
+      </Typography>
     </>
   }

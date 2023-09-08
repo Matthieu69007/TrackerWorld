@@ -177,7 +177,7 @@ export default function ViewerComponent() {
           markerColor={Color.TRANSPARENT}
           />
           
-36      
+      
         {/* Loop through consigneParcoursData and create point entities */}
         {[
           ...(consigneParcoursPreviousData?.features || []),
