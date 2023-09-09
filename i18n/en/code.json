@@ -281,5 +281,14 @@
   },
   "Carte intercative du chemin parcouru et à parcourir par trace": {
     "message": "Interactive map of Trace's traveled and to be traveled path"
+  },
+  "Pour décourvrir le projet et comprendre les règles.": {
+    "message": "Discover the project and understand the rules."
+  },
+  "Visite ce site web": {
+    "message": "Visit the Website"
+  },
+  "Voyage avec Trace": {
+    "message": "Travel with Trace"
   }
 }

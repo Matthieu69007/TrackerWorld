@@ -281,5 +281,14 @@
   },
   "Carte intercative du chemin parcouru et à parcourir par trace": {
     "message": "Interaktive Karte des zurückgelegten und noch zurückzulegenden Weges pro Spur"
+  },
+  "Pour décourvrir le projet et comprendre les règles.": {
+    "message": "Um das Projekt zu entschleunigen und die Regeln zu verstehen."
+  },
+  "Visite ce site web": {
+    "message": "Besuchen sie diese Website"
+  },
+  "Voyage avec Trace": {
+    "message": "Reisen mit Trace"
   }
 }
