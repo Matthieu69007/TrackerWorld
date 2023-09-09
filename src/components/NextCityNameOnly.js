@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import React, { useState, useEffect } from "react"
+import Translate from '@docusaurus/Translate';
 
 export const urlNextcity = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B:G/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
@@ -31,7 +32,7 @@ export default function NextCityNameOnly() {
     return <>
           
       <Typography gutterBottom variant="body1" component="div">
-        Prochaine étape : {nextCityData?.city_accent},{nextCityData?.country}
+        <Translate desc='Prochaine étape :'>Prochaine étape :</Translate> {nextCityData?.city_accent},{nextCityData?.country}
       </Typography>
     </>
   }

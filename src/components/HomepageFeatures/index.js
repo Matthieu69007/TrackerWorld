@@ -2,57 +2,60 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import NextCityNameOnly from '../NextCityNameOnly';
-
+import Translate from '@docusaurus/Translate';
 
 
 const FeatureList = [
   {
-    title: 'Visite ce site web',
+    title: <Translate desc='Visite ce site web'>Visite ce site web</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputer2detoure.svg').default,
-    description: (
-      <>
-        Pour décourvrir le projet et comprendre les règles.
-      </>
-    ),
+    description: <Translate desc='Pour décourvrir le projet et comprendre les règles.'>
+                  Pour décourvrir le projet et comprendre les règles.
+                </Translate>,
   },
   {
-    title: 'Voyage avec Trace',
+    title: <Translate desc='Voyage avec Trace'>Voyage avec Trace</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lama-on-a-bike.svg').default,
     description: (
       <>
-         Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.
+         <Translate desc="Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.">Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.</Translate>
          <br/>
-         Attention, Trace ne prends pas l'avion!
+         <Translate desc="Attention, Trace ne prends pas l'avion!">Attention, Trace ne prends pas l'avion!</Translate>
         <br/><br/>
         <NextCityNameOnly/>
       </>
     ),
   },
   {
-    title: 'Contacte ta communauté',
+    title: <Translate desc='Contacte ta communauté'>Contacte ta communauté</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lama-with-friends.svg').default,
     description: (
-      <>
+      <Translate desc="Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.">
         Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Prend un selfie',
+    title: <Translate desc='Prend un selfie'>Prend un selfie</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaselfie.svg').default,
-    description: (
-      <> Avec Trace et la personne qui te la confiée.
+    description: (<>
+      <Translate desc='Avec Trace et la personne qui te la confiée.'>
+        Avec Trace et la personne qui te la confiée.
+      </Translate>
       <br/>
-      Ou seul avec Trace, si tu passes près d'une des étapes fixées.        
+      <Translate desc="Ou seul avec Trace, si tu passes près d'une des étapes fixées.">
+      Ou seul avec Trace, si tu passes près d'une des étapes fixées.
+      </Translate>
       </>
     ),
   },
   {
-    title: 'Partage sur Instagram',
+    title: <Translate desc='Partage sur Instagram'>Partage sur Instagram</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputerinstagram.svg').default,
     description: (
-      <> Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.       
-      </>
+      <Translate desc="Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace."> 
+        Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.       
+      </Translate>
     ),
   },
 ];

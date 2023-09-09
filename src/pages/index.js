@@ -36,6 +36,7 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const ChipMap = <Translate desc="Carte intercative du chemin parcouru et à parcourir par trace">Carte intercative du chemin parcouru et à parcourir par trace</Translate>
+  const CompRules = <Rules/>
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -56,7 +57,7 @@ export default function Home() {
                   />
                 <br /><br />
                 <ViewerComponent />
-                <Rules />
+                {CompRules}
                 <Itinerary />
                 <br /> <br />
               </div>
