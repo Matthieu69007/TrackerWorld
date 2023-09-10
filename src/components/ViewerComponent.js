@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Entity, Viewer, GeoJsonDataSource, CameraFlyTo, Clock, CameraLookAt } from "resium";
-import { Cartesian2, Cartesian3, Color } from "cesium";
+import { Entity, Viewer, GeoJsonDataSource, CameraFlyTo, Clock, CameraLookAt, Scene } from "resium";
+import { Cartesian2, Cartesian3, Color, SceneMode } from "cesium";
 import { urlNextcity } from "./NextCity";
 
 const urlConsigneParcours =
@@ -8,8 +8,8 @@ const urlConsigneParcours =
 const urlTraceReelle =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:C100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 
-const PreviouslineColor = Color.fromCssColorString("#D5720E"); 
-const NextlineColor = Color.fromCssColorString("#572C3A"); 
+const PreviouslineColor = Color.fromCssColorString("#D5720E");
+const NextlineColor = Color.fromCssColorString("#572C3A");
 const SOME_ZOOM_THRESHOLD = 500000; // Ajustez cette valeur selon vos besoins
 
 export default function ViewerComponent() {
@@ -20,7 +20,7 @@ export default function ViewerComponent() {
   const [traceReelleData, setTraceReelleData] =
     useState(null);
   const [StartPos, setStartPos] =
-    useState([4.820163386,45.75749697]);
+    useState([4.820163386, 45.75749697]);
   const [nextCityId, setNextCityId] = useState(1);
   const viewerRef = useRef(null);
   const cityEntitiesRef = useRef([]);
@@ -31,7 +31,7 @@ export default function ViewerComponent() {
       .then((x) => x.json())
       .then((x) => {
         const cityId = (x?.values && parseFloat(x.values[1][3])) || 1;
-        setNextCityId(cityId-1);
+        setNextCityId(cityId - 1);
       });
 
     fetch(urlConsigneParcours)
@@ -125,7 +125,7 @@ export default function ViewerComponent() {
           ];
           traceData.features[0].geometry.coordinates.push(coordinates);
         }
-        setStartPos([parseFloat(x.values[x.values.length-1][1]),parseFloat(x.values[x.values.length-1][0])])
+        setStartPos([parseFloat(x.values[x.values.length - 1][1]), parseFloat(x.values[x.values.length - 1][0])])
         setTraceReelleData(traceData);
       });
   }, [nextCityId]);
@@ -147,14 +147,14 @@ export default function ViewerComponent() {
     }
   };
 
+ 
+
   return (
     <div>
       <button onClick={enterFullscreen}>Plein écran</button>
-      
+
       <Viewer ref={viewerRef} timeline={false} animation={false} >
-        <CameraFlyTo Clock={false} 
-          
-          destination={Cartesian3.fromDegrees(StartPos[0],StartPos[1], 1000000)} />
+        <Scene mode={SceneMode.SCENE2D} onMorphComplete={()=>{viewerRef.current.cesiumElement?.ViewerComponent?.Camera?.CameraFlyTo(React.Component.PropsWithChildren<CameraFlyTo>{Clock:false, destination:Cartesian3.fromDegrees(StartPos[0], StartPos[1], 1000000)})}}/>
         <GeoJsonDataSource
           markerSymbol=""
           data={consigneParcoursPreviousData}
@@ -169,15 +169,15 @@ export default function ViewerComponent() {
           // hide markers
           markerColor={Color.TRANSPARENT}
         />
-         <GeoJsonDataSource
+        <GeoJsonDataSource
           markerSymbol=""
           data={traceReelleData}
           stroke={Color.BLUE} // Vous pouvez utiliser n'importe quelle couleur de votre choix pour la ligne de la trace réelle.
           // hide markers
           markerColor={Color.TRANSPARENT}
-          />
-          
-      
+        />
+
+
         {/* Loop through consigneParcoursData and create point entities */}
         {[
           ...(consigneParcoursPreviousData?.features || []),
@@ -188,23 +188,23 @@ export default function ViewerComponent() {
             const city = feature.properties.city;
             const name = feature.properties.name;
             return (
-              <Entity key={"Feature"+Math.random()}
+              <Entity key={"Feature" + Math.random()}
                 description={name}
                 name={city}
-                point={{ pixelSize: 10 }}
+                point={{ pixelSize: 8 }}
                 label={{
                   text: city,
                   font: "14pt",
                   pixelOffset: new Cartesian2(0, -20),
                 }}
                 // remove the on click handler
-                onClick={() => {}}
+                onClick={() => { }}
                 position={Cartesian3.fromDegrees(longitude, latitude, 100)}
               />
             );
           }
         })}
-        
+
       </Viewer>
     </div>
   );
