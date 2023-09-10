@@ -68,12 +68,6 @@ const config = {
           src: 'img/Mascotte/Resize/lamatetedetoure.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Le projet',
-          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://www.instagram.com/traceacrosstheworld/',
