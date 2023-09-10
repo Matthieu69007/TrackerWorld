@@ -64,7 +64,7 @@ export default function ListAllCities() {
       <Container maxWidth="lg">
         <br/>
         <Typography variant="body2" color="text.secondary"></Typography>
-        <ImageList cols={cols} sx={{ width: '100%', height: 'auto' }}>
+        <ImageList cols={cols} sx={{ width: '100%', height: '40vh' }}>
             {citiesData?.Places?.map((item) => (
                 <ImageListItem key={item.srcImg}>
                     <img
