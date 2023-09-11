@@ -66,7 +66,7 @@ export default function ListAllCities() {
         <Typography variant="body2" color="text.secondary"></Typography>
         <ImageList cols={cols} sx={{ width: '100%', height: '40vh' }}>
             {citiesData?.Places?.map((item) => (
-                <ImageListItem key={item.srcImg}>
+                <ImageListItem key={item.srcImg+Math.random()}>
                     <img
                         src={`${item.srcImg}?w=248&fit=crop&auto=format`}
                         srcSet={`${item.srcImg}?w=248&fit=crop&auto=format&dpr=2 2x`}
