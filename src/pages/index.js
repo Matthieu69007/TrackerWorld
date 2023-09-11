@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Rules from '../../docs/Rules.mdx';
 import Itinerary from '../../docs/Itinerary.mdx';
 import Translate from '@docusaurus/Translate';
-import ViePrivee from '../../docs/ViePrivee.mdx';
+import ViePrivee from './ViePrivee.js'
 import Presentation from '../../docs/Presentation.mdx';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
