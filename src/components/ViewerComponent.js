@@ -153,8 +153,8 @@ export default function ViewerComponent() {
     <div>
       <button onClick={enterFullscreen}>Plein écran</button>
 
-      <Viewer ref={viewerRef} timeline={false} animation={false} >
-        <Scene mode={SceneMode.SCENE2D} onMorphComplete={()=>{viewerRef.current.cesiumElement?.ViewerComponent?.Camera?.CameraFlyTo(React.Component.PropsWithChildren<CameraFlyTo>{Clock:false, destination:Cartesian3.fromDegrees(StartPos[0], StartPos[1], 1000000)})}}/>
+      <Viewer ref={viewerRef} timeline={false} animation={false} sceneMode={SceneMode.SCENE2D} >
+        <CameraFlyTo destination={Cartesian3.fromDegrees(StartPos[0], StartPos[1], 1000000)}  />
         <GeoJsonDataSource
           markerSymbol=""
           data={consigneParcoursPreviousData}
