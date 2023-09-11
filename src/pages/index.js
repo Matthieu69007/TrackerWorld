@@ -10,7 +10,7 @@ import CustomizedTimeline from '../components/TimeLine';
 import Chip from '@mui/material/Chip';
 import ViewerComponent from '../components/ViewerComponent';
 import Typography from '@mui/material/Typography';
-import Rules from '../../docs/Rules.mdx';
+import Rules from './Rules.js';
 import Itinerary from '../../docs/Itinerary.mdx';
 import Translate from '@docusaurus/Translate';
 import ViePrivee from './ViePrivee.js'
