@@ -290,5 +290,35 @@
   },
   "Voyage avec Trace": {
     "message": "Reisen mit Trace"
+  },
+  "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.": {
+    "message": "Um ihm zu helfen, sich dem nächsten Schritt der geplanten Route zu nähern."
+  },
+  "Attention, Trace ne prends pas l'avion!": {
+    "message": "Achtung, Trace fliegt nicht!"
+  },
+  "Contacte ta communauté": {
+    "message": "Kontaktiere deine Gemeinde"
+  },
+  "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.": {
+    "message": "Um jemanden zu finden, der Trace bei der Fortsetzung ihrer Reise helfen kann."
+  },
+  "Prend un selfie": {
+    "message": "Nimm ein Selfie auf"
+  },
+  "Ou seul avec Trace, si tu passes près d'une des étapes fixées.": {
+    "message": "Oder allein mit Trace, wenn du an einem der festgelegten Schritte vorbeikommst."
+  },
+  "Partage sur Instagram": {
+    "message": "Auf Instagram teilen"
+  },
+  "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.": {
+    "message": "Um dich den anderen Teammitgliedern vorzustellen und ihnen die Möglichkeit zu geben, Traces Reise zu verfolgen."
+  },
+  "Prochaine étape :": {
+    "message": "Nächster Schritt:"
+  },
+  "Avec Trace et la personne à qui tu confies la mascotte.": {
+    "message": "Mit Trace und der Person, der du das Maskottchen anvertraust."
   }
 }

@@ -1,0 +1,101 @@
+import Link from '@docusaurus/Link';
+
+ <br /> <br />
+<div style={{ width: '800px', margin: '0 auto', textAlign: 'center' }}>
+ <div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
+</div>
+
+# Overview
+
+Welcome to the "Trace across the world" project
+
+### Objective
+
+The Trace mascot is equipped with a tracking system that allows it to be followed around the globe. Leaving Lyon in France on XX/XX/2023, Trace is touring the world, passing from hand to hand the carriers that take her around.
+
+
+### How does this work?
+
+Trace's itinerary is well-defined, passing through symbolic stopover towns around the world.
+
+Mind you, Trace has decided to make this long trip without flying. We'll have to take the boat to cross the oceans!
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/planisphere.svg" alt="Planisphere" />
+</div>
+<br/>
+On this site, you can :
+<br/>
+<br/>- follow the mascot's route
+<br/>- find out more about the project
+<br/>- join the <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram page</a> of the Trace community
+<br/>- join the <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>group to help find future carriers for Trace
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/lama-on-a-bike.svg" alt="Lama on a bike" />
+</div>
+
+### Did you get the Trace mascot?
+
+Get it moving in the right direction towards the next stage, then entrust it to a trusted and motivated person, who will also take it forward a few kilometers.
+No matter how long it takes, from carrier to carrier, Trace will make his way from on destination to the next.
+Don't know who to give the mascot to? Connect to the [WhatsApp]group (https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), and the Trace team will help you find the next carrier!
+
+
+
+
+
+### Are you close to one of the route main stops?
+
+Well done, get to the indicated place as quickly as possible, then take a photo or video of Trace with you in front of the place symbolizing the leg. We'll then put together a film with all the photos and videos from the project!
+
+
+<div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
+  <Link
+    className="button button--secondary button--lg"
+    style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
+    to="/docs/Rules">
+    The rules of the game 📜
+  </Link>
+</div>
+
+
+
+## And what about the team?
+
+Once you've relayed the mascot, you're part of the "Trace across the world" team. You can return to the site regularly to follow its progress around the world.
+
+If you know anyone in the Trace area, you can put them in touch with the carrier via the team's [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) group. Perhaps this will enable us to find a future relay worker to take Trace a little further towards its next stage.
+
+Finally, as a carrier, don't hesitate to send us some photos/videos of you with Trace on the <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram account</a> at places close to where you are.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/lama-with-friends.svg" alt="Lama with friend" />
+</div>
+
+## How to follow ? ##
+
+Thanks to the chip installed inside Trace, the whole team can follow its progress around the world.
+
+<br/>
+
+
+<div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
+  <Link
+    className="button button--secondary button--lg"
+    style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
+    to="/docs/Itinerary">
+    Trace 🧭
+  </Link>
+</div>
+
+
+-->
+
+
+<br/>
+As a security measure, the displayed location is approximately 2km away, so that the carrier cannot be accurately located.
+
+</div>
+

@@ -39,6 +39,7 @@
     "resium": "^1.16.1"
   },
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^2.4.1",
     "@docusaurus/module-type-aliases": "2.4.1",
     "@svgr/cli": "^8.0.1"
   },

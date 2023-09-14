@@ -39,7 +39,7 @@ const FeatureList = [
     title: <Translate desc='Prend un selfie'>Prend un selfie</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaselfie.svg').default,
     description: (<>
-      <Translate desc='Avec Trace et la personne qui te la confiée.'>
+      <Translate desc='Avec Trace et la personne à qui tu confies la mascotte.'>
         Avec Trace et la personne à qui tu confies la mascotte.
       </Translate>
       <br/>

@@ -1,0 +1,101 @@
+import Link from '@docusaurus/Link';
+
+ <br /> <br />
+<div style={{ width: '800px', margin: '0 auto', textAlign: 'center' }}>
+ <div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
+</div>
+
+# Präsentation
+
+Willkommen beim Projekt "Trace across the world".
+
+### Ziel
+
+Das Maskottchen Trace ist mit einem Ortungssystem ausgestattet, mit dem man seine Spur rund um den Globus verfolgen kann. Trace ist am XX/XX/2023 in Lyon in Frankreich gestartet und macht eine Weltreise, indem sie Träger von Hand zu Hand weitergibt, die sie auf Reisen schicken.
+
+
+### Wie funktioniert das?
+
+Die Route von Trace ist festgelegt und führt durch symbolische Etappenstädte rund um die Welt.
+
+Achtung: Trace hat sich entschieden, diese lange Reise ohne Flugzeug anzutreten. Du musst ein Schiff nehmen, um die Ozeane zu überqueren!
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/planisphere.svg" alt="Planisphere" />
+</div>
+<br/>
+Auf dieser Seite kannst du :
+<br/>
+<br/>- den Weg des Maskottchens verfolgen
+<br/>- mehr über das Projekt erfahren
+<br/>- der Seite <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> der Trace-Community beitreten
+<br/>- der Gruppe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>beitreten, um bei der Suche nach zukünftigen Trägern für Trace zu helfen
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/lama-on-a-bike.svg" alt="Lama on a bike" />
+</div>
+
+### Hast du das Trace-Maskottchen erhalten?
+
+Führe sie in die richtige Richtung zum nächsten Schritt und übergebe sie dann einer vertrauenswürdigen und motivierten Person, die sie ebenfalls ein paar Kilometer weiterbringt.
+Egal, wie lange es dauert, von Träger zu Träger, Trace schafft es, sich von Etappe zu Etappe durchzuschlagen.
+Du weißt nicht, wem du das Maskottchen geben sollst? Verbinde dich mit der Gruppe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), und das Trace-Team wird dir helfen, den nächsten Träger zu finden!
+
+
+
+
+
+### Bist du in der Nähe einer der Stationen der Route?
+
+Bravo, mach dich so schnell wie möglich auf den Weg zum angegebenen Ort und mache dann ein Foto oder Video von Trace mit dir vor dem Symbolort der Etappe. Wir werden dann einen Film mit allen Fotos und Videos des Projekts zusammenschneiden!
+
+
+<div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
+  <Link
+    className="button button--secondary button--lg"
+    style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
+    to="/docs/Rules">
+    Die Spielregeln 📜.
+  </Link>
+</div>
+
+
+
+## Und das Team in all dem?
+
+Wenn du einmal Staffelläufer des Maskottchens warst, gehörst du zum Team "Trace across the world". Du kannst regelmäßig auf die Seite zurückkehren, um ihren Fortschritt auf der ganzen Welt zu verfolgen.
+
+Wenn du Bekannte hast, die sich in der Umgebung von Trace befinden, kannst du sie über die Gruppe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) des Teams mit dem Träger in Verbindung bringen. Vielleicht wird dadurch ein zukünftiger Staffelläufer gefunden, um Trace ein Stück weiter in seine nächste Phase zu bringen.
+
+Und schließlich kannst du uns als Überbringer auf dem Konto <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> gerne ein paar Fotos/Videos von dir mit Trace an Orten, die dir am Herzen liegen, in der Nähe deines Aufenthaltsortes schicken.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/img/Mascotte/Resize/lama-with-friends.svg" alt="Lama with friend" />
+</div>
+
+## Wie kann ich mithalten? ##
+
+Dank des Chips in Trace kann das gesamte Team seine Reise um die Welt verfolgen.
+
+<br/>
+
+
+<div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
+  <Link
+    className="button button--secondary button--lg"
+    style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
+    to="/docs/Itinerary">Dokumente
+    Spur 🧭.
+  </Link>
+</div>
+
+
+-->
+
+
+<br/>
+Aus Sicherheitsgründen ist der angezeigte Standort auf 2 km genau ungefähr, damit der Träger nicht genau lokalisiert werden kann.
+
+</div>
+

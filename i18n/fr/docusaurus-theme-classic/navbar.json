@@ -7,10 +7,6 @@
     "message": "Home Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Le projet": {
-    "message": "Le projet",
-    "description": "Navbar item with label Le projet"
-  },
   "item.label.Blog": {
     "message": "Blog",
     "description": "Navbar item with label Blog"

@@ -290,5 +290,35 @@
   },
   "Voyage avec Trace": {
     "message": "Travel with Trace"
+  },
+  "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.": {
+    "message": "To help him get closer to the next stage of his planned journey."
+  },
+  "Attention, Trace ne prends pas l'avion!": {
+    "message": "Mind you, Trace doesn't fly!"
+  },
+  "Contacte ta communauté": {
+    "message": "Contact your community"
+  },
+  "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.": {
+    "message": "To find someone to help Trace continue his journey."
+  },
+  "Prend un selfie": {
+    "message": "Take a selfie"
+  },
+  "Ou seul avec Trace, si tu passes près d'une des étapes fixées.": {
+    "message": "Or alone with Trace, if you're close to one of the milestones."
+  },
+  "Partage sur Instagram": {
+    "message": "Share on Instagram"
+  },
+  "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.": {
+    "message": "To introduce you to the other team members, and let them follow Trace's journey."
+  },
+  "Prochaine étape :": {
+    "message": "Next step:"
+  },
+  "Avec Trace et la personne à qui tu confies la mascotte.": {
+    "message": "With Trace and the person to whom you entrust the mascot."
   }
 }
