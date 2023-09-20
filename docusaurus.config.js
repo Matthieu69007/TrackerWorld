@@ -68,7 +68,7 @@ const config = {
           src: 'img/Mascotte/Resize/lamatetedetoure.svg',
         },
         items: [
-          {to: '/blog', label: 'Blog', position: 'left'},
+          //{to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://www.instagram.com/traceacrosstheworld/',
             label: 'Instagram',
@@ -105,15 +105,15 @@ const config = {
               },
             ],
           },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-            ],
-          },
+          //{
+          //  title: 'More',
+          //  items: [
+          //    {
+          //      label: 'Blog',
+          //      to: '/blog',
+         //     },
+         //   ],
+         // },
         ],
         copyright: `Copyright © 2023- TraceAcrossTheWorld.com. Built with Docusaurus.`,
       },
