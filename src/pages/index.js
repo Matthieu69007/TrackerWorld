@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import Itinerary from '../../docs/Itinerary.mdx';
 import Translate from '@docusaurus/Translate';
 import MDXTranslator from '../components/MDXTranslator';
+import { Grid, Stack } from '@mui/material';
+import { Col } from '@nextui-org/react';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
 
@@ -38,32 +40,40 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Hello from ${siteConfig.title}">
       <HomepageHeader />
       <main>
-        <div className="container">
-          <div className="row">
-            <div className={clsx('col')}>
-              <div className="text--center">
-              <br/><br/>
-              <Typography fontSize={50}><Translate desc='Le projet en quelques mots'>Le projet en quelques mots</Translate></Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12}/>
+          <Grid item xs={12}>
+            <Typography fontSize={50}><Translate desc='Le projet en quelques mots'>Le projet en quelques mots</Translate></Typography>
               <HomepageFeatures />
-              <MDXTranslator Page="Presentation"/>
-              <Chip 
-                label={ChipMap}
-                color="success"
-                size="medium"
-              />
-              <br /><br />
-              <ViewerComponent />
-              <MDXTranslator Page="Rules"/>
-              <Itinerary />
-              <br /> <br />
-              <MDXTranslator Page="ViePrivee"/>
+          </Grid>
+          <Grid item xs={12}  lignCaontent='center'  justifyContent="center">
+            <Stack direction='column' alignItems="center" spacing={1}>
+              <div style={{"max-width":"300px"}}>
+                <MDXTranslator Page="Presentation" />
+                <Chip 
+                  label={ChipMap}
+                  color="success"
+                  size="medium"
+                />
               </div>
-            </div>
-          </div>
-        </div>
+            </Stack>
+            <Stack direction='column' alignItems="center" spacing={1}>
+              <div style={{width:"80%"}}>
+                <ViewerComponent/>
+              </div>
+            </Stack>
+            <Stack direction='column' alignItems="center" spacing={1}>
+              <div style={{"max-width":"300px"}}>
+                <MDXTranslator Page="Rules"/>
+                <Itinerary />
+                <MDXTranslator Page="ViePrivee"/>
+              </div>
+            </Stack>
+          </Grid>
+        </Grid>
 
       </main>
     </Layout>

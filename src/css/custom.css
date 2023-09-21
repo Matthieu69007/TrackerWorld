@@ -56,4 +56,13 @@
   font-weight: bolder;
 }
 
+.NarrowColumn {
+  display: contents;
+  align-self: center;
+  align-content: center;
+  width: 30%;
+  max-width: 300px;
+  background-color: green;
+}
+
 
