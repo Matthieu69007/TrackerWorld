@@ -35,6 +35,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const MDXColumnWidth="450px"
   const { siteConfig } = useDocusaurusContext();
   const ChipMap = <Translate desc="Carte intercative du chemin parcouru et à parcourir par trace">Carte intercative du chemin parcouru et à parcourir par trace</Translate>
   return (
@@ -45,13 +46,15 @@ export default function Home() {
       <main>
         <Grid container spacing={2}>
           <Grid item xs={12}/>
-          <Grid item xs={12}>
-            <Typography fontSize={50}><Translate desc='Le projet en quelques mots'>Le projet en quelques mots</Translate></Typography>
-              <HomepageFeatures />
-          </Grid>
-          <Grid item xs={12}  lignCaontent='center'  justifyContent="center">
+          <Grid item xs={12}  >
             <Stack direction='column' alignItems="center" spacing={1}>
-              <div style={{"max-width":"300px"}}>
+              <Typography fontSize={50}><Translate desc='Le projet en quelques mots'>Le projet en quelques mots</Translate></Typography>
+              <HomepageFeatures />
+            </Stack>
+          </Grid>
+          <Grid item xs={12}  justifyContent="center">
+            <Stack direction='column' alignItems="center" spacing={1}>
+              <div style={{"max-width":MDXColumnWidth}}>
                 <MDXTranslator Page="Presentation" />
                 <Chip 
                   label={ChipMap}
@@ -66,7 +69,7 @@ export default function Home() {
               </div>
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
-              <div style={{"max-width":"300px"}}>
+              <div style={{"max-width":MDXColumnWidth}}>
                 <MDXTranslator Page="Rules"/>
                 <Itinerary />
                 <MDXTranslator Page="ViePrivee"/>
