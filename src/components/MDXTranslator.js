@@ -36,9 +36,9 @@ export default function MDXTranslator(Props)
   
   const { i18n} = useDocusaurusContext();
 
-  console.log("MDXTranslator")
+  /*console.log("MDXTranslator")
   console.log(i18n)
-  console.log(useDocusaurusContext())
+  console.log(useDocusaurusContext())*/
   const PageName=Props.Page
   if (!i18n)
   {
