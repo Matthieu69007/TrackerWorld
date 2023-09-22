@@ -65,13 +65,15 @@ export default function Home() {
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
               <div style={{width:"80%"}}>
-                <ViewerComponent/>
+              <ViewerComponent/>
               </div>
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
               <div style={{"max-width":MDXColumnWidth}}>
                 <MDXTranslator Page="Rules"/>
+                </div>  
                 <Itinerary />
+                <div style={{"max-width":MDXColumnWidth}}>  
                 <MDXTranslator Page="ViePrivee"/>
               </div>
             </Stack>
