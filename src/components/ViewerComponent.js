@@ -10,6 +10,7 @@ import { Stack, getDialogActionsUtilityClass } from "@mui/material";
 import CityLamas from '../../static/img/Mascotte/Lama with friends.png'
 import TraceLama1 from '../../static/img/Mascotte/Lama on a bike.png'
 import TraceLama2 from '../../static/img/Mascotte/LamaTeteDetourée.png'
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
@@ -19,7 +20,6 @@ const urlTraceReelle =
 const TracelineColor = { "color":"#5100C2","weight":2, "smooth":1};
 const PreviouslineColor = { "color":"#D5720E","weight":1, "smooth":1};
 const NextlineColor = {"xolor":"#572C3A","weight":2};
-const SOME_ZOOM_THRESHOLD = 500000; // Ajustez cette valeur selon vos besoins
 
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
@@ -266,6 +266,7 @@ export default function ViewerComponent() {
   
 
   return (
+    
     <Stack direction='column' spacing={3} alignItems="center">
       <button sx={{"max-width":"150px"}} onClick={enterFullscreen}>Plein écran</button>
 

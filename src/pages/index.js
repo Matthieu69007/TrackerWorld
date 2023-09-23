@@ -14,6 +14,7 @@ import Translate from '@docusaurus/Translate';
 import MDXTranslator from '../components/MDXTranslator';
 import { Grid, Stack } from '@mui/material';
 import { Col } from '@nextui-org/react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
 
@@ -65,7 +66,9 @@ export default function Home() {
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
               <div style={{width:"80%"}}>
-              <ViewerComponent/>
+              <BrowserOnly>
+                {() => { return <ViewerComponent/>}}
+              </BrowserOnly>
               </div>
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
