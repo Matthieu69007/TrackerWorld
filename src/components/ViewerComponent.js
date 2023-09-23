@@ -1,30 +1,134 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Entity, Viewer, GeoJsonDataSource, CameraFlyTo, Clock, CameraLookAt, Scene } from "resium";
-import { Cartesian2, Cartesian3, Color, SceneMode } from "cesium";
-import { urlNextcity } from "./NextCity";
+import NextCity, { urlNextcity } from "./NextCity";
+
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMapEvent } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet'
+import 'leaflet-defaulticon-compatibility';
+import { Stack, getDialogActionsUtilityClass } from "@mui/material";
+
+import CityLamas from '../../static/img/Mascotte/Lama with friends.png'
+import TraceLama1 from '../../static/img/Mascotte/Lama on a bike.png'
+import TraceLama2 from '../../static/img/Mascotte/LamaTeteDetourée.png'
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 const urlTraceReelle =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:C100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 
-const PreviouslineColor = Color.fromCssColorString("#D5720E");
-const NextlineColor = Color.fromCssColorString("#572C3A");
+const TracelineColor = { "color":"#5100C2","weight":2, "smooth":1};
+const PreviouslineColor = { "color":"#D5720E","weight":1, "smooth":1};
+const NextlineColor = {"xolor":"#572C3A","weight":2};
 const SOME_ZOOM_THRESHOLD = 500000; // Ajustez cette valeur selon vos besoins
 
+function AddPoint(CoordsArray,PrevPos, NextPos)
+{
+  let SplitCoords=null;
+  if (PrevPos)
+  {
+    let CurX = PrevPos[1]
+    let NextX = NextPos[1]
+
+    if (NextX * CurX<0 && Math.abs(NextX-CurX)>=180)
+    {
+      if (NextX > 0)
+      {
+
+        SplitCoords=[PrevPos[0],NextX-360]
+      }
+      else
+      {
+        SplitCoords=[PrevPos[0],NextX+360]
+      }
+      CoordsArray.push(SplitCoords)      
+      return SplitCoords
+    }
+
+  }
+  CoordsArray.push(NextPos)
+  return SplitCoords
+}
+
+function GetPolylines(Options, Sets)
+{
+  return Sets.map((value)=>{
+    return <Polyline key={"Polyline_"+Math.random} pathOptions={Options}  positions={value}/>
+  })
+}
+
+function GetCityMarkers(CityList, ZoomLevel, currentCity)
+{
+  let icon = L.icon({
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0, -16],
+    iconRetinaUrl: CityLamas,
+    iconUrl: CityLamas,
+    shadowUrl: null
+})
+  console.log(ZoomLevel)
+  if (CityList && ZoomLevel >2)
+  {
+    return CityList.map((value)=>{
+      
+      return <Marker position={value.Position} icon={icon} >
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable to put Trace Information when it reached the
+                city and the photos maybe...
+              </Popup>
+            </Marker>
+    })
+  }
+  else if (CityList)
+  {
+    
+    let value= CityList[currentCity]
+    if (value)
+    {
+      return <Marker position={value.Position} icon={icon} >
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable to put Trace Information when it reached the
+                city and the photos maybe...
+              </Popup>
+            </Marker>
+    }
+  }
+  return null
+  
+}
+
+function GetTraceMarker(Position)
+{
+  const Icons=[TraceLama1,TraceLama2]
+  const I = Icons[Math.round(2*Math.random())%2]
+
+  let icon = L.icon({
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0, -16],
+    iconRetinaUrl: I,
+    iconUrl: I,
+    shadowUrl: null
+  })
+
+  return <Marker position={Position} icon={icon} >
+          
+        </Marker>
+}
+
+
 export default function ViewerComponent() {
-  const [consigneParcoursPreviousData, setConsigneParcoursPreviousData] =
-    useState(null);
-  const [consigneParcoursNextData, setConsigneParcoursNextData] =
-    useState(null);
-  const [traceReelleData, setTraceReelleData] =
-    useState(null);
   const [StartPos, setStartPos] =
     useState([4.820163386, 45.75749697]);
-  const [nextCityId, setNextCityId] = useState(1);
+  const [nextCityId, setNextCityId] = useState(0);
   const viewerRef = useRef(null);
-  const cityEntitiesRef = useRef([]);
-
+  
+  const [CityList,SetCityList]=useState(null)
+  const [Tracks, setTracks] =useState(null);
+  const [ActualTrack, SetActualTrack] =useState(null);
+  const [CityMarkers,SetCityMarkers] = useState(null)
+  const [TraceMarker,SetTraceMarker] = useState(null)
+  const [MapZoom, SetMapZoom] = useState(2)
 
   useEffect(async () => {
     await fetch(urlNextcity)
@@ -37,96 +141,85 @@ export default function ViewerComponent() {
     fetch(urlConsigneParcours)
       .then((x) => x.json())
       .then((x) => {
-        let previousData = {
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              properties: {},
-              geometry: {
-                type: "LineString",
-                coordinates: [],
-              },
-            },
-          ],
-        };
-
-        let nextData = {
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              properties: {},
-              geometry: {
-                type: "LineString",
-                coordinates: [],
-              },
-            },
-          ],
-        };
+        let previousData =[] 
+        let previousDataSet =[] 
+        let nextData = []
+        let nextDataSet = []
+        let PrevCoords = null;
+        let Cities=[]
 
         for (let i = 1; i < x.values.length; i++) {
           let coordinates = [
-            parseFloat(x.values[i][5]),
             parseFloat(x.values[i][4]),
+            parseFloat(x.values[i][5]),
           ];
 
-          const properties = {
-            city: x.values[i][1],
-            name: x.values[i][6],
-          };
-
-          const pointData = {
-            type: "Feature",
-            properties,
-            geometry: {
-              type: "Point",
-              coordinates: coordinates,
-            },
-          };
-
-          const cityId = parseFloat(x.values[i][0]);
-
+          Cities.push({"Name":x.values[i][6],Position:coordinates})
+          const cityId = parseFloat(x.values[i][0]-1);
           if (cityId <= nextCityId) {
-            previousData.features[0].geometry.coordinates.push(coordinates); // ajout des points à la ligne
-            previousData.features.push(pointData);
+            if (AddPoint(previousData,PrevCoords,coordinates))
+            {
+              previousDataSet.push(previousData)
+              previousData = new Array(coordinates)
+            }
           }
           if (cityId >= nextCityId) {
-            nextData.features[0].geometry.coordinates.push(coordinates); // ajout des points à la ligne
-            // ajout des étiquettes
-            nextData.features.push(pointData);
+            if (AddPoint(nextData,PrevCoords,coordinates))
+            {
+              nextDataSet.push(nextData)
+              nextData = new Array(coordinates)
+            }
           }
+          PrevCoords= coordinates
+          
         }
-        setConsigneParcoursPreviousData(previousData);
-        setConsigneParcoursNextData(nextData);
+        if (previousData.length>1)
+        { 
+          previousDataSet.push(previousData)
+        }
+        if (nextData.length>1)
+        {
+          nextDataSet.push(nextData)
+        }
+        setTracks(
+          <>
+            {GetPolylines(PreviouslineColor,previousDataSet)}
+            {GetPolylines(NextlineColor,nextDataSet)}
+            
+          </>
+        )
+        SetCityMarkers(<>{GetCityMarkers(Cities, MapZoom,nextCityId)}</>)
+        SetCityList(Cities)
       });
 
     fetch(urlTraceReelle)
       .then((x) => x.json())
       .then((x) => {
-        let traceData = {
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              properties: {},
-              geometry: {
-                type: "LineString",
-                coordinates: [],
-              },
-            },
-          ],
-        };
-
+        let TraceData = []
+        let TraceDataSet=[]
+        let PrevCoords=null
+        let coordinates=null
         for (let i = 1; i < x.values.length; i++) {
-          let coordinates = [
-            parseFloat(x.values[i][1]),
+          coordinates = [
             parseFloat(x.values[i][0]),
+            parseFloat(x.values[i][1]),
           ];
-          traceData.features[0].geometry.coordinates.push(coordinates);
+
+          
+          if (AddPoint(TraceData,PrevCoords,coordinates))
+          {
+            TraceDataSet.push(previousData)
+            TraceData = new Array(coordinates)
+          }
+          PrevCoords= coordinates
+          if (TraceData.length>1)
+        {
+          TraceDataSet.push(TraceData)
         }
-        setStartPos([parseFloat(x.values[x.values.length - 1][1]), parseFloat(x.values[x.values.length - 1][0])])
-        setTraceReelleData(traceData);
+          
+        }
+        SetActualTrack(<>{GetPolylines(TracelineColor,TraceDataSet)}</>)
+        SetTraceMarker(<>{GetTraceMarker(coordinates)}</>)
       });
   }, [nextCityId]);
 
@@ -147,13 +240,53 @@ export default function ViewerComponent() {
     }
   };
 
- 
+  function MapEventhandler(Props)
+  {
+    const map=useMapEvent(
+      {
+        zoom(ev) {
+          if (ev.type=="zoom")
+          {
+            Props.ZoomEventHandler(ev.sourceTarget.getZoom())
+          }
+        }
+        
+      }
+    )
+
+    return <></>
+  }
+
+  function HandleZoomChange(z)
+  {
+    SetMapZoom(z)
+    SetCityMarkers(GetCityMarkers(CityList,z, nextCityId))
+  }
+  
+  
 
   return (
-    <div>
-      <button onClick={enterFullscreen}>Plein écran</button>
+    <Stack direction='column' spacing={3} alignItems="center">
+      <button sx={{"max-width":"150px"}} onClick={enterFullscreen}>Plein écran</button>
 
-      <Viewer ref={viewerRef} timeline={false} animation={false} sceneMode={SceneMode.SCENE2D} >
+      <MapContainer className="MapStyle"  center={[StartPos[1], StartPos[0]]} zoom={MapZoom} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {Tracks}
+        {CityMarkers}
+        {ActualTrack}
+        {TraceMarker}
+        <MapEventhandler ZoomEventHandler={HandleZoomChange} />
+      </MapContainer>
+      
+    </Stack>
+  );
+}
+
+/*
+<Viewer ref={viewerRef} timeline={false} animation={false} sceneMode={SceneMode.SCENE2D} >
         <CameraFlyTo destination={Cartesian3.fromDegrees(StartPos[0], StartPos[1], 1000000)}  />
         <GeoJsonDataSource
           markerSymbol=""
@@ -178,7 +311,7 @@ export default function ViewerComponent() {
         />
 
 
-        {/* Loop through consigneParcoursData and create point entities */}
+        {/* Loop through consigneParcoursData and create point entities * /}
         {[
           ...(consigneParcoursPreviousData?.features || []),
           ...(consigneParcoursNextData?.features || []),
@@ -206,6 +339,4 @@ export default function ViewerComponent() {
         })}
 
       </Viewer>
-    </div>
-  );
-}
+    */
