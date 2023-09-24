@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import  { urlNextcity } from "./NextCity";
 
 
-import { Stack } from "@mui/material";
+import { Card, CardContent, CardHeader, CardMedia, Stack, Typography } from "@mui/material";
 import CityLamas from '@site/static/img/Mascotte/Lama with friends.png'
 import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
 import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
@@ -55,10 +55,30 @@ function GetPolylines(Options, Sets)
   })
 }
 
+function GetCityPopup(City)
+{
+  const Popup = require('react-leaflet').Popup
+  
+  return <Popup>
+            <Card >
+              <CardHeader title={City.MainPoint}/>
+              <CardContent>
+                <img class="PopupImage" src={'../img/Etapes/'+City.ImageName+'.jpg'} alt={City.MainPoint} />
+              </CardContent>
+              <CardMedia alignItems='center'>
+                <Stack direction="column" spacing={2} alignItems={"center"}>
+                  <Typography variant="body2">{City.Name}</Typography>
+                </Stack>
+              </CardMedia>
+            </Card>
+            
+        </Popup> 
+}
+
 function GetCityMarkers(CityList, ZoomLevel, currentCity)
 {
   const Marker = require('react-leaflet').Marker
-  const Popup = require('react-leaflet').Popup
+  
   
   let icon = L.icon({
     iconSize: [32,32],
@@ -74,10 +94,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
     return CityList.map((value)=>{
       
       return <Marker position={value.Position} icon={icon} >
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable to put Trace Information when it reached the
-                city and the photos maybe...
-              </Popup>
+              {GetCityPopup(value)}
             </Marker>
     })
   }
@@ -88,10 +105,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
     if (value)
     {
       return <Marker position={value.Position} icon={icon} >
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable to put Trace Information when it reached the
-                city and the photos maybe...
-              </Popup>
+              {GetCityPopup(value)}
             </Marker>
     }
   }
@@ -168,7 +182,7 @@ function Viewercomponentcode() {
             parseFloat(x.values[i][5]),
           ];
 
-          Cities.push({"Name":x.values[i][6],Position:coordinates})
+          Cities.push({"Name":x.values[i][6],"Position":coordinates, "MainPoint":x.values[i][3], "ImageName":x.values[i][1]})
           const cityId = parseFloat(x.values[i][0]-1);
           if (cityId <= nextCityId) {
             if (AddPoint(previousData,PrevCoords,coordinates))
