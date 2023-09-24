@@ -1,16 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
-import NextCity, { urlNextcity } from "./NextCity";
+import  { urlNextcity } from "./NextCity";
 
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMapEvent } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet'
-import 'leaflet-defaulticon-compatibility';
-import { Stack, getDialogActionsUtilityClass } from "@mui/material";
 
-import CityLamas from '../../static/img/Mascotte/Lama with friends.png'
-import TraceLama1 from '../../static/img/Mascotte/Lama on a bike.png'
-import TraceLama2 from '../../static/img/Mascotte/LamaTeteDetourée.png'
+import { Stack } from "@mui/material";
+import CityLamas from '@site/static/img/Mascotte/Lama with friends.png'
+import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
+import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import Translate from "@docusaurus/Translate";
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
@@ -51,6 +48,8 @@ function AddPoint(CoordsArray,PrevPos, NextPos)
 
 function GetPolylines(Options, Sets)
 {
+  const Polyline = require('react-leaflet').Polyline
+  
   return Sets.map((value)=>{
     return <Polyline key={"Polyline_"+Math.random} pathOptions={Options}  positions={value}/>
   })
@@ -58,6 +57,9 @@ function GetPolylines(Options, Sets)
 
 function GetCityMarkers(CityList, ZoomLevel, currentCity)
 {
+  const Marker = require('react-leaflet').Marker
+  const Popup = require('react-leaflet').Popup
+  
   let icon = L.icon({
     iconSize: [32,32],
     iconAnchor: [16,32],
@@ -99,6 +101,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
 
 function GetTraceMarker(Position)
 {
+  const Marker = require('react-leaflet').Marker
   const Icons=[TraceLama1,TraceLama2]
   const I = Icons[Math.round(2*Math.random())%2]
 
@@ -117,7 +120,18 @@ function GetTraceMarker(Position)
 }
 
 
-export default function ViewerComponent() {
+export default function ViewerComponent ()
+{
+  const LoadingText=<Translate description="Loading...">Loading...</Translate>
+  return <BrowserOnly fallback={<div>{LoadingText}</div>}>
+          {() => {
+            return <Viewercomponentcode />
+            }
+          }
+          </BrowserOnly>
+}
+
+function Viewercomponentcode() {
   const [StartPos, setStartPos] =
     useState([4.820163386, 45.75749697]);
   const [nextCityId, setNextCityId] = useState(0);
@@ -263,7 +277,10 @@ export default function ViewerComponent() {
     SetCityMarkers(GetCityMarkers(CityList,z, nextCityId))
   }
   
-  
+  const MapContainer = require('react-leaflet').MapContainer
+  const TileLayer = require('react-leaflet').TileLayer
+  const useMapEvent = require('react-leaflet').useMapEvent
+            
 
   return (
     

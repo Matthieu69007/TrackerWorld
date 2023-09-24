@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '../components/HomepageFeatures';
 import styles from './index.module.css';
-import {  Ion } from "cesium";
+//import {  Ion } from "cesium";
 import Chip from '@mui/material/Chip';
-import ViewerComponent from '../components/ViewerComponent';
+//import ViewerComponent from '../components/ViewerComponent';
 import Typography from '@mui/material/Typography';
-import Itinerary from '../../docs/Itinerary.mdx';
+import Itinerary from '@site//docs/Itinerary.mdx';
 import Translate from '@docusaurus/Translate';
 import MDXTranslator from '../components/MDXTranslator';
 import { Grid, Stack } from '@mui/material';
-import { Col } from '@nextui-org/react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-
-Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjMmMxODRjYy1mYzFiLTQ5MTUtODE1MS02NGNkMzAyNTIyODciLCJpZCI6MTA2OTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJhc3NldHMiOlsyLDMsNCwxXSwiaWF0IjoxNTU3MjA1NTM1fQ.5TYPEJKj_JzGX4r_a6GQjwSu7TIW2BIzeaIW8gFLUec";
-
+import ViewerComponent from '../components/ViewerComponent';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -66,9 +61,7 @@ export default function Home() {
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
               <div style={{width:"80%"}}>
-              <BrowserOnly>
-                {() => { return <ViewerComponent/>}}
-              </BrowserOnly>
+              <ViewerComponent />           
               </div>
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>

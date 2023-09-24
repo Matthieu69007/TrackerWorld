@@ -32,7 +32,7 @@ const config = {
     locales: ['fr','en','de'],
   },
   
-  plugins: ['cesium-loader'],
+  plugins: [],
 
   presets: [
     [
@@ -49,7 +49,8 @@ const config = {
         theme: {
           customCss: [
             require.resolve('./src/css/custom.css'),
-            require.resolve("./static/cesium/Widgets/widgets.css")
+            require.resolve("./static/cesium/Widgets/widgets.css"),
+            require.resolve("leaflet/dist/leaflet.css")
           ]
         },
       }),
