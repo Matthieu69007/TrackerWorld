@@ -33,7 +33,7 @@ function HomepageHeader() {
 export default function Home() {
   const MDXColumnWidth="450px"
   const { siteConfig } = useDocusaurusContext();
-  const ChipMap = <Translate desc="Carte intercative du chemin parcouru et à parcourir par trace">Carte intercative du chemin parcouru et à parcourir par trace</Translate>
+  //const ChipMap = <Translate desc="Carte intercative du chemin parcouru et à parcourir par trace">Carte intercative du chemin parcouru et à parcourir par trace</Translate>
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -52,15 +52,10 @@ export default function Home() {
             <Stack direction='column' alignItems="center" spacing={1}>
               <div style={{"max-width":MDXColumnWidth}}>
                 <MDXTranslator Page="Presentation" />
-                <Chip 
-                  label={ChipMap}
-                  color="success"
-                  size="medium"
-                />
               </div>
             </Stack>
             <Stack direction='column' alignItems="center" spacing={1}>
-              <div style={{width:"80%"}}>
+              <div style={{width:"100%"}}>
               <ViewerComponent />           
               </div>
             </Stack>

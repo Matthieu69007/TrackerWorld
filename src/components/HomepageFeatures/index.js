@@ -21,7 +21,7 @@ const FeatureList = [
          <Translate desc="Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.">Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.</Translate>
          <br/>
          <Translate desc="Attention, Trace ne prends pas l'avion!">Attention, Trace ne prends pas l'avion!</Translate>
-        <br/><br/>
+        <br/>
         <NextCityNameOnly/>
       </>
     ),

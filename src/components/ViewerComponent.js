@@ -3,7 +3,7 @@ import  { urlNextcity } from "./NextCity";
 
 
 import { Card, CardContent, CardHeader, CardMedia, Stack, Typography } from "@mui/material";
-import CityLamas from '@site/static/img/Mascotte/Lama with friends.png'
+import CityLamas from '@site/static/img/Mascotte/CityIcon.png'
 import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
 import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
 import BrowserOnly from "@docusaurus/BrowserOnly";

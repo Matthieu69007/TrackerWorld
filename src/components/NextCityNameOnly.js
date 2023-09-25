@@ -31,8 +31,9 @@ export default function NextCityNameOnly() {
     
     return <>
           
-      <Typography gutterBottom variant="body1" component="div">
-        <Translate desc='Prochaine étape :'>Prochaine étape :</Translate> {nextCityData?.city_accent},{nextCityData?.country}
-      </Typography>
+          <Typography gutterBottom variant="body1" component="div">
+            <Translate desc='Prochaine étape :'>Prochaine étape :</Translate> {' '}
+              <strong>{nextCityData?.city_accent}, {nextCityData?.country}</strong>
+            </Typography>
     </>
   }
