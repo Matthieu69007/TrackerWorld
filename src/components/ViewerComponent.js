@@ -294,14 +294,18 @@ function Viewercomponentcode() {
   const MapContainer = require('react-leaflet').MapContainer
   const TileLayer = require('react-leaflet').TileLayer
   const useMapEvent = require('react-leaflet').useMapEvent
-            
+  const FS = require('leaflet-fullscreen')
 
+  const EnterFullScreenText=<Translate description="Visualiser en plein écran">Visualiser en plein écran</Translate>
+  const ExitFullScreenText=<Translate description="Quitter le modeplein écran">Quitter le mode plein écran</Translate>
+  
   return (
     
     <Stack direction='column' spacing={3} alignItems="center">
-      <button sx={{"max-width":"150px"}} onClick={enterFullscreen}>Plein écran</button>
-
-      <MapContainer className="MapStyle"  center={[StartPos[1], StartPos[0]]} zoom={MapZoom} scrollWheelZoom={true}>
+      
+      <MapContainer className="MapStyle"  center={[StartPos[1], StartPos[0]]} zoom={MapZoom} scrollWheelZoom={true}
+        fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
