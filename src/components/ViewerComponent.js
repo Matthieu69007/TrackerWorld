@@ -51,7 +51,7 @@ function GetPolylines(Options, Sets)
   const Polyline = require('react-leaflet').Polyline
   
   return Sets.map((value)=>{
-    return <Polyline key={"Polyline_"+Math.random} pathOptions={Options}  positions={value}/>
+    return <Polyline key={"Polyline_"+Math.random()} pathOptions={Options}  positions={value}/>
   })
 }
 
