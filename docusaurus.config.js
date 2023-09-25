@@ -51,7 +51,8 @@ const config = {
             require.resolve('./src/css/custom.css'),
             require.resolve("./static/cesium/Widgets/widgets.css"),
             require.resolve("leaflet/dist/leaflet.css"),
-            require.resolve('leaflet-fullscreen/dist/leaflet.fullscreen.css')
+            require.resolve('leaflet-fullscreen/dist/leaflet.fullscreen.css'),
+            
           ]
         },
       }),
