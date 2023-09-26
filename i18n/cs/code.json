@@ -1,324 +1,333 @@
 {
   "theme.ErrorPageContent.title": {
-    "message": "Cette page a planté.",
+    "message": "Tato stránka se zhroutila.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.NotFound.title": {
-    "message": "Page introuvable",
+    "message": "Stránka nebyla nalezena",
     "description": "The title of the 404 page"
   },
   "theme.NotFound.p1": {
-    "message": "Nous n'avons pas trouvé ce que vous recherchez.",
+    "message": "Nenašli jsme, co hledáte.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Veuillez contacter le propriétaire du site qui vous a lié à l'URL d'origine et leur faire savoir que leur lien est cassé.",
+    "message": "Kontaktujte prosím vlastníka webu, který vás odkázal na původní adresu URL, a informujte ho o tom, že je jeho odkaz nefunkční.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.admonition.note": {
-    "message": "remarque",
+    "message": "poznámka",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "astuce",
+    "message": "tip",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.danger": {
-    "message": "danger",
+    "message": "nebezpečí",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "info",
+    "message": "informace",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.caution": {
-    "message": "attention",
+    "message": "Pozor",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Retour au début de la page",
+    "message": "Zpět na začátek stránky",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
-    "message": "Archive",
+    "message": "Archiv",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "Archive",
+    "message": "Archiv",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "Pagination de la liste des articles du blog",
+    "message": "Stránkování seznamu příspěvků na blogu",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Nouvelles entrées",
+    "message": "Nové položky",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Anciennes entrées",
+    "message": "Staré vchody",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Pagination des articles du blog",
+    "message": "Stránkování příspěvků na blogu",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Article plus récent",
+    "message": "Nejnovější článek",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Article plus ancien",
+    "message": "Starší článek",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Basculer entre le mode sombre et clair (actuellement {mode})",
+    "message": "Přepínání mezi tmavým a světlým režimem (aktuálně {mode})",
     "description": "The ARIA label for the navbar color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "mode sombre",
+    "message": "tmavý režim",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "mode clair",
+    "message": "režim vymazání",
     "description": "The name for the light color mode"
   },
   "theme.blog.post.plurals": {
-    "message": "Un article|{count} articles",
+    "message": "Jeden článek|{count} články",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagués avec « {tagName} »",
+    "message": "{nPosts} Tagged s \" {tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Voir tous les tags",
+    "message": "Zobrazit všechny štítky",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} éléments",
+    "message": "{count} prvky",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Fil d'Ariane",
+    "message": "Drobková stezka",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Pages de documentation",
+    "message": "Stránky s dokumentací",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "Précédent",
+    "message": "Předchozí",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "Suivant",
+    "message": "Další",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Un document tagué|{count} documents tagués",
+    "message": "Jeden označený dokument|{count} označené dokumenty",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} avec \"{tagName}\"",
+    "message": "{nDocsTagged} s \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "Verze: {versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "Ceci est la documentation de la prochaine version {versionLabel} de {siteTitle}.",
+    "message": "Toto je dokumentace k další verzi {versionLabel} {siteTitle}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Ceci est la documentation de {siteTitle} {versionLabel}, qui n'est plus activement maintenue.",
+    "message": "Jedná se o dokumentaci k webu {siteTitle} {versionLabel}, který již není aktivně udržován.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Pour une documentation à jour, consultez la {latestVersionLink} ({versionLabel}).",
+    "message": "Aktuální dokumentaci najdete na adrese {latestVersionLink} ({versionLabel}).",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "dernière version",
+    "message": "nejnovější verze",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Éditer cette page",
+    "message": "Upravit tuto stránku",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Lien direct vers {heading}",
+    "message": "Přímý odkaz na {heading}",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " le {date}",
+    "message": " {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " par {user}",
+    "message": " podle {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Dernière mise à jour{atDate}{byUser}",
+    "message": "Poslední aktualizace{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "Verze",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags :",
+    "message": "Tagy :",
     "description": "The label alongside a tag list"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Navigation article de blog récent",
+    "message": "Navigace v nejnovějších příspěvcích na blogu",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fermer",
+    "message": "Zavřít",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copié",
+    "message": "Kopírovat",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copier le code",
+    "message": "Zkopírujte kód",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copier",
+    "message": "Kopírovat",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Activer/désactiver le retour à la ligne",
+    "message": "Aktivace/deaktivace podávání řádků",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Plier/Déplier la catégorie '{label}' de la barre latérale",
+    "message": "Složit/rozložit kategorii \"{label}\" v postranním panelu",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "Hlavní stránka",
     "description": "The ARIA label for the main navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Sur cette page",
+    "message": "Na této stránce",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.blog.post.readMore": {
-    "message": "Lire plus",
+    "message": "Přečtěte si více",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "En savoir plus sur {title}",
+    "message": "Další informace naleznete na adrese {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "Une minute de lecture|{readingTime} minutes de lecture",
+    "message": "Minuta čtení|{readingTime} minut čtení",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Langues",
+    "message": "Jazyky",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Page d'accueil",
+    "message": "Domovská stránka",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Réduire le menu latéral",
+    "message": "Sbalení boční nabídky",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Réduire le menu latéral",
+    "message": "Sbalení boční nabídky",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "Postranní panel Dokumenty",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Retour au menu principal",
+    "message": "← Zpět do hlavní nabídky",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Fermer la barre de navigation",
+    "message": "Zavření navigačního panelu",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Ouvrir/fermer la barre de navigation",
+    "message": "Otevření/zavření navigačního panelu",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Déplier le menu latéral",
+    "message": "Rozbalení postranní nabídky",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Déplier le menu latéral",
+    "message": "Rozbalení postranní nabídky",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Réessayer",
+    "message": "Zkuste to znovu",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
-    "message": "Aller au contenu principal",
+    "message": "Přejít na hlavní obsah",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "Štítky",
     "description": "The title of the tag list page"
   },
   "Trace across the world": {
-    "message": "Trace across the world"
+    "message": "Stopa po celém světě"
   },
   "Le tour du monde depuis chez soi !": {
-    "message": "Le tour du monde depuis chez soi !"
+    "message": "Na cestu kolem světa z pohodlí domova!"
   },
   "Le projet en quelques mots": {
-    "message": "Le projet en quelques mots"
-  },
-  "Carte intercative du chemin parcouru et à parcourir par trace": {
-    "message": "Carte intercative du chemin parcouru et à parcourir par trace"
+    "message": "Projekt v kostce"
   },
   "Pour décourvrir le projet et comprendre les règles.": {
-    "message": "Pour décourvrir le projet et comprendre les règles."
+    "message": "Chcete-li se o projektu dozvědět více a porozumět pravidlům."
   },
   "Visite ce site web": {
-    "message": "Visite ce site web"
+    "message": "Navštivte tyto webové stránky"
   },
   "Voyage avec Trace": {
-    "message": "Voyage avec Trace"
+    "message": "Cestování s Trace"
   },
   "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.": {
-    "message": "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu."
+    "message": "Aby se přiblížil k další etapě své plánované cesty."
   },
   "Attention, Trace ne prends pas l'avion!": {
-    "message": "Attention, Trace ne prends pas l'avion!"
+    "message": "Pozor, Trace nelétá!"
   },
   "Contacte ta communauté": {
-    "message": "Contacte ta communauté"
+    "message": "Kontaktujte svou komunitu"
   },
   "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.": {
-    "message": "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage."
+    "message": "Najít někoho, kdo Traceovi pomůže pokračovat v cestě."
   },
   "Prend un selfie": {
-    "message": "Prend un selfie"
+    "message": "Pořiďte si selfie"
   },
   "Ou seul avec Trace, si tu passes près d'une des étapes fixées.": {
-    "message": "Ou seul avec Trace, si tu passes près d'une des étapes fixées."
+    "message": "Nebo samostatně s Trace, pokud se blížíte k některému z milníků."
   },
   "Partage sur Instagram": {
-    "message": "Partage sur Instagram"
+    "message": "Sdílet na Instagramu"
   },
   "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.": {
-    "message": "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace."
+    "message": "Představit vám ostatní členy týmu a umožnit jim sledovat Traceovu cestu."
   },
   "Prochaine étape :": {
-    "message": "Prochaine étape :"
+    "message": "Další krok:"
   },
   "Avec Trace et la personne à qui tu confies la mascotte.": {
-    "message": "Avec Trace et la personne à qui tu confies la mascotte."
+    "message": "Se společností Trace a osobou, které maskota svěříte."
+  },
+  "Loading...": {
+    "message": "Načítání...",
+    "description": "Loading..."
+  },
+  "Visualiser en plein écran": {
+    "message": "Zobrazit celou obrazovku",
+    "description": "Visualiser en plein écran"
+  },
+  "Quitter le mode plein écran": {
+    "message": "Ukončení režimu celé obrazovky",
+    "description": "Quitter le modeplein écran"
   }
 }

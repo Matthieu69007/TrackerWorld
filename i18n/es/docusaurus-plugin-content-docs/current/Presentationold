@@ -6,87 +6,87 @@ import Link from '@docusaurus/Link';
   <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
 </div>
 
-# Présentation
+# Presentación
 
-Bienvenue sur le projet "Trace across the world"
+Bienvenido al proyecto "Trace across the world
 
-### Objectif
+### Objetivo
 
-La mascotte Trace est équipée d'un système de localisation permettant de suivre sa trace autour du globe. Partie de Lyon en France le XX/XX/2023, Trace réalise un tour du monde en passant de main en main des porteurs qui la font voyager.
+La mascota Trace está equipada con un sistema de rastreo que permite seguirla por todo el mundo. Partiendo de Lyon (Francia) el XX/XX/2023, Trace recorre el mundo pasando de mano en mano los transportines que la llevan de un lado a otro.
 
 
-### Comment ça fonctionne?
+### ¿Cómo funciona?
 
-L'itinéraire de Trace est défini et passe par des villes étapes symboliques autour du monde.
+La ruta del Rastro está bien definida y pasa por ciudades simbólicas de todo el mundo.
 
-Attention, Trace a décidé de faire ce long voyage sans prendre l'avion. Il faudra prendre le bateau pour traverser les océans!
+Eso sí, Trace ha decidido hacer este largo viaje sin volar. Tendrás que coger un barco para cruzar los océanos.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/planisphere.svg" alt="Planisphere" />
 </div>
 <br/>
-Sur ce site, tu pourras :
+En este sitio, puede :
 <br/>
-<br/>• suivre le trajet de la mascotte
-<br/>• en apprendre plus sur le projet
-<br/>• rejoindre la page <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> de la communauté Trace
-<br/>• rejoindre le groupe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>pour aider à trouver des futurs porteurs pour Trace
+<br/>- sigue la ruta de la mascota
+<br/>- más información sobre el proyecto
+<br/>- únete a la página de Instagram de la comunidad Trace <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer"></a>
+<br/>- únete al grupo de WhatsApp <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer"></a>para ayudar a encontrar futuros transportistas para Trace
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-on-a-bike.svg" alt="Lama on a bike" />
 </div>
 
-### Tu as reçu la mascotte Trace?
+### ¿Conseguiste la mascota de Trace?
 
-Fais la avancer dans la bonne direction vers la prochaine étape, puis confie là à une personne de confiance et motivée, qui la fera aussi avancer de quelques kilomètres.
-Peu importe le temps qu'il faudra, de porteur en porteur, Trace réussira à se frayer un chemin d'étape en étape.
-Tu ne sais pas à qui donner à la mascotte? Connecte toi au groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), et la team Trace t'aidera à trouver le prochain porteur!
-
-
+Haz que avance en la dirección correcta hacia la siguiente etapa, y luego entrégala a alguien en quien confíes y que esté motivado, que también la hará avanzar unos kilómetros.
+Por mucho que tarde, de portaaviones en portaaviones, Trace se las arreglará para abrirse camino de escenario en escenario.
+¿No sabes a quién regalarle la mascota? Conéctese al grupo [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), ¡y el equipo de Trace le ayudará a encontrar el próximo transportista!
 
 
 
-### Tu es proche d'une des étapes du parcours?
 
-Bravo, rends toi le plus vite au lieu indiqué, puis prends une photo ou vidéo de Trace avec toi devant le lieu symbole de l'étape. Nous monterons ensuite un film avec toutes les photos et vidéos du projet!
+
+### ¿Estás cerca de una de las etapas de la ruta?
+
+Bien hecho, llega al lugar indicado lo antes posible y, a continuación, saca una foto o graba un vídeo de Trace contigo delante del lugar que simboliza el escenario. Después haremos una película con todas las fotos y vídeos del proyecto.
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
-    className="button button--secondary button--lg"
+  <Enlace
+    className="botón botón--secundario botón--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
-    to="/docs/Rules">
-    Les règles du jeu 📜
+    to="/docs/Reglas">
+    Las reglas del juego 📜
   </Link>
 </div>
 
 
 
-## Et l'équipe dans tout ça?
+## ¿Y el equipo?
 
-Une fois que tu as été relayeur de la mascotte, tu fais partie de l'équipe "Trace across the world". Tu peux revenir régulièrement sur le site pour suivre son avancée à travers le monde.
+Una vez que has sido portador de la antorcha de la mascota, formas parte del equipo "Traza a través del mundo". Puede volver al sitio con regularidad para seguir su evolución en todo el mundo.
 
-Si tu as des connaissances qui se situent aux alentours de Trace, tu peux les mettre en relation avec le porteur via le groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) de l'équipe. Cela permettra peut être de trouver un futur relayeur pour faire avancer Trace un peu plus vers son étape suivante.
+Si conoces a alguien en la zona del Rastro, puedes ponerle en contacto con el promotor a través del grupo [WhatsApp]del equipo (https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE). Tal vez esto nos permita encontrar un futuro conductor de relevo que lleve a Trace un poco más lejos hacia su siguiente etapa.
 
-Enfin, en tant que porteur, n'hésite pas à nous envoyer sur le compte <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> quelques photos/vidéos de toi avec Trace sur des lieux qui te tiennent à coeur près de là où tu es.
+Por último, como portador, no dudes en enviarnos algunas fotos/vídeos tuyos y de Trace en lugares cercanos a donde te encuentres, en la cuenta de Instagram <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer"></a>.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-with-friends.svg" alt="Lama with friend" />
 </div>
 
-## Comment suivre ? ##
+## ¿Cómo seguir? ##
 
-Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivre son avancée autour du monde.
+Gracias al chip instalado en Trace, todo el equipo puede seguir sus progresos en todo el mundo.
 
 <br/>
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
-    className="button button--secondary button--lg"
+  <Enlace
+    className="botón botón--secundario botón--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
-    to="/docs/Itinerary">
-    Trace 🧭
+    to="/docs/Itinerario">
+    Rastrear 🧭
   </Link>
 </div>
 
@@ -95,7 +95,7 @@ Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivr
 
 
 <br/>
-Par mesure de sécurité, la localisation affichée est approximative à 2km près, pour que l'on ne puisse pas localiser précisément le porteur.
+Por razones de seguridad, la ubicación mostrada es aproximada con un margen de 2 km, por lo que no se puede localizar con precisión al usuario.
 
 </div>
 

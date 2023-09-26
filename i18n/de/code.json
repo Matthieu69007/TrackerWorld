@@ -279,9 +279,6 @@
   "Le projet en quelques mots": {
     "message": "Das Projekt in Stichworten"
   },
-  "Carte intercative du chemin parcouru et à parcourir par trace": {
-    "message": "Interaktive Karte des zurückgelegten und noch zurückzulegenden Weges pro Spur"
-  },
   "Pour décourvrir le projet et comprendre les règles.": {
     "message": "Um das Projekt zu entschleunigen und die Regeln zu verstehen."
   },
@@ -320,5 +317,17 @@
   },
   "Avec Trace et la personne à qui tu confies la mascotte.": {
     "message": "Mit Trace und der Person, der du das Maskottchen anvertraust."
+  },
+  "Loading...": {
+    "message": "Loading...",
+    "description": "Loading..."
+  },
+  "Visualiser en plein écran": {
+    "message": "Im Vollbildmodus ansehen",
+    "description": "Visualiser en plein écran"
+  },
+  "Quitter le mode plein écran": {
+    "message": "Den Vollbildmodus verlassen",
+    "description": "Quitter le modeplein écran"
   }
 }

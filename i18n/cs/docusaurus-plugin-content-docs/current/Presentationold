@@ -1,4 +1,4 @@
-import Link from '@docusaurus/Link';
+import Link z '@docusaurus/Link';
 
  <br /> <br />
 <div style={{ width: '800px', margin: '0 auto', textAlign: 'center' }}>
@@ -6,83 +6,83 @@ import Link from '@docusaurus/Link';
   <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
 </div>
 
-# Présentation
+# Prezentace
 
-Bienvenue sur le projet "Trace across the world"
+Vítejte v projektu "Stopa napříč světem"
 
-### Objectif
+### Cíl
 
-La mascotte Trace est équipée d'un système de localisation permettant de suivre sa trace autour du globe. Partie de Lyon en France le XX/XX/2023, Trace réalise un tour du monde en passant de main en main des porteurs qui la font voyager.
+Maskot Trace je vybaven sledovacím systémem, který umožňuje jeho sledování po celém světě. Trace vyráží z francouzského Lyonu dne XX/XX/2023 a cestuje po světě, předává si z ruky do ruky nosiče, které ji vezou na cestu.
 
 
-### Comment ça fonctionne?
+### Jak to funguje?
 
-L'itinéraire de Trace est défini et passe par des villes étapes symboliques autour du monde.
+Trasa Trace je dobře definovaná a vede přes symbolická zastávková města po celém světě.
 
-Attention, Trace a décidé de faire ce long voyage sans prendre l'avion. Il faudra prendre le bateau pour traverser les océans!
+Trace se rozhodl, že tuto dlouhou cestu absolvuje bez létání. Na plavbu přes oceány si budete muset vzít loď!
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/planisphere.svg" alt="Planisphere" />
 </div>
 <br/>
-Sur ce site, tu pourras :
+Na těchto stránkách můžete :
 <br/>
-<br/>• suivre le trajet de la mascotte
-<br/>• en apprendre plus sur le projet
-<br/>• rejoindre la page <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> de la communauté Trace
-<br/>• rejoindre le groupe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>pour aider à trouver des futurs porteurs pour Trace
+<br/>- sledujte trasu maskota
+<br/>- zjistěte více o projektu
+<br/>- připojte se ke komunitě Trace na <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> .
+<br/>- připojte se ke skupině <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>a pomozte najít budoucí dopravce pro Trace.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-on-a-bike.svg" alt="Lama on a bike" />
 </div>
 
-### Tu as reçu la mascotte Trace?
+### Dostal jsi maskota Trace?
 
-Fais la avancer dans la bonne direction vers la prochaine étape, puis confie là à une personne de confiance et motivée, qui la fera aussi avancer de quelques kilomètres.
-Peu importe le temps qu'il faudra, de porteur en porteur, Trace réussira à se frayer un chemin d'étape en étape.
-Tu ne sais pas à qui donner à la mascotte? Connecte toi au groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), et la team Trace t'aidera à trouver le prochain porteur!
-
-
+Přiveďte ji správným směrem k další etapě a pak ji předejte někomu, komu důvěřujete a kdo je motivovaný a kdo ji také posune o několik kilometrů vpřed.
+Bez ohledu na to, jak dlouho to bude trvat, od nosiče k nosiči, Trace zvládne cestu od jednoho pódia k druhému.
+Nevíte, komu dát maskota? Připojte se ke skupině [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) a tým Trace vám pomůže najít dalšího dopravce!
 
 
 
-### Tu es proche d'une des étapes du parcours?
 
-Bravo, rends toi le plus vite au lieu indiqué, puis prends une photo ou vidéo de Trace avec toi devant le lieu symbole de l'étape. Nous monterons ensuite un film avec toutes les photos et vidéos du projet!
+
+### Nacházíte se poblíž některé z etap na trase?
+
+Dobrá práce, co nejrychleji se dostaňte na určené místo a vyfoťte se nebo natočte video, na kterém je Trace s vámi před místem, které symbolizuje scénu. Poté natočíme film se všemi fotografiemi a videi z projektu!
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
+  <Odkaz
     className="button button--secondary button--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
-    to="/docs/Rules">
-    Les règles du jeu 📜
+    to="/docs/Pravidla">
+    Pravidla hry 📜
   </Link>
 </div>
 
 
 
-## Et l'équipe dans tout ça?
+## A co tým?
 
-Une fois que tu as été relayeur de la mascotte, tu fais partie de l'équipe "Trace across the world". Tu peux revenir régulièrement sur le site pour suivre son avancée à travers le monde.
+Jakmile se stanete nositelem pochodně s maskotem, stanete se součástí týmu "Trace across the world". Na stránky se můžete pravidelně vracet a sledovat jejich vývoj po celém světě.
 
-Si tu as des connaissances qui se situent aux alentours de Trace, tu peux les mettre en relation avec le porteur via le groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) de l'équipe. Cela permettra peut être de trouver un futur relayeur pour faire avancer Trace un peu plus vers son étape suivante.
+Pokud znáte někoho v oblasti Trace, můžete ho kontaktovat prostřednictvím skupiny týmu [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE). Snad nám to umožní najít budoucího řidiče relé, který posune Trace o něco dál k další fázi.
 
-Enfin, en tant que porteur, n'hésite pas à nous envoyer sur le compte <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> quelques photos/vidéos de toi avec Trace sur des lieux qui te tiennent à coeur près de là où tu es.
+Na závěr nám jako dopravce neváhejte poslat několik fotografií/videí, na kterých jste zachyceni s Trace na místech ve vašem okolí, a to na instagramový účet <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer"></a>.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-with-friends.svg" alt="Lama with friend" />
 </div>
 
-## Comment suivre ? ##
+## Jak sledovat? ##
 
-Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivre son avancée autour du monde.
+Díky čipu instalovanému v zařízení Trace může celý tým sledovat jeho postup po celém světě.
 
 <br/>
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
+  <Odkaz
     className="button button--secondary button--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
     to="/docs/Itinerary">
@@ -95,7 +95,7 @@ Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivr
 
 
 <br/>
-Par mesure de sécurité, la localisation affichée est approximative à 2km près, pour que l'on ne puisse pas localiser précisément le porteur.
+Z bezpečnostních důvodů je zobrazená poloha přibližná s přesností na 2 km, takže nelze přesně lokalizovat uživatele.
 
 </div>
 

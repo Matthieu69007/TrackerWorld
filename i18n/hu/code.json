@@ -1,30 +1,30 @@
 {
   "theme.ErrorPageContent.title": {
-    "message": "Cette page a planté.",
+    "message": "Ez az oldal összeomlott.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.NotFound.title": {
-    "message": "Page introuvable",
+    "message": "Az oldal nem található",
     "description": "The title of the 404 page"
   },
   "theme.NotFound.p1": {
-    "message": "Nous n'avons pas trouvé ce que vous recherchez.",
+    "message": "Nem találtuk meg, amit keresett.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Veuillez contacter le propriétaire du site qui vous a lié à l'URL d'origine et leur faire savoir que leur lien est cassé.",
+    "message": "Kérjük, vegye fel a kapcsolatot az eredeti URL-címre mutató oldal tulajdonosával, és tájékoztassa őket, hogy a linkjük megszakadt.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.admonition.note": {
-    "message": "remarque",
+    "message": "megjegyzés",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "astuce",
+    "message": "borravaló",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.danger": {
-    "message": "danger",
+    "message": "veszély",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
@@ -32,293 +32,302 @@
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.caution": {
-    "message": "attention",
+    "message": "figyelem",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Retour au début de la page",
+    "message": "Vissza az oldal tetejére",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
-    "message": "Archive",
+    "message": "Archívum",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "Archive",
+    "message": "Archívum",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "Pagination de la liste des articles du blog",
+    "message": "A blogbejegyzések listájának oldalszámozása",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Nouvelles entrées",
+    "message": "Új bejegyzések",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Anciennes entrées",
+    "message": "Régi bejáratok",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Pagination des articles du blog",
+    "message": "A blogbejegyzések oldalszámozása",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Article plus récent",
+    "message": "Legutóbbi cikk",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Article plus ancien",
+    "message": "Régebbi cikk",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Basculer entre le mode sombre et clair (actuellement {mode})",
+    "message": "Váltás sötét és világos üzemmód között (jelenleg {mode})",
     "description": "The ARIA label for the navbar color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "mode sombre",
+    "message": "sötét üzemmód",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "mode clair",
+    "message": "törlési mód",
     "description": "The name for the light color mode"
   },
   "theme.blog.post.plurals": {
-    "message": "Un article|{count} articles",
+    "message": "Egy cikk|{count} cikkek",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagués avec « {tagName} »",
+    "message": "{nPosts} címkézve \" {tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Voir tous les tags",
+    "message": "Minden címke megtekintése",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} éléments",
+    "message": "{count} elemek",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Fil d'Ariane",
+    "message": "Kenyérmorzsa nyomvonal",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Pages de documentation",
+    "message": "Dokumentációs oldalak",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "Précédent",
+    "message": "Előző",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "Suivant",
+    "message": "Következő",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Un document tagué|{count} documents tagués",
+    "message": "Egy megjelölt dokumentum|{count} megjelölt dokumentumok",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} avec \"{tagName}\"",
+    "message": "{nDocsTagged} a \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "Verzió: {versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "Ceci est la documentation de la prochaine version {versionLabel} de {siteTitle}.",
+    "message": "Ez a {siteTitle}következő verziójának {versionLabel} dokumentációja.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Ceci est la documentation de {siteTitle} {versionLabel}, qui n'est plus activement maintenue.",
+    "message": "Ez a {siteTitle} {versionLabel}dokumentációja, amelyet már nem tartanak fenn aktívan.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Pour une documentation à jour, consultez la {latestVersionLink} ({versionLabel}).",
+    "message": "Naprakész dokumentációért látogasson el a {latestVersionLink} ({versionLabel}) weboldalra.",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "dernière version",
+    "message": "legújabb verzió",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Éditer cette page",
+    "message": "Az oldal szerkesztése",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Lien direct vers {heading}",
+    "message": "Közvetlen link a {heading}oldalra",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " le {date}",
+    "message": " a {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " par {user}",
+    "message": " {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Dernière mise à jour{atDate}{byUser}",
+    "message": "Utolsó frissítés{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "Verziók",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags :",
+    "message": "Címkék :",
     "description": "The label alongside a tag list"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Navigation article de blog récent",
+    "message": "Legutóbbi blogbejegyzés navigációja",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fermer",
+    "message": "Zárja be a",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copié",
+    "message": "Másolás",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copier le code",
+    "message": "Másolja a kódot",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copier",
+    "message": "Másolás",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Activer/désactiver le retour à la ligne",
+    "message": "A sortovábbítás aktiválása/deaktiválása",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Plier/Déplier la catégorie '{label}' de la barre latérale",
+    "message": "A '{label}' kategória össze/felhajtása az oldalsávban",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "Főoldal",
     "description": "The ARIA label for the main navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Sur cette page",
+    "message": "Ezen az oldalon",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.blog.post.readMore": {
-    "message": "Lire plus",
+    "message": "Bővebben",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "En savoir plus sur {title}",
+    "message": "További információért látogasson el a {title}weboldalra.",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "Une minute de lecture|{readingTime} minutes de lecture",
+    "message": "Egyperces olvasás|{readingTime} perc olvasás",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Langues",
+    "message": "Nyelvek",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Page d'accueil",
+    "message": "Kezdőlap",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Réduire le menu latéral",
+    "message": "Oldalmenü összecsukása",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Réduire le menu latéral",
+    "message": "Oldalmenü összecsukása",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "Dokumentumok oldalsáv",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Retour au menu principal",
+    "message": "← Vissza a főmenübe",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Fermer la barre de navigation",
+    "message": "A navigációs sáv bezárása",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Ouvrir/fermer la barre de navigation",
+    "message": "Navigációs sáv nyitása/zárása",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Déplier le menu latéral",
+    "message": "Nyissa ki az oldalsó menüt",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Déplier le menu latéral",
+    "message": "Nyissa ki az oldalsó menüt",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Réessayer",
+    "message": "Próbálja újra",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
-    "message": "Aller au contenu principal",
+    "message": "Vissza a fő tartalomhoz",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "Címkék",
     "description": "The title of the tag list page"
   },
   "Trace across the world": {
-    "message": "Trace across the world"
+    "message": "Nyomon követni a világot"
   },
   "Le tour du monde depuis chez soi !": {
-    "message": "Le tour du monde depuis chez soi !"
+    "message": "A világ körül a saját otthonod kényelméből!"
   },
   "Le projet en quelques mots": {
-    "message": "Le projet en quelques mots"
-  },
-  "Carte intercative du chemin parcouru et à parcourir par trace": {
-    "message": "Carte intercative du chemin parcouru et à parcourir par trace"
+    "message": "A projekt dióhéjban"
   },
   "Pour décourvrir le projet et comprendre les règles.": {
-    "message": "Pour décourvrir le projet et comprendre les règles."
+    "message": "Ha többet szeretne megtudni a projektről és megérteni a szabályokat."
   },
   "Visite ce site web": {
-    "message": "Visite ce site web"
+    "message": "Látogasson el erre a weboldalra"
   },
   "Voyage avec Trace": {
-    "message": "Voyage avec Trace"
+    "message": "Utazás Trace-szel"
   },
   "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.": {
-    "message": "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu."
+    "message": "Hogy közelebb kerüljön tervezett útjának következő szakaszához."
   },
   "Attention, Trace ne prends pas l'avion!": {
-    "message": "Attention, Trace ne prends pas l'avion!"
+    "message": "Ne feledd, Trace nem repül!"
   },
   "Contacte ta communauté": {
-    "message": "Contacte ta communauté"
+    "message": "Kapcsolatfelvétel a közösséggel"
   },
   "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.": {
-    "message": "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage."
+    "message": "Találni valakit, aki segít Trace-nek folytatni az útját."
   },
   "Prend un selfie": {
-    "message": "Prend un selfie"
+    "message": "Készíts egy szelfit"
   },
   "Ou seul avec Trace, si tu passes près d'une des étapes fixées.": {
-    "message": "Ou seul avec Trace, si tu passes près d'une des étapes fixées."
+    "message": "Vagy egyedül Trace-szel, ha közel állsz valamelyik mérföldkőhöz."
   },
   "Partage sur Instagram": {
-    "message": "Partage sur Instagram"
+    "message": "Megosztás az Instagramon"
   },
   "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.": {
-    "message": "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace."
+    "message": "Bemutatni a csapat többi tagját, és lehetővé tenni számukra, hogy kövessék Trace útját."
   },
   "Prochaine étape :": {
-    "message": "Prochaine étape :"
+    "message": "Következő lépés:"
   },
   "Avec Trace et la personne à qui tu confies la mascotte.": {
-    "message": "Avec Trace et la personne à qui tu confies la mascotte."
+    "message": "Trace-szel és azzal a személlyel, akire a kabalát bízza."
+  },
+  "Loading...": {
+    "message": "Betöltés...",
+    "description": "Loading..."
+  },
+  "Visualiser en plein écran": {
+    "message": "Teljes képernyő megtekintése",
+    "description": "Visualiser en plein écran"
+  },
+  "Quitter le mode plein écran": {
+    "message": "Kilépés a teljes képernyős módból",
+    "description": "Quitter le modeplein écran"
   }
 }

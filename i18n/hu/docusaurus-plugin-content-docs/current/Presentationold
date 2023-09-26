@@ -6,87 +6,87 @@ import Link from '@docusaurus/Link';
   <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
 </div>
 
-# Présentation
+# Bemutató
 
-Bienvenue sur le projet "Trace across the world"
+Üdvözöljük a "Trace across the world" projektben
 
-### Objectif
+### Cél
 
-La mascotte Trace est équipée d'un système de localisation permettant de suivre sa trace autour du globe. Partie de Lyon en France le XX/XX/2023, Trace réalise un tour du monde en passant de main en main des porteurs qui la font voyager.
+A Trace kabalafigura nyomkövető rendszerrel van felszerelve, amely lehetővé teszi, hogy az egész világon követni lehessen. A franciaországi Lyonból 2023 XX/XX/2023-án induló Trace bejárja a világot, és kézről kézre adja a hordozókat, amelyek útjára viszik.
 
 
-### Comment ça fonctionne?
+### Hogyan működik?
 
-L'itinéraire de Trace est défini et passe par des villes étapes symboliques autour du monde.
+A Trace útvonal jól meghatározott, és szimbolikus megállóhelyeket érint a világ minden táján.
 
-Attention, Trace a décidé de faire ce long voyage sans prendre l'avion. Il faudra prendre le bateau pour traverser les océans!
+Jegyezzük meg, Trace úgy döntött, hogy ezt a hosszú utat repülőgép nélkül teszi meg. Hajóval kell átkelni az óceánokon!
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/planisphere.svg" alt="Planisphere" />
 </div>
 <br/>
-Sur ce site, tu pourras :
+Ezen az oldalon, akkor :
 <br/>
-<br/>• suivre le trajet de la mascotte
-<br/>• en apprendre plus sur le projet
-<br/>• rejoindre la page <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> de la communauté Trace
-<br/>• rejoindre le groupe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>pour aider à trouver des futurs porteurs pour Trace
+<br/>- kövesse a kabala útvonalát
+<br/>- Tudjon meg többet a projektről
+<br/>- csatlakozz a Trace közösség <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram oldalához</a>
+<br/>- csatlakozzon a <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp csoporthoz</a>, hogy segítsen megtalálni a Trace jövőbeli fuvarozóit.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-on-a-bike.svg" alt="Lama on a bike" />
 </div>
 
-### Tu as reçu la mascotte Trace?
+### Megszerezted a Trace kabalát?
 
-Fais la avancer dans la bonne direction vers la prochaine étape, puis confie là à une personne de confiance et motivée, qui la fera aussi avancer de quelques kilomètres.
-Peu importe le temps qu'il faudra, de porteur en porteur, Trace réussira à se frayer un chemin d'étape en étape.
-Tu ne sais pas à qui donner à la mascotte? Connecte toi au groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), et la team Trace t'aidera à trouver le prochain porteur!
-
-
+Indítsd el a megfelelő irányba a következő szakasz felé, majd add át valakinek, akiben megbízol, aki motivált, és aki szintén előreviszi néhány kilométert.
+Nem számít, mennyi időbe telik, hordozóról hordozóra, Trace-nek sikerül színpadról színpadra jutnia.
+Nem tudod, kinek adhatod a kabalát? Csatlakozz a [WhatsApp]csoporthoz (https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), és a Trace csapata segít megtalálni a következő fuvarozót!
 
 
 
-### Tu es proche d'une des étapes du parcours?
 
-Bravo, rends toi le plus vite au lieu indiqué, puis prends une photo ou vidéo de Trace avec toi devant le lieu symbole de l'étape. Nous monterons ensuite un film avec toutes les photos et vidéos du projet!
+
+### Közel van az útvonal valamelyik szakaszához?
+
+Jól van, menj a megadott helyszínre a lehető leggyorsabban, majd készíts egy fotót vagy videót Trace-ről a színpadot szimbolizáló helyszín előtt. Ezután filmet készítünk a projekt során készült összes fotóból és videóból!
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
   <Link
-    className="button button--secondary button--lg"
+    className="gomb gomb--szekunder gomb--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
-    to="/docs/Rules">
-    Les règles du jeu 📜
+    to="/docs/Szabályok">
+    A játékszabályok 📜
   </Link>
 </div>
 
 
 
-## Et l'équipe dans tout ça?
+## És mi a helyzet a csapattal?
 
-Une fois que tu as été relayeur de la mascotte, tu fais partie de l'équipe "Trace across the world". Tu peux revenir régulièrement sur le site pour suivre son avancée à travers le monde.
+Ha már továbbítottad a kabalát, a "Nyomozd át a világot" csapat tagja vagy. Rendszeresen visszatérhet a honlapra, hogy nyomon követhesse, hogyan halad a világ minden táján.
 
-Si tu as des connaissances qui se situent aux alentours de Trace, tu peux les mettre en relation avec le porteur via le groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) de l'équipe. Cela permettra peut être de trouver un futur relayeur pour faire avancer Trace un peu plus vers son étape suivante.
+Ha ismersz valakit a Trace környékén, a csapat [WhatsApp]csoportján keresztül (https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) felveheted a kapcsolatot a szervezővel. Talán ez lehetővé teszi számunkra, hogy találjunk egy jövőbeli relévezetőt, aki egy kicsit tovább viszi a Trace-t a következő szakasz felé.
 
-Enfin, en tant que porteur, n'hésite pas à nous envoyer sur le compte <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> quelques photos/vidéos de toi avec Trace sur des lieux qui te tiennent à coeur près de là où tu es.
+Végezetül, mint hordozó, ne habozz, küldj nekünk néhány fotót/videót magadról Trace-szel a hozzád közeli helyeken, a <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram-fiókon</a> .
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-with-friends.svg" alt="Lama with friend" />
 </div>
 
-## Comment suivre ? ##
+## Hogyan kell követni? ##
 
-Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivre son avancée autour du monde.
+A Trace-ba épített chipnek köszönhetően az egész csapat követni tudja az útját a világ minden táján.
 
 <br/>
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
   <Link
-    className="button button--secondary button--lg"
+    className="gomb gomb--szekunder gomb--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
     to="/docs/Itinerary">
-    Trace 🧭
+    Nyomkövetés 🧭
   </Link>
 </div>
 
@@ -95,7 +95,7 @@ Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivr
 
 
 <br/>
-Par mesure de sécurité, la localisation affichée est approximative à 2km près, pour que l'on ne puisse pas localiser précisément le porteur.
+Biztonsági okokból a kijelzett hely 2 km-en belül megközelítőleg van megadva, így a viselője nem lokalizálható pontosan.
 
 </div>
 

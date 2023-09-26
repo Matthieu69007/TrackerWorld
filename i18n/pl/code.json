@@ -1,30 +1,30 @@
 {
   "theme.ErrorPageContent.title": {
-    "message": "Cette page a planté.",
+    "message": "Ta strona uległa awarii.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.NotFound.title": {
-    "message": "Page introuvable",
+    "message": "Nie znaleziono strony",
     "description": "The title of the 404 page"
   },
   "theme.NotFound.p1": {
-    "message": "Nous n'avons pas trouvé ce que vous recherchez.",
+    "message": "Nie znaleźliśmy tego, czego szukasz.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Veuillez contacter le propriétaire du site qui vous a lié à l'URL d'origine et leur faire savoir que leur lien est cassé.",
+    "message": "Prosimy o kontakt z właścicielem strony, która łączyła Cię z oryginalnym adresem URL i poinformowanie go, że jego link jest uszkodzony.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.admonition.note": {
-    "message": "remarque",
+    "message": "uwaga",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "astuce",
+    "message": "wskazówka",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.danger": {
-    "message": "danger",
+    "message": "niebezpieczeństwo",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
@@ -32,293 +32,302 @@
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.caution": {
-    "message": "attention",
+    "message": "uwaga",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Retour au début de la page",
+    "message": "Powrót do początku strony",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
-    "message": "Archive",
+    "message": "Archiwum",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "Archive",
+    "message": "Archiwum",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "Pagination de la liste des articles du blog",
+    "message": "Paginacja listy wpisów na blogu",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Nouvelles entrées",
+    "message": "Nowe wpisy",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Anciennes entrées",
+    "message": "Stare wejścia",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Pagination des articles du blog",
+    "message": "Paginacja wpisów na blogu",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Article plus récent",
+    "message": "Najnowszy artykuł",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Article plus ancien",
+    "message": "Starszy artykuł",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Basculer entre le mode sombre et clair (actuellement {mode})",
+    "message": "Przełączanie między trybem ciemnym i jasnym (obecnie {mode})",
     "description": "The ARIA label for the navbar color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "mode sombre",
+    "message": "tryb ciemny",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "mode clair",
+    "message": "tryb czyszczenia",
     "description": "The name for the light color mode"
   },
   "theme.blog.post.plurals": {
-    "message": "Un article|{count} articles",
+    "message": "Jeden artykuł|{count} artykuły",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagués avec « {tagName} »",
+    "message": "{nPosts} oznaczone tagiem \" {tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Voir tous les tags",
+    "message": "Zobacz wszystkie tagi",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} éléments",
+    "message": "{count} elementy",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Fil d'Ariane",
+    "message": "Ścieżka nawigacyjna",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Pages de documentation",
+    "message": "Strony dokumentacji",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "Précédent",
+    "message": "Poprzedni",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "Suivant",
+    "message": "Następny",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Un document tagué|{count} documents tagués",
+    "message": "Jeden oznaczony dokument|{count} oznaczone dokumenty",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} avec \"{tagName}\"",
+    "message": "{nDocsTagged} z \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "Wersja: {versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "Ceci est la documentation de la prochaine version {versionLabel} de {siteTitle}.",
+    "message": "To jest dokumentacja dla następnej wersji {versionLabel} {siteTitle}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Ceci est la documentation de {siteTitle} {versionLabel}, qui n'est plus activement maintenue.",
+    "message": "To jest dokumentacja dla {siteTitle} {versionLabel}, która nie jest już aktywnie utrzymywana.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Pour une documentation à jour, consultez la {latestVersionLink} ({versionLabel}).",
+    "message": "Aktualną dokumentację można znaleźć na stronie {latestVersionLink} ({versionLabel}).",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "dernière version",
+    "message": "najnowsza wersja",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Éditer cette page",
+    "message": "Edytuj tę stronę",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Lien direct vers {heading}",
+    "message": "Bezpośredni link do strony {heading}",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " le {date}",
+    "message": " {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " par {user}",
+    "message": " przez {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Dernière mise à jour{atDate}{byUser}",
+    "message": "Ostatnia aktualizacja{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "Wersje",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags :",
+    "message": "Tagi :",
     "description": "The label alongside a tag list"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Navigation article de blog récent",
+    "message": "Nawigacja po ostatnich wpisach na blogu",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fermer",
+    "message": "Zamknij",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copié",
+    "message": "Kopia",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copier le code",
+    "message": "Skopiuj kod",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copier",
+    "message": "Kopia",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Activer/désactiver le retour à la ligne",
+    "message": "Aktywacja/dezaktywacja podawania linii",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Plier/Déplier la catégorie '{label}' de la barre latérale",
+    "message": "Zwiń/rozwiń kategorię \"{label}\" na pasku bocznym.",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "Główny",
     "description": "The ARIA label for the main navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Sur cette page",
+    "message": "Na tej stronie",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.blog.post.readMore": {
-    "message": "Lire plus",
+    "message": "Czytaj więcej",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "En savoir plus sur {title}",
+    "message": "Więcej informacji można znaleźć na stronie {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "Une minute de lecture|{readingTime} minutes de lecture",
+    "message": "Jedna minuta czytania|{readingTime} minut czytania",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Langues",
+    "message": "Języki",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Page d'accueil",
+    "message": "Strona główna",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Réduire le menu latéral",
+    "message": "Zwiń menu boczne",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Réduire le menu latéral",
+    "message": "Zwiń menu boczne",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "Pasek boczny dokumentów",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Retour au menu principal",
+    "message": "← Powrót do menu głównego",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Fermer la barre de navigation",
+    "message": "Zamknij pasek nawigacji",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Ouvrir/fermer la barre de navigation",
+    "message": "Otwórz/zamknij pasek nawigacji",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Déplier le menu latéral",
+    "message": "Rozwiń menu boczne",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Déplier le menu latéral",
+    "message": "Rozwiń menu boczne",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Réessayer",
+    "message": "Spróbuj ponownie",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.common.skipToMainContent": {
-    "message": "Aller au contenu principal",
+    "message": "Przejdź do treści głównej",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "Tagi",
     "description": "The title of the tag list page"
   },
   "Trace across the world": {
-    "message": "Trace across the world"
+    "message": "Śledź przez cały świat"
   },
   "Le tour du monde depuis chez soi !": {
-    "message": "Le tour du monde depuis chez soi !"
+    "message": "Dookoła świata w zaciszu własnego domu!"
   },
   "Le projet en quelques mots": {
-    "message": "Le projet en quelques mots"
-  },
-  "Carte intercative du chemin parcouru et à parcourir par trace": {
-    "message": "Carte intercative du chemin parcouru et à parcourir par trace"
+    "message": "Projekt w pigułce"
   },
   "Pour décourvrir le projet et comprendre les règles.": {
-    "message": "Pour décourvrir le projet et comprendre les règles."
+    "message": "Aby dowiedzieć się więcej o projekcie i zrozumieć zasady."
   },
   "Visite ce site web": {
-    "message": "Visite ce site web"
+    "message": "Odwiedź tę stronę"
   },
   "Voyage avec Trace": {
-    "message": "Voyage avec Trace"
+    "message": "Podróżuj z Trace"
   },
   "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu.": {
-    "message": "Pour l'aider à se rapprocher de la prochaine étape du trajet prévu."
+    "message": "Aby pomóc mu zbliżyć się do kolejnego etapu jego planowanej podróży."
   },
   "Attention, Trace ne prends pas l'avion!": {
-    "message": "Attention, Trace ne prends pas l'avion!"
+    "message": "Pamiętaj, że Trace nie lata!"
   },
   "Contacte ta communauté": {
-    "message": "Contacte ta communauté"
+    "message": "Skontaktuj się ze swoją społecznością"
   },
   "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage.": {
-    "message": "Pour trouver quelqu'un qui pourra aider Trace à continuer son voyage."
+    "message": "Znaleźć kogoś, kto pomoże Trace kontynuować podróż."
   },
   "Prend un selfie": {
-    "message": "Prend un selfie"
+    "message": "Zrób sobie selfie"
   },
   "Ou seul avec Trace, si tu passes près d'une des étapes fixées.": {
-    "message": "Ou seul avec Trace, si tu passes près d'une des étapes fixées."
+    "message": "Lub samodzielnie z Trace, jeśli jesteś blisko jednego z kamieni milowych."
   },
   "Partage sur Instagram": {
-    "message": "Partage sur Instagram"
+    "message": "Udostępnij na Instagramie"
   },
   "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace.": {
-    "message": "Pour te présenter aux autres membres de l'équipe, et leur permettre de suivre le périple de Trace."
+    "message": "Aby przedstawić cię innym członkom zespołu i pozwolić im śledzić podróż Trace."
   },
   "Prochaine étape :": {
-    "message": "Prochaine étape :"
+    "message": "Następny krok:"
   },
   "Avec Trace et la personne à qui tu confies la mascotte.": {
-    "message": "Avec Trace et la personne à qui tu confies la mascotte."
+    "message": "Z Trace i osobą, której powierzysz maskotkę."
+  },
+  "Loading...": {
+    "message": "Ładowanie...",
+    "description": "Loading..."
+  },
+  "Visualiser en plein écran": {
+    "message": "Zobacz pełny ekran",
+    "description": "Visualiser en plein écran"
+  },
+  "Quitter le mode plein écran": {
+    "message": "Wyjście z trybu pełnoekranowego",
+    "description": "Quitter le modeplein écran"
   }
 }

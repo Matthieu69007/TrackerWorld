@@ -279,9 +279,6 @@
   "Le projet en quelques mots": {
     "message": "The project in a nutshell"
   },
-  "Carte intercative du chemin parcouru et à parcourir par trace": {
-    "message": "Interactive map of Trace's traveled and to be traveled path"
-  },
   "Pour décourvrir le projet et comprendre les règles.": {
     "message": "Discover the project and understand the rules."
   },
@@ -320,5 +317,17 @@
   },
   "Avec Trace et la personne à qui tu confies la mascotte.": {
     "message": "With Trace and the person to whom you entrust the mascot."
+  },
+  "Loading...": {
+    "message": "Loading...",
+    "description": "Loading..."
+  },
+  "Visualiser en plein écran": {
+    "message": "View full screen",
+    "description": "Visualiser en plein écran"
+  },
+  "Quitter le mode plein écran": {
+    "message": "Exit full screen mode",
+    "description": "Quitter le modeplein écran"
   }
 }

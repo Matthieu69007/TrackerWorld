@@ -1,4 +1,4 @@
-import Link from '@docusaurus/Link';
+从'@docusaurus/Link'导入 Link；
 
  <br /> <br />
 <div style={{ width: '800px', margin: '0 auto', textAlign: 'center' }}>
@@ -6,87 +6,87 @@ import Link from '@docusaurus/Link';
   <img src="/img/Mascotte/Resize/tracefullbodydetoure.svg" alt="Trace Mascot" />
 </div>
 
-# Présentation
+# 演示
 
-Bienvenue sur le projet "Trace across the world"
+欢迎参加 "全球寻踪 "项目
 
-### Objectif
+### 目标
 
-La mascotte Trace est équipée d'un système de localisation permettant de suivre sa trace autour du globe. Partie de Lyon en France le XX/XX/2023, Trace réalise un tour du monde en passant de main en main des porteurs qui la font voyager.
+Trace 吉祥物配备了一个跟踪系统，可以在全球范围内跟踪它。 2023 年 XX 月 XX 日，Trace 从法国里昂出发，开始了她的环球旅行。
 
 
-### Comment ça fonctionne?
+#### 它是如何工作的？
 
-L'itinéraire de Trace est défini et passe par des villes étapes symboliques autour du monde.
+追溯之路 "路线明确，途经世界各地具有象征意义的中转站。
 
-Attention, Trace a décidé de faire ce long voyage sans prendre l'avion. Il faudra prendre le bateau pour traverser les océans!
+请注意，索斯决定不坐飞机完成这次长途旅行。 您必须乘船穿越海洋！
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/planisphere.svg" alt="Planisphere" />
 </div>
 <br/>
-Sur ce site, tu pourras :
+在这个网站上，您可以 ：
 <br/>
-<br/>• suivre le trajet de la mascotte
-<br/>• en apprendre plus sur le projet
-<br/>• rejoindre la page <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> de la communauté Trace
-<br/>• rejoindre le groupe <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp</a>pour aider à trouver des futurs porteurs pour Trace
+<br/>- 沿着吉祥物的路线
+<br/>- 了解更多项目信息
+<br/>- 加入 Trace 社区的 <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram 页面</a>
+<br/>- 加入 <a href="https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE" target="_blank" rel="noopener noreferrer">WhatsApp 群组</a>，帮助寻找 Trace 未来的运营商
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-on-a-bike.svg" alt="Lama on a bike" />
 </div>
 
-### Tu as reçu la mascotte Trace?
+### 你拿到索斯吉祥物了吗？
 
-Fais la avancer dans la bonne direction vers la prochaine étape, puis confie là à une personne de confiance et motivée, qui la fera aussi avancer de quelques kilomètres.
-Peu importe le temps qu'il faudra, de porteur en porteur, Trace réussira à se frayer un chemin d'étape en étape.
-Tu ne sais pas à qui donner à la mascotte? Connecte toi au groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE), et la team Trace t'aidera à trouver le prochain porteur!
-
-
+让她朝着正确的方向迈向下一阶段，然后把她交给你信任的、有动力的人，他也会带着她前进几公里。
+无论要花费多长时间，从一个航母到另一个航母，索斯都能从一个舞台走到另一个舞台。
+不知道该把吉祥物送给谁？ 连接到 [WhatsApp]群 (https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE)，Trace 团队将帮助您找到下一个运营商！
 
 
 
-### Tu es proche d'une des étapes du parcours?
 
-Bravo, rends toi le plus vite au lieu indiqué, puis prends une photo ou vidéo de Trace avec toi devant le lieu symbole de l'étape. Nous monterons ensuite un film avec toutes les photos et vidéos du projet!
+
+#### 您离路线上的某个赛段近吗？
+
+干得好，尽快到达指定地点，然后在象征舞台的地点前拍摄一张 Trace 与你的合影或视频。 然后，我们将把项目中的所有照片和视频制作成一部电影！
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
-    className="button button--secondary button--lg"
+  <链接
+    className="button buttonon-secondary buttonon--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
     to="/docs/Rules">
-    Les règles du jeu 📜
+    游戏规则 📜
   </Link>
 </div>
 
 
 
-## Et l'équipe dans tout ça?
+#And what about the team?
 
-Une fois que tu as été relayeur de la mascotte, tu fais partie de l'équipe "Trace across the world". Tu peux revenir régulièrement sur le site pour suivre son avancée à travers le monde.
+一旦你成为吉祥物火炬手，你就是 "穿越世界的足迹 "团队的一员。 您可以定期访问该网站，了解其在世界各地的进展情况。
 
-Si tu as des connaissances qui se situent aux alentours de Trace, tu peux les mettre en relation avec le porteur via le groupe [WhatsApp](https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) de l'équipe. Cela permettra peut être de trouver un futur relayeur pour faire avancer Trace un peu plus vers son étape suivante.
+如果您认识 Trace 地区的任何人，可以通过团队的 [WhatsApp]群组 (https://chat.whatsapp.com/FKwW0q23yVk3OdKNKAxGnE) 与发起人取得联系。 也许，这将使我们能够找到未来的中继驱动程序，让 Trace 向下一个阶段更进一步。
 
-Enfin, en tant que porteur, n'hésite pas à nous envoyer sur le compte <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram</a> quelques photos/vidéos de toi avec Trace sur des lieux qui te tiennent à coeur près de là où tu es.
+最后，作为载体，请不要犹豫，在 <a href="https://www.instagram.com/traceacrosstheworld/" target="_blank" rel="noopener noreferrer">Instagram 账户</a> 上向我们发送几张您与 Trace 在您所在位置附近的照片/视频。
 
 <div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/img/Mascotte/Resize/lama-with-friends.svg" alt="Lama with friend" />
 </div>
 
-## Comment suivre ? ##
+## How to follow? ##
 
-Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivre son avancée autour du monde.
+通过安装在 Trace 内部的芯片，整个团队都可以跟踪它在世界各地的进展情况。
 
 <br/>
 
 
 <div className="custom-container" style={{ display: "flex", justifyContent: "center" }}>
-  <Link
-    className="button button--secondary button--lg"
+  <链接
+    className="button buttonon-secondary buttonon--lg"
     style={{ width: "auto", textAlign: "center", backgroundColor: "#eaeaea"}}
     to="/docs/Itinerary">
-    Trace 🧭
+    跟踪 🧭
   </Link>
 </div>
 
@@ -95,7 +95,7 @@ Grace à la puce installée à l'intérieur de Trace, toute l'équipe peut suivr
 
 
 <br/>
-Par mesure de sécurité, la localisation affichée est approximative à 2km près, pour que l'on ne puisse pas localiser précisément le porteur.
+出于安全考虑，所显示的位置为 2 公里以内的近似值，因此无法精确定位佩戴者。
 
 </div>
 
