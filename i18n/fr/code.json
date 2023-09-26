@@ -279,9 +279,6 @@
   "Le projet en quelques mots": {
     "message": "Le projet en quelques mots"
   },
-  "Carte intercative du chemin parcouru et à parcourir par trace": {
-    "message": "Carte intercative du chemin parcouru et à parcourir par trace"
-  },
   "Pour décourvrir le projet et comprendre les règles.": {
     "message": "Pour décourvrir le projet et comprendre les règles."
   },
@@ -320,5 +317,17 @@
   },
   "Avec Trace et la personne à qui tu confies la mascotte.": {
     "message": "Avec Trace et la personne à qui tu confies la mascotte."
+  },
+  "Loading...": {
+    "message": "Loading...",
+    "description": "Loading..."
+  },
+  "Visualiser en plein écran": {
+    "message": "Visualiser en plein écran",
+    "description": "Visualiser en plein écran"
+  },
+  "Quitter le mode plein écran": {
+    "message": "Quitter le mode plein écran",
+    "description": "Quitter le modeplein écran"
   }
 }

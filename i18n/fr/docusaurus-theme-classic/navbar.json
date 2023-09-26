@@ -7,10 +7,6 @@
     "message": "Home Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
-  },
   "item.label.Instagram": {
     "message": "Instagram",
     "description": "Navbar item with label Instagram"
