@@ -251,23 +251,6 @@ function Viewercomponentcode() {
       });
   }, [nextCityId]);
 
-  const enterFullscreen = () => {
-    if (viewerRef.current) {
-      const element = viewerRef.current.cesiumElement?.canvas;
-      if (element) {
-        if (element.requestFullscreen) {
-          element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-          element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-          element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) {
-          element.msRequestFullscreen();
-        }
-      }
-    }
-  };
-
   function MapEventhandler(Props)
   {
     const map=useMapEvent(

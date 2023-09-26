@@ -4,9 +4,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '../components/HomepageFeatures';
 import styles from './index.module.css';
-//import {  Ion } from "cesium";
-import Chip from '@mui/material/Chip';
-//import ViewerComponent from '../components/ViewerComponent';
 import Typography from '@mui/material/Typography';
 import Itinerary from '@site//docs/Itinerary.mdx';
 import Translate from '@docusaurus/Translate';
@@ -15,8 +12,7 @@ import { Grid, Stack } from '@mui/material';
 import ViewerComponent from '../components/ViewerComponent';
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-
+  
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
