@@ -329,5 +329,11 @@
   "Quitter le mode plein écran": {
     "message": "Exit full screen mode",
     "description": "Quitter le modeplein écran"
+  },
+  "Prochaine destination": {
+    "message": "Next destination"
+  },
+  "Toutes les destinations": {
+    "message": "All destinations"
   }
 }

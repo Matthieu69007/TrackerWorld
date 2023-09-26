@@ -329,5 +329,11 @@
   "Quitter le mode plein écran": {
     "message": "Kilépés a teljes képernyős módból",
     "description": "Quitter le modeplein écran"
+  },
+  "Prochaine destination": {
+    "message": "Következő úticél"
+  },
+  "Toutes les destinations": {
+    "message": "Minden úticél"
   }
 }

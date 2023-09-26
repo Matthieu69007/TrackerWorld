@@ -329,5 +329,11 @@
   "Quitter le mode plein écran": {
     "message": "Ukončení režimu celé obrazovky",
     "description": "Quitter le modeplein écran"
+  },
+  "Prochaine destination": {
+    "message": "Další destinace"
+  },
+  "Toutes les destinations": {
+    "message": "Všechny destinace"
   }
 }

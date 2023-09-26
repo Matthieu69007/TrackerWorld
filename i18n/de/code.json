@@ -329,5 +329,11 @@
   "Quitter le mode plein écran": {
     "message": "Den Vollbildmodus verlassen",
     "description": "Quitter le modeplein écran"
+  },
+  "Prochaine destination": {
+    "message": "Nächstes Reiseziel"
+  },
+  "Toutes les destinations": {
+    "message": "Alle Reiseziele"
   }
 }

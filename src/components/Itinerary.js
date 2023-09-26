@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ListAllCities from "@site/src/components/ListAllCities.js";
 import NextCity from "@site/src/components/NextCity";
+import Translate from '@docusaurus/Translate';
 
 export default function Itinerary() {
     const [expanded, setExpanded] = React.useState(false);
@@ -21,7 +22,7 @@ export default function Itinerary() {
             <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '5vh' }}>
                 <div>
                     <Typography variant="h4" gutterBottom>
-                        Prochaine destination
+                        <Translate desc='Prochaine destination'>Prochaine destination</Translate>
                     </Typography>
                     <br />
                     <NextCity />
@@ -35,7 +36,7 @@ export default function Itinerary() {
                     id="panel1bh-header"
                 >
                     <Typography sx={{ textAlign:'center',width: '100%', flexShrink: 0,fontWeight: 'bold' }}>
-                    Toute les destinations
+                    <Translate desc='Toutes les destinations'>Toutes les destinations</Translate>
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>

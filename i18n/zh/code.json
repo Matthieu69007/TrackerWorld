@@ -329,5 +329,11 @@
   "Quitter le mode plein écran": {
     "message": "退出全屏模式",
     "description": "Quitter le modeplein écran"
+  },
+  "Prochaine destination": {
+    "message": "下一个目的地"
+  },
+  "Toutes les destinations": {
+    "message": "所有目的地"
   }
 }
