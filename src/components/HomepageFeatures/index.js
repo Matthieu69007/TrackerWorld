@@ -3,10 +3,12 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import NextCityNameOnly from '../NextCityNameOnly';
 import Translate from '@docusaurus/Translate';
+import { Stack } from '@mui/material';
 
 
 const FeatureList = [
   {
+    row:1,
     title: <Translate desc='Visite ce site web'>Visite ce site web</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputer2detoure.svg').default,
     description: <Translate desc='Pour décourvrir le projet et comprendre les règles.'>
@@ -14,6 +16,7 @@ const FeatureList = [
                 </Translate>,
   },
   {
+    row:1,
     title: <Translate desc='Voyage avec Trace'>Voyage avec Trace</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lama-on-a-bike.svg').default,
     description: (
@@ -27,6 +30,7 @@ const FeatureList = [
     ),
   },
   {
+    row:1,
     title: <Translate desc='Contacte ta communauté'>Contacte ta communauté</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lama-with-friends.svg').default,
     description: (
@@ -36,6 +40,7 @@ const FeatureList = [
     ),
   },
   {
+    row:2,
     title: <Translate desc='Prend un selfie'>Prend un selfie</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaselfie.svg').default,
     description: (<>
@@ -50,6 +55,7 @@ const FeatureList = [
     ),
   },
   {
+    row:2,
     title: <Translate desc='Partage sur Instagram'>Partage sur Instagram</Translate>,
     Svg: require('@site/static/img/Mascotte/Resize/lamaoncomputerinstagram.svg').default,
     description: (
@@ -74,18 +80,26 @@ function Feature({Svg, title, description}) {
   );
 }
 
+let FLRow1 = FeatureList.filter( (x)=>{if (x?.row==1){ return x} else {return null}})
+let FLRow2 = FeatureList.filter( (x)=>{if (x?.row==2){ return x }else {return null}})
+
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-        
-          {FeatureList.map((props, idx) => (
+    
+      <>
+        <Stack direction='row' justifyContent='center' alignItems='center' alignSelf='center'>
+          {FLRow1.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
-        </div>
-      </div>
-    </section>
+        </Stack>
+        <Stack direction='row' justifyContent='center' alignItems='center' alignSelf='center' flex>
+          {FLRow2.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
+        </Stack>
+      </>
+
+    
   );
 }
