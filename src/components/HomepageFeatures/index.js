@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import NextCityNameOnly from '../NextCityNameOnly';
 import Translate from '@docusaurus/Translate';
-import { Stack } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 
 
 const FeatureList = [
@@ -66,9 +66,9 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description,smWidth}) {
   return (
-    <div className={clsx('col col--4')}>
+    <Grid item xs={12} sm={smWidth?smWidth:4}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
@@ -76,7 +76,7 @@ function Feature({Svg, title, description}) {
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
-    </div>
+    </Grid>
   );
 }
 
@@ -87,19 +87,29 @@ let FLRow2 = FeatureList.filter( (x)=>{if (x?.row==2){ return x }else {return nu
 export default function HomepageFeatures() {
   return (
     
-      <>
-        <Stack direction='row' justifyContent='center' alignItems='center' alignSelf='center'>
-          {FLRow1.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </Stack>
-        <Stack direction='row' justifyContent='center' alignItems='center' alignSelf='center' flex>
-          {FLRow2.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </Stack>
-      </>
-
+      <Stack justifyItems='center' alignSelf='center' flexGrow spacing={4}>
+        <Grid container justifyContent='center' width={'100%'} spacing={3}>
+          <Grid item xs={12}>
+            <Grid container>
+            {FLRow1.map((props, idx) => (
+              <Feature key={'r1'+idx} {...props} />
+            ))}
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid container justifyContent='center' flexGrow>
+          <Grid item xs={12}>
+            <Grid container>
+            {FLRow2.map((props, idx) => (
+              <Feature key={'R2'+idx} {...props} smWidth={6} />
+            ))}
+            </Grid>
+          </Grid>
+        </Grid>
+        
+        
+      </Stack>
+    
     
   );
 }
