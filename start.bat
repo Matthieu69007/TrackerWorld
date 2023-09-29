@@ -1,1 +1,1 @@
-npm run start -- --language hu
+npm run start
