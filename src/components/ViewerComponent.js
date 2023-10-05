@@ -16,7 +16,7 @@ const urlTraceReelle =
 
 const TracelineColor = { "color":"#5100C2","weight":2, "smooth":1};
 const PreviouslineColor = { "color":"#D5720E","weight":1, "smooth":1};
-const NextlineColor = {"xolor":"#572C3A","weight":2};
+const NextlineColor = {"color":"#265CC7","weight":2};
 
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
@@ -89,7 +89,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
     shadowUrl: null
 })
   console.log(ZoomLevel)
-  if (CityList && ZoomLevel >2)
+  if (CityList && ZoomLevel >4)
   {
     return CityList.map((value)=>{
       
@@ -184,7 +184,7 @@ function Viewercomponentcode() {
 
           Cities.push({"Name":x.values[i][6],"Position":coordinates, "MainPoint":x.values[i][3], "ImageName":x.values[i][1]})
           const cityId = parseFloat(x.values[i][0]-1);
-          if (cityId <= nextCityId) {
+          if (cityId >= (nextCityId-1) && cityId <= nextCityId) {
             if (AddPoint(previousData,PrevCoords,coordinates))
             {
               previousDataSet.push(previousData)
@@ -381,59 +381,3 @@ function Viewercomponentcode() {
     </Stack>
   );
 }
-
-/*
-<Viewer ref={viewerRef} timeline={false} animation={false} sceneMode={SceneMode.SCENE2D} >
-        <CameraFlyTo destination={Cartesian3.fromDegrees(StartPos[0], StartPos[1], 1000000)}  />
-        <GeoJsonDataSource
-          markerSymbol=""
-          data={consigneParcoursPreviousData}
-          stroke={PreviouslineColor}
-          // hide markers
-          markerColor={Color.TRANSPARENT}
-        />
-        <GeoJsonDataSource
-          markerSymbol=""
-          data={consigneParcoursNextData}
-          stroke={NextlineColor}
-          // hide markers
-          markerColor={Color.TRANSPARENT}
-        />
-        <GeoJsonDataSource
-          markerSymbol=""
-          data={traceReelleData}
-          stroke={Color.BLUE} // Vous pouvez utiliser n'importe quelle couleur de votre choix pour la ligne de la trace réelle.
-          // hide markers
-          markerColor={Color.TRANSPARENT}
-        />
-
-
-        {/* Loop through consigneParcoursData and create point entities * /}
-        {[
-          ...(consigneParcoursPreviousData?.features || []),
-          ...(consigneParcoursNextData?.features || []),
-        ].map((feature) => {
-          if (feature.geometry.type === "Point") {
-            const [longitude, latitude] = feature.geometry.coordinates;
-            const city = feature.properties.city;
-            const name = feature.properties.name;
-            return (
-              <Entity key={"Feature" + Math.random()}
-                description={name}
-                name={city}
-                point={{ pixelSize: 8 }}
-                label={{
-                  text: city,
-                  font: "14pt",
-                  pixelOffset: new Cartesian2(0, -20),
-                }}
-                // remove the on click handler
-                onClick={() => { }}
-                position={Cartesian3.fromDegrees(longitude, latitude, 100)}
-              />
-            );
-          }
-        })}
-
-      </Viewer>
-    */
