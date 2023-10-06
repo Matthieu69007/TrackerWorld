@@ -14,9 +14,10 @@ const urlConsigneParcours =
 const urlTraceReelle =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:C100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 
-const TracelineColor = { "color":"#5100C2","weight":2, "smooth":1};
-const PreviouslineColor = { "color":"#D5720E","weight":1, "smooth":1};
-const NextlineColor = {"color":"#265CC7","weight":2};
+const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
+const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
+const NextlineColor = {"color":"#00904E","weight":2};
+const Colors=[PreviouslineColor,NextlineColor];
 
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
@@ -153,12 +154,18 @@ function Viewercomponentcode() {
   
   const [CityList,SetCityList]=useState(null)
   const [Tracks, setTracks] =useState(null);
+  const [TracksPoints, setTracksPoints] =useState(null);
   const [ActualTrack, SetActualTrack] =useState(null);
   const [CityMarkers,SetCityMarkers] = useState(null)
   const [TraceMarker,SetTraceMarker] = useState(null)
   const [MapZoom, SetMapZoom] = useState(2)
 
   useEffect(async () => {
+    let previousData =[] 
+    let previousDataSet =[] 
+    let nextData = []
+    let nextDataSet = []
+    
     await fetch(urlNextcity)
       .then((x) => x.json())
       .then((x) => {
@@ -166,13 +173,9 @@ function Viewercomponentcode() {
         setNextCityId(cityId - 1);
       });
 
-    fetch(urlConsigneParcours)
+    await fetch(urlConsigneParcours)
       .then((x) => x.json())
       .then((x) => {
-        let previousData =[] 
-        let previousDataSet =[] 
-        let nextData = []
-        let nextDataSet = []
         let PrevCoords = null;
         let Cities=[]
 
@@ -216,11 +219,13 @@ function Viewercomponentcode() {
             
           </>
         )
+        setTracksPoints([previousDataSet,nextDataSet])
         SetCityMarkers(<>{GetCityMarkers(Cities, MapZoom,nextCityId)}</>)
         SetCityList(Cities)
+        console.log("Setting Tracks")
       });
 
-    fetch(urlTraceReelle)
+    await fetch(urlTraceReelle)
       .then((x) => x.json())
       .then((x) => {
         let TraceData = []
@@ -248,6 +253,29 @@ function Viewercomponentcode() {
         }
         SetActualTrack(<>{GetPolylines(TracelineColor,TraceDataSet)}</>)
         SetTraceMarker(<>{GetTraceMarker(coordinates)}</>)
+        console.log("Hijacking tracks")
+        console.log(previousDataSet)
+
+        /*if (TracksPoints)
+        {let TracksPointsArray=TracksPoints
+        
+        setTracks(<>
+                    {
+                      TracksPointsArray.map((value,index)=>{return GetPolylines(Colors[index],value)})
+                    }
+                  </>)}*/
+        if (previousDataSet[0])
+        {
+          previousDataSet[0][0]=coordinates
+          setTracks(
+            <>
+              {GetPolylines(PreviouslineColor,previousDataSet)}
+              {GetPolylines(NextlineColor,nextDataSet)}
+              
+            </>
+          )
+        }
+
       });
   }, [nextCityId]);
 
