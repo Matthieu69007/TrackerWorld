@@ -8,6 +8,7 @@ import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
 import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Translate from "@docusaurus/Translate";
+import { GetOrthoDist, RoundPow } from "./MathCalcs";
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
@@ -94,7 +95,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
   {
     return CityList.map((value)=>{
       
-      return <Marker position={value.Position} icon={icon} >
+      return <Marker Key={"CityMarker_"+currentCity} position={value.Position} icon={icon} >
               {GetCityPopup(value)}
             </Marker>
     })
@@ -129,9 +130,31 @@ function GetTraceMarker(Position)
     shadowUrl: null
   })
 
-  return <Marker position={Position} icon={icon} >
+  return <Marker key={"Marker"+Math.random()} position={Position} icon={icon} >
           
         </Marker>
+}
+
+function GetTraceSetDistance(TS)
+{
+  let TraceDist = 0
+  let CurPos = null
+  for (let i in TS)
+  {
+    for (let j in TS[i])
+    {
+      if (CurPos)
+      {
+        TraceDist += GetOrthoDist(CurPos[0],CurPos[1],TS[i][j][1],TS[i][j][0])
+      }
+      CurPos=[
+          TS[i][j][1],
+          TS[i][j][0]
+        ]
+    }
+  }
+
+  return TraceDist
 }
 
 
@@ -166,6 +189,7 @@ function Viewercomponentcode() {
     let nextData = []
     let nextDataSet = []
     
+        
     await fetch(urlNextcity)
       .then((x) => x.json())
       .then((x) => {
@@ -232,7 +256,8 @@ function Viewercomponentcode() {
         let TraceDataSet=[]
         let PrevCoords=null
         let coordinates=null
-        for (let i = 1; i < x.values.length; i++) {
+        for (let i = 1; i < x.values.length; i++) 
+        {
           coordinates = [
             parseFloat(x.values[i][0]),
             parseFloat(x.values[i][1]),
@@ -241,15 +266,15 @@ function Viewercomponentcode() {
           
           if (AddPoint(TraceData,PrevCoords,coordinates))
           {
-            TraceDataSet.push(previousData)
+            TraceDataSet.push(TraceData)
             TraceData = new Array(coordinates)
           }
           PrevCoords= coordinates
-          if (TraceData.length>1)
+          
+        }
+        if (TraceData.length>1)
         {
           TraceDataSet.push(TraceData)
-        }
-          
         }
         SetActualTrack(<>{GetPolylines(TracelineColor,TraceDataSet)}</>)
         SetTraceMarker(<>{GetTraceMarker(coordinates)}</>)
@@ -275,8 +300,15 @@ function Viewercomponentcode() {
             </>
           )
         }
+        let TraceDist=GetTraceSetDistance(TraceDataSet)
+        console.log("Trace Distance "+ RoundPow (TraceDist,2) + "km")
+        let NextDist=GetTraceSetDistance(nextDataSet)
+        console.log("Remaining Distance "+ RoundPow (NextDist,2) + "km")
+        
+      }
+    );
 
-      });
+
   }, [nextCityId]);
 
   function MapEventhandler(Props)
