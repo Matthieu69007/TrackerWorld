@@ -60,12 +60,18 @@ function GetPolylines(Options, Sets)
 function GetCityPopup(City)
 {
   const Popup = require('react-leaflet').Popup
+  const ImgUrl = typeof City.AlternateImage!== "undefined"?'https://images.traceacrosstheworld.com/'+City.AlternateImage:'../img/Etapes/'+City.ImageName+'.jpg'
+  const ImgCity =<img class="PopupImage" src={ImgUrl} alt={City.MainPoint} />;
+
   
   return <Popup>
             <Card >
               <CardHeader title={City.MainPoint}/>
               <CardContent>
-                <img class="PopupImage" src={'../img/Etapes/'+City.ImageName+'.jpg'} alt={City.MainPoint} />
+                <Stack alignItems='center'>
+                {ImgCity}
+                {City.VisitDate?City.VisitDate:null}
+                </Stack>
               </CardContent>
               <CardMedia alignItems='center'>
                 <Stack direction="column" spacing={2} alignItems={"center"}>
@@ -209,7 +215,14 @@ function Viewercomponentcode() {
             parseFloat(x.values[i][5]),
           ];
 
-          Cities.push({"Name":x.values[i][6],"Position":coordinates, "MainPoint":x.values[i][3], "ImageName":x.values[i][1]})
+          Cities.push({"Name":x.values[i][6],
+                        "Position":coordinates, 
+                        "MainPoint":x.values[i][3], 
+                        "ImageName":x.values[i][1],
+                        "AlternateImage":x.values[i][8], 
+                        "VisitDate":x.values[i][7], 
+                        
+                      })
           const cityId = parseFloat(x.values[i][0]-1);
           if (cityId >= (nextCityId-1) && cityId <= nextCityId) {
             if (AddPoint(previousData,PrevCoords,coordinates))
