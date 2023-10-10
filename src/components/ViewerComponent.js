@@ -18,7 +18,6 @@ const urlTraceReelle =
 const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
 const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
 const NextlineColor = {"color":"#00904E","weight":2};
-const Colors=[PreviouslineColor,NextlineColor];
 
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
