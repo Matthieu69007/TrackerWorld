@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback } from "react";
+import React, { useEffect, useState,  useMemo, useCallback } from "react";
 import  { urlNextcity } from "./NextCity";
 
 
 import { Card, CardContent, CardHeader, CardMedia, Stack, Typography } from "@mui/material";
 import CityLamas from '@site/static/img/Mascotte/CityIcon.png'
+import SelfieLamas from '@site/static/img/Mascotte/LamaSelfie.png'
 import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
 import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
 import BrowserOnly from "@docusaurus/BrowserOnly";
@@ -14,7 +15,8 @@ const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 const urlTraceReelle =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:C100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
-
+const urlAdditionalMarkers =
+  "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/AdditionalMarkers!A:E/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
 const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
 const NextlineColor = {"color":"#00904E","weight":2};
@@ -82,6 +84,27 @@ function GetCityPopup(City)
         </Popup> 
 }
 
+function GetSelfiePopup(Selfie)
+{
+  const Popup = require('react-leaflet').Popup
+  const ImgUrl = 'https://images.traceacrosstheworld.com/'+Selfie.Image
+  const ImgSelfie =<img class="PopupImage" src={ImgUrl} alt={Selfie.Date} />;
+
+  
+  return <Popup>
+            <Card >
+              <CardContent>
+                <Stack alignItems='center'>
+                  {ImgSelfie}
+                  {Selfie.Date?Selfie.Date:null}
+                </Stack>
+              </CardContent>
+              
+            </Card>
+            
+        </Popup> 
+}
+
 function GetCityMarkers(CityList, ZoomLevel, currentCity)
 {
   const Marker = require('react-leaflet').Marker
@@ -94,8 +117,8 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
     iconRetinaUrl: CityLamas,
     iconUrl: CityLamas,
     shadowUrl: null
-})
-  console.log(ZoomLevel)
+    })
+  
   if (CityList && ZoomLevel >4)
   {
     return CityList.map((value)=>{
@@ -115,6 +138,35 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
               {GetCityPopup(value)}
             </Marker>
     }
+  }
+  return null
+  
+}
+
+function GetSelfieMarkers(SelfieList, ZoomLevel)
+{
+  const Marker = require('react-leaflet').Marker
+  
+  
+  let icon = L.icon({
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0, -16],
+    iconRetinaUrl: SelfieLamas,
+    iconUrl: SelfieLamas,
+    shadowUrl: null
+    })
+  
+  if (SelfieList )
+  {
+    let Selector = null
+
+    return SelfieList.map((value)=>{
+      
+      return <Marker Key={"SelfieMarker_"+Math.random()} position={value.Position} icon={icon} >
+              {GetSelfiePopup(value)}
+            </Marker>
+    })
   }
   return null
   
@@ -175,16 +227,14 @@ export default function ViewerComponent ()
 }
 
 function Viewercomponentcode() {
-  const [StartPos, setStartPos] =
-    useState([4.820163386, 45.75749697]);
+  const [StartPos] = useState([4.820163386, 45.75749697]);
   const [nextCityId, setNextCityId] = useState(0);
-  const viewerRef = useRef(null);
   
   const [CityList,SetCityList]=useState(null)
   const [Tracks, setTracks] =useState(null);
-  const [TracksPoints, setTracksPoints] =useState(null);
   const [ActualTrack, SetActualTrack] =useState(null);
   const [CityMarkers,SetCityMarkers] = useState(null)
+  const [AdditionalMarkers,SetAdditionalMarkers] = useState(null)
   const [TraceMarker,SetTraceMarker] = useState(null)
   const [MapZoom, SetMapZoom] = useState(2)
 
@@ -255,7 +305,7 @@ function Viewercomponentcode() {
             
           </>
         )
-        setTracksPoints([previousDataSet,nextDataSet])
+        //setTracksPoints([previousDataSet,nextDataSet])
         SetCityMarkers(<>{GetCityMarkers(Cities, MapZoom,nextCityId)}</>)
         SetCityList(Cities)
         console.log("Setting Tracks")
@@ -319,6 +369,28 @@ function Viewercomponentcode() {
         
       }
     );
+
+    await fetch(urlAdditionalMarkers)
+        .then((x)=> x.json())
+        .then((x) => 
+          {
+            let Markers=[]
+            for (let i = 1; i < x.values.length; i++) 
+            {
+              let coordinates = [
+                parseFloat(x.values[i][2].replace(',','.')),
+                parseFloat(x.values[i][3].replace(',','.')),
+              ];
+
+              let Marker= {Position:coordinates,
+                      Date : x.values[i][1],
+                      Image : x.values[i][4],
+                    }
+              Markers.push(Marker)
+            }
+
+            SetAdditionalMarkers( GetSelfieMarkers(Markers,MapZoom))
+          })
 
 
   }, [nextCityId]);
@@ -442,10 +514,11 @@ function Viewercomponentcode() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {TraceMarker}
         {Tracks}
         {CityMarkers}
         {ActualTrack}
-        {TraceMarker}
+        {AdditionalMarkers}
         <MapEventhandler ZoomEventHandler={HandleZoomChange} />
         <MinimapControl position="topright" />
       </MapContainer>
