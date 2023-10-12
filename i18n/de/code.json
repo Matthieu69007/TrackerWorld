@@ -335,5 +335,21 @@
   },
   "Toutes les destinations": {
     "message": "Alle Reiseziele"
+  },
+  "Porteurs(ses) :": {
+    "message": "Träger(innen) :",
+    "description": "Porteurs(ses)"
+  },
+  "km parcourus :": {
+    "message": "gefahrene km :",
+    "description": "km parcourus"
+  },
+  "km restant :": {
+    "message": "Verbleibender Kilometer :",
+    "description": "km restant"
+  },
+  "Pays visités :": {
+    "message": "Besuchte Länder :",
+    "description": "Pays visités"
   }
 }

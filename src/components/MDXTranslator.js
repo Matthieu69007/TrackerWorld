@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
+
 import FR_Rules from "../../docs/Rules.mdx"
 import DE_Rules from "@site/i18n/de/docusaurus-plugin-content-docs/current/Rules.mdx"
 import EN_Rules from "@site/i18n/en/docusaurus-plugin-content-docs/current/Rules.mdx"
@@ -27,6 +28,16 @@ import HU_Presentation from "@site/i18n/hu/docusaurus-plugin-content-docs/curren
 import PL_Presentation from "@site/i18n/pl/docusaurus-plugin-content-docs/current/Presentation.mdx"
 import PT_Presentation from "@site/i18n/pt/docusaurus-plugin-content-docs/current/Presentation.mdx"
 import ZH_Presentation from "@site/i18n/zh/docusaurus-plugin-content-docs/current/Presentation.mdx"
+import FR_TracePopup from "../../docs/TracePopup.mdx"
+import DE_TracePopup from "@site/i18n/de/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import EN_TracePopup from "@site/i18n/en/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import CS_TracePopup from "@site/i18n/cs/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import ES_TracePopup from "@site/i18n/es/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import HU_TracePopup from "@site/i18n/hu/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import PL_TracePopup from "@site/i18n/pl/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import PT_TracePopup from "@site/i18n/pt/docusaurus-plugin-content-docs/current/TracePopup.mdx"
+import ZH_TracePopup from "@site/i18n/zh/docusaurus-plugin-content-docs/current/Presentation.mdx"
+
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 
@@ -57,16 +68,28 @@ export default function MDXTranslator(Props)
         'zh':<ZH_ViePrivee/>,
     },
     'Presentation':{      
-        'fr':<FR_Presentation/>,
-        'de':<DE_Presentation/>,
-        'en':<EN_Presentation/>,
-        'cs':<CS_Presentation/>,
-        'es':<ES_Presentation/>,
-        'hu':<HU_Presentation/>,
-        'pl':<PL_Presentation/>,
-        'pt':<PT_Presentation/>,
-        'zh':<ZH_Presentation/>,
-    }
+      'fr':<FR_Presentation/>,
+      'de':<DE_Presentation/>,
+      'en':<EN_Presentation/>,
+      'cs':<CS_Presentation/>,
+      'es':<ES_Presentation/>,
+      'hu':<HU_Presentation/>,
+      'pl':<PL_Presentation/>,
+      'pt':<PT_Presentation/>,
+      'zh':<ZH_Presentation/>,
+    },
+    'TracePopup':{      
+      'fr':<FR_TracePopup {...Props} Infos={Props.Infos}/>,
+      'de':<DE_TracePopup {...Props}/>,
+      'en':<EN_TracePopup {...Props}/>,
+      'cs':<CS_TracePopup {...Props}/>,
+      'es':<ES_TracePopup {...Props}/>,
+      'hu':<HU_TracePopup {...Props}/>,
+      'pl':<PL_TracePopup {...Props}/>,
+      'pt':<PT_TracePopup {...Props}/>,
+      'zh':<ZH_TracePopup {...Props}/>,
+    },
+
   }
   
   
@@ -86,7 +109,7 @@ export default function MDXTranslator(Props)
   }
   else if (Pages[PageName][i18n.currentLocale])
   {
-    return (<>{Pages[PageName][i18n.currentLocale]}</>)
+    return (<>{Pages[PageName][i18n.currentLocale]} </>)
   }
   else if ((Pages[PageName][i18n.defaultLocale]))
   {

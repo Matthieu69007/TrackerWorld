@@ -335,5 +335,21 @@
   },
   "Toutes les destinations": {
     "message": "Minden úticél"
+  },
+  "Porteurs(ses) :": {
+    "message": "Támogatók :",
+    "description": "Porteurs(ses)"
+  },
+  "km parcourus :": {
+    "message": "megtett km :",
+    "description": "km parcourus"
+  },
+  "km restant :": {
+    "message": "hátralévő km :",
+    "description": "km restant"
+  },
+  "Pays visités :": {
+    "message": "Meglátogatott országok :",
+    "description": "Pays visités"
   }
 }

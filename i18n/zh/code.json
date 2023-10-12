@@ -335,5 +335,21 @@
   },
   "Toutes les destinations": {
     "message": "所有目的地"
+  },
+  "Porteurs(ses) :": {
+    "message": "促进者 ：",
+    "description": "Porteurs(ses)"
+  },
+  "km parcourus :": {
+    "message": "行驶公里数 ：",
+    "description": "km parcourus"
+  },
+  "km restant :": {
+    "message": "剩余公里数 ：",
+    "description": "km restant"
+  },
+  "Pays visités :": {
+    "message": "访问过的国家 ：",
+    "description": "Pays visités"
   }
 }

@@ -335,5 +335,21 @@
   },
   "Toutes les destinations": {
     "message": "Wszystkie miejsca docelowe"
+  },
+  "Porteurs(ses) :": {
+    "message": "Promotorzy :",
+    "description": "Porteurs(ses)"
+  },
+  "km parcourus :": {
+    "message": "Przejechane km:",
+    "description": "km parcourus"
+  },
+  "km restant :": {
+    "message": "Pozostałe km:",
+    "description": "km restant"
+  },
+  "Pays visités :": {
+    "message": "Odwiedzone kraje :",
+    "description": "Pays visités"
   }
 }

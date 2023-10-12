@@ -2,7 +2,7 @@ import React, { useEffect, useState,  useMemo, useCallback } from "react";
 import  { urlNextcity } from "./NextCity";
 
 
-import { Card, CardContent, CardHeader, CardMedia, Stack, Typography } from "@mui/material";
+import { Card, CardContent, CardHeader, CardMedia, Grid, Stack, Typography } from "@mui/material";
 import CityLamas from '@site/static/img/Mascotte/CityIcon.png'
 import SelfieLamas from '@site/static/img/Mascotte/LamaSelfie.png'
 import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
@@ -10,17 +10,21 @@ import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Translate from "@docusaurus/Translate";
 import { GetOrthoDist, RoundPow } from "./MathCalcs";
+import MDXTranslator from "./MDXTranslator";
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 const urlTraceReelle =
-  "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:C100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
+  "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:G100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 const urlAdditionalMarkers =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/AdditionalMarkers!A:E/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
-const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
-const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
-const NextlineColor = {"color":"#00904E","weight":2};
-
+/*  const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
+  const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
+  const NextlineColor = {"color":"#00904E","weight":2};*/
+  const TracelineColor = { "color":"#358B2E","weight":2, "smooth":1};
+  const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
+  const NextlineColor = {"color":"#1D00E0","weight":2};
+    
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
   let SplitCoords=null;
@@ -109,6 +113,10 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
 {
   const Marker = require('react-leaflet').Marker
   
+  if (!CityList)
+  {
+    return null
+  }
   
   let icon = L.icon({
     iconSize: [32,32],
@@ -172,11 +180,11 @@ function GetSelfieMarkers(SelfieList, ZoomLevel)
   
 }
 
-function GetTraceMarker(Position)
+function GetTraceMarker(Position, PopupInformation)
 {
   const Marker = require('react-leaflet').Marker
-  const Icons=[TraceLama1,TraceLama2]
-  const I = Icons[Math.round(2*Math.random())%2]
+  const Popup = require('react-leaflet').Popup
+  const I = TraceLama2
 
   let icon = L.icon({
     iconSize: [32,32],
@@ -188,7 +196,25 @@ function GetTraceMarker(Position)
   })
 
   return <Marker key={"Marker"+Math.random()} position={Position} icon={icon} >
-          
+          <Popup>
+             
+                {/*<MDXTranslator Page='TracePopup' Infos={PopupInformation} />*/}
+                <Grid container  spacing={0}>
+                  <Grid item>
+                    <Translate description="Porteurs(ses)" >Porteurs(ses) :</Translate>{PopupInformation.BearerCount}
+                  </Grid>
+                  <Grid item >
+                    <Translate description="km parcourus" >km parcourus :</Translate>{PopupInformation.kmdone}
+                  </Grid>
+                  <Grid item >
+                    <Translate description="km restant" >km restant :</Translate>{PopupInformation.RemainingKm}
+                  </Grid>
+                   <Grid item>
+                    <Translate description="Pays visités" >Pays visités :</Translate>{PopupInformation.CountriesCount}
+                  </Grid>
+                  </Grid>
+            
+        </Popup> 
         </Marker>
 }
 
@@ -308,7 +334,7 @@ function Viewercomponentcode() {
         //setTracksPoints([previousDataSet,nextDataSet])
         SetCityMarkers(<>{GetCityMarkers(Cities, MapZoom,nextCityId)}</>)
         SetCityList(Cities)
-        console.log("Setting Tracks")
+        //console.log("Setting Tracks")
       });
 
     await fetch(urlTraceReelle)
@@ -318,12 +344,18 @@ function Viewercomponentcode() {
         let TraceDataSet=[]
         let PrevCoords=null
         let coordinates=null
+        let Countries=[]
+        let Bearers=[]
+
         for (let i = 1; i < x.values.length; i++) 
         {
           coordinates = [
             parseFloat(x.values[i][0]),
             parseFloat(x.values[i][1]),
           ];
+
+          ArrayCountUpdate(Countries, x.values[i],4);
+          ArrayCountUpdate(Bearers, x.values[i],5);
 
           
           if (AddPoint(TraceData,PrevCoords,coordinates))
@@ -339,7 +371,6 @@ function Viewercomponentcode() {
           TraceDataSet.push(TraceData)
         }
         SetActualTrack(<>{GetPolylines(TracelineColor,TraceDataSet)}</>)
-        SetTraceMarker(<>{GetTraceMarker(coordinates)}</>)
         console.log("Hijacking tracks")
         console.log(previousDataSet)
 
@@ -363,9 +394,19 @@ function Viewercomponentcode() {
           )
         }
         let TraceDist=GetTraceSetDistance(TraceDataSet)
-        console.log("Trace Distance "+ RoundPow (TraceDist,2) + "km")
+        //console.log("Trace Distance "+ RoundPow (TraceDist,1) + "km")
         let NextDist=GetTraceSetDistance(nextDataSet)
-        console.log("Remaining Distance "+ RoundPow (NextDist,2) + "km")
+        //console.log("Remaining Distance "+ RoundPow (NextDist,1) + "km")
+        //console.log(Object.keys( Bearers).length ,Countries.length)
+        let PopupInfo = 
+        {
+          kmdone:RoundPow (TraceDist,1),
+          RemainingKm:RoundPow (NextDist,1),
+          CountriesCount:Object.keys(Countries).length,
+          BearerCount:Object.keys( Bearers)?.length
+        }
+        SetTraceMarker(<>{GetTraceMarker(coordinates, PopupInfo)}</>)
+        
         
       }
     );
@@ -482,7 +523,10 @@ function Viewercomponentcode() {
           scrollWheelZoom={false}
           attributionControl={false}
           zoomControl={false}>
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {//<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          }
+          <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'/>
+          
           <MinimapBounds parentMap={parentMap} zoom={mapZoom} />
         </MapContainer>
       ),
@@ -507,13 +551,17 @@ function Viewercomponentcode() {
       
       <MapContainer className="MapStyle"  center={[StartPos[1], StartPos[0]]} zoom={MapZoom} scrollWheelZoom={true}
         fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 
-        minimap={true}
+        minimap={true} style={{'z-index':0}}
       >
-        
-        <TileLayer
+        <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' 
+              attribution= '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+              subdomains= 'abcd'
+                maxZoom= {20} 
+              />
+        {/*<TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+  />*/}
         {TraceMarker}
         {Tracks}
         {CityMarkers}
@@ -521,8 +569,26 @@ function Viewercomponentcode() {
         {AdditionalMarkers}
         <MapEventhandler ZoomEventHandler={HandleZoomChange} />
         <MinimapControl position="topright" />
+
       </MapContainer>
       
     </Stack>
   );
 }
+function ArrayCountUpdate(ArrayList, x, Col) 
+{
+  if (!ArrayList || !x || !x[Col])
+  {
+    return
+  }
+  
+  if (ArrayList[x[Col]]) {
+    ArrayList[x[Col]]++;
+  }
+
+  else 
+  {
+     ArrayList[x[Col]] = 1;
+  }
+}
+

@@ -335,5 +335,21 @@
   },
   "Toutes les destinations": {
     "message": "Všechny destinace"
+  },
+  "Porteurs(ses) :": {
+    "message": "Pořadatelé :",
+    "description": "Porteurs(ses)"
+  },
+  "km parcourus :": {
+    "message": "Ujeté kilometry :",
+    "description": "km parcourus"
+  },
+  "km restant :": {
+    "message": "Zbývající kilometry :",
+    "description": "km restant"
+  },
+  "Pays visités :": {
+    "message": "Navštívené země :",
+    "description": "Pays visités"
   }
 }
