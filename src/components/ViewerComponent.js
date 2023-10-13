@@ -265,6 +265,7 @@ function Viewercomponentcode() {
   const [AdditionalMarkers,SetAdditionalMarkers] = useState(null)
   const [TraceMarker,SetTraceMarker] = useState(null)
   const [MapZoom, SetMapZoom] = useState(2)
+  const [MapCenter,SetMapCenter] = useState({lat:4.820163386, lng:45.75749697})
 
   useEffect(async () => {
     let previousData =[] 
@@ -446,6 +447,23 @@ function Viewercomponentcode() {
           if (ev.type=="zoom")
           {
             Props.ZoomEventHandler(ev.sourceTarget.getZoom())
+            let C = ev.sourceTarget.getCenter()
+            if (C.lng > 180 || C.lng < -180)
+            {
+              console.log(C)
+              while (C.lng < -180)
+              {
+                C.lng += 360
+              }
+              while (C.lng > 180)
+              {
+                C.lng -= 360
+              }
+              
+              map.setView(C,ev.sourceTarget.getZoom(), {animate:false});
+              SetMapCenter(C)
+            }
+            
           }
         }
         
@@ -549,7 +567,7 @@ function Viewercomponentcode() {
     
     <Stack direction='column' spacing={3} alignItems="center">
       
-      <MapContainer className="MapStyle"  center={[StartPos[1], StartPos[0]]} zoom={MapZoom} scrollWheelZoom={true}
+      <MapContainer className="MapStyle"  center={MapCenter} zoom={MapZoom} scrollWheelZoom={true}
         fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 
         minimap={true} style={{'z-index':0}}
       >
