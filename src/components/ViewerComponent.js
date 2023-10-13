@@ -21,9 +21,11 @@ const urlAdditionalMarkers =
 /*  const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
   const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
   const NextlineColor = {"color":"#00904E","weight":2};*/
-  const TracelineColor = { "color":"#358B2E","weight":2, "smooth":1};
-  const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
-  const NextlineColor = {"color":"#1D00E0","weight":2};
+  //const TracelineColor = { "color":"#358B2E","weight":3, "smooth":1};
+  //const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
+  const TracelineColor = { "color":"#DB2596","weight":3, "smooth":1};
+  const PreviouslineColor = { "color":"#1D00E0","weight":3, "smooth":1};
+  const NextlineColor = {"color":"#1D00E0","weight":3};
     
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
@@ -523,8 +525,6 @@ function Viewercomponentcode() {
           scrollWheelZoom={false}
           attributionControl={false}
           zoomControl={false}>
-          {//<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          }
           <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'/>
           
           <MinimapBounds parentMap={parentMap} zoom={mapZoom} />
@@ -553,15 +553,10 @@ function Viewercomponentcode() {
         fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 
         minimap={true} style={{'z-index':0}}
       >
-        <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' 
-              attribution= '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-              subdomains= 'abcd'
-                maxZoom= {20} 
-              />
-        {/*<TileLayer
+       <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />*/}
+        />
         {TraceMarker}
         {Tracks}
         {CityMarkers}
