@@ -2,15 +2,14 @@ import React, { useEffect, useState,  useMemo, useCallback } from "react";
 import  { urlNextcity } from "./NextCity";
 
 
-import { Card, CardContent, CardHeader, CardMedia, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Modal, Stack, Typography } from "@mui/material";
 import CityLamas from '@site/static/img/Mascotte/CityIcon.png'
 import SelfieLamas from '@site/static/img/Mascotte/LamaSelfie.png'
-import TraceLama1 from '@site/static/img/Mascotte/Lama on a bike.png'
 import TraceLama2 from '@site/static/img/Mascotte/LamaTeteDetourée.png'
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Translate from "@docusaurus/Translate";
 import { GetOrthoDist, RoundPow } from "./MathCalcs";
-import MDXTranslator from "./MDXTranslator";
+
 
 const urlConsigneParcours =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:I/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
@@ -18,15 +17,28 @@ const urlTraceReelle =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/TraceReelle!B7:G100004/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
 const urlAdditionalMarkers =
   "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/AdditionalMarkers!A:E/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68";
-/*  const TracelineColor = { "color":"#FF7B84","weight":2, "smooth":1};
-  const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
-  const NextlineColor = {"color":"#00904E","weight":2};*/
-  //const TracelineColor = { "color":"#358B2E","weight":3, "smooth":1};
-  //const PreviouslineColor = { "color":"#7895D7","weight":2, "smooth":1};
   const TracelineColor = { "color":"#DB2596","weight":3, "smooth":1};
   const PreviouslineColor = { "color":"#1D00E0","weight":3, "smooth":1};
   const NextlineColor = {"color":"#1D00E0","weight":3};
     
+
+  function ArrayCountUpdate(ArrayList, x, Col) 
+{
+  if (!ArrayList || !x || !x[Col])
+  {
+    return
+  }
+  
+  if (ArrayList[x[Col]]) {
+    ArrayList[x[Col]]++;
+  }
+
+  else 
+  {
+     ArrayList[x[Col]] = 1;
+  }
+}
+
 function AddPoint(CoordsArray,PrevPos, NextPos)
 {
   let SplitCoords=null;
@@ -64,39 +76,39 @@ function GetPolylines(Options, Sets)
   })
 }
 
-function GetCityPopup(City)
+function GetCityPopup(City, OnClickHandler)
 {
   const Popup = require('react-leaflet').Popup
   const ImgUrl = typeof City.AlternateImage!== "undefined"?'https://images.traceacrosstheworld.com/'+City.AlternateImage:'../img/Etapes/'+City.ImageName+'.jpg'
-  const ImgCity =<img class="PopupImage" src={ImgUrl} alt={City.MainPoint} />;
+  const ImgCity =<img class="PopupImage" src={ImgUrl} alt={City.MainPoint} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):0} />;
 
-  
+  console.log(OnClickHandler)
   return <Popup>
             <Card >
-              <CardHeader title={City.MainPoint}/>
-              <CardContent>
-                <Stack alignItems='center'>
-                {ImgCity}
-                {City.VisitDate?City.VisitDate:null}
-                </Stack>
-              </CardContent>
-              <CardMedia alignItems='center'>
-                <Stack direction="column" spacing={2} alignItems={"center"}>
-                  <Typography variant="body2">{City.Name}</Typography>
-                </Stack>
-              </CardMedia>
+              
+                <CardHeader title={City.MainPoint} alignItems='center'/>
+                <CardContent >
+                  <Stack alignItems='center' >
+                    {ImgCity}
+                    {City.VisitDate?City.VisitDate:null}
+                  </Stack>
+                  <Stack direction="column" spacing={2} alignItems={"center"}>
+                    <Typography variant="h5">{City.Name}</Typography>
+                  </Stack>
+                </CardContent>
+              
             </Card>
             
         </Popup> 
 }
 
-function GetSelfiePopup(Selfie)
+function GetSelfiePopup(Selfie, OnClickHandler)
 {
   const Popup = require('react-leaflet').Popup
   const ImgUrl = 'https://images.traceacrosstheworld.com/'+Selfie.Image
-  const ImgSelfie =<img class="PopupImage" src={ImgUrl} alt={Selfie.Date} />;
+  const ImgSelfie =<img class="PopupImage" src={ImgUrl} alt={Selfie.Date} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):0} />;
 
-  
+  console.log("onclickhandler :"+OnClickHandler)
   return <Popup>
             <Card >
               <CardContent>
@@ -111,7 +123,7 @@ function GetSelfiePopup(Selfie)
         </Popup> 
 }
 
-function GetCityMarkers(CityList, ZoomLevel, currentCity)
+function GetCityMarkers(CityList, ZoomLevel, currentCity, OnClickHandler)
 {
   const Marker = require('react-leaflet').Marker
   
@@ -134,7 +146,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
     return CityList.map((value)=>{
       
       return <Marker Key={"CityMarker_"+currentCity} position={value.Position} icon={icon} >
-              {GetCityPopup(value)}
+              {GetCityPopup(value, OnClickHandler)}
             </Marker>
     })
   }
@@ -145,7 +157,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
     if (value)
     {
       return <Marker position={value.Position} icon={icon} >
-              {GetCityPopup(value)}
+              {GetCityPopup(value, OnClickHandler)}
             </Marker>
     }
   }
@@ -153,7 +165,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity)
   
 }
 
-function GetSelfieMarkers(SelfieList, ZoomLevel)
+function GetSelfieMarkers(SelfieList, OnClickHandler)
 {
   const Marker = require('react-leaflet').Marker
   
@@ -174,7 +186,7 @@ function GetSelfieMarkers(SelfieList, ZoomLevel)
     return SelfieList.map((value)=>{
       
       return <Marker Key={"SelfieMarker_"+Math.random()} position={value.Position} icon={icon} >
-              {GetSelfiePopup(value)}
+              {GetSelfiePopup(value,OnClickHandler)}
             </Marker>
     })
   }
@@ -266,6 +278,7 @@ function Viewercomponentcode() {
   const [TraceMarker,SetTraceMarker] = useState(null)
   const [MapZoom, SetMapZoom] = useState(2)
   const [MapCenter,SetMapCenter] = useState({lat:4.820163386, lng:45.75749697})
+  const [ModalImageURL,SetModalImageURL] = useState(null);
 
   useEffect(async () => {
     let previousData =[] 
@@ -335,7 +348,7 @@ function Viewercomponentcode() {
           </>
         )
         //setTracksPoints([previousDataSet,nextDataSet])
-        SetCityMarkers(<>{GetCityMarkers(Cities, MapZoom,nextCityId)}</>)
+        SetCityMarkers(<>{GetCityMarkers(Cities, MapZoom,nextCityId,SetModalImageURL)}</>)
         SetCityList(Cities)
         //console.log("Setting Tracks")
       });
@@ -433,7 +446,7 @@ function Viewercomponentcode() {
               Markers.push(Marker)
             }
 
-            SetAdditionalMarkers( GetSelfieMarkers(Markers,MapZoom))
+            SetAdditionalMarkers( GetSelfieMarkers(Markers,SetModalImageURL))
           })
 
 
@@ -478,7 +491,7 @@ function Viewercomponentcode() {
     SetMapZoom(z)
     SetCityMarkers(GetCityMarkers(CityList,z, nextCityId))
   }
-  
+ 
   const MapContainer = require('react-leaflet').MapContainer
   const TileLayer = require('react-leaflet').TileLayer
   const useMapEvent = require('react-leaflet').useMapEvent
@@ -560,11 +573,39 @@ function Viewercomponentcode() {
     )
   }
 
+  function ModalImage(props) {
+
+    const style = {
+      position: 'absolute' ,
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '60%',
+      bgcolor: 'background.paper',
+      border: '2px solid #000',
+      boxShadow: 24,
+      p: 4,
+    };
+    
+    return (
+      <Modal
+        {...props}
+      >
+        
+        <Box sx={style}>
+          <img src={props.ImageURL} width='100%'/>
+        </Box>
+        
+      </Modal>
+    );
+  }
+  
+
   const EnterFullScreenText=<Translate description="Visualiser en plein écran">Visualiser en plein écran</Translate>
   const ExitFullScreenText=<Translate description="Quitter le modeplein écran">Quitter le mode plein écran</Translate>
   
-  return (
-    
+  return (<>
+    <ModalImage open={ModalImageURL!==null} ImageURL={ModalImageURL} onClose={() => {SetModalImageURL(null)}}/>
     <Stack direction='column' spacing={3} alignItems="center">
       
       <MapContainer className="MapStyle"  center={MapCenter} zoom={MapZoom} scrollWheelZoom={true}
@@ -586,22 +627,8 @@ function Viewercomponentcode() {
       </MapContainer>
       
     </Stack>
+    </>
   );
 }
-function ArrayCountUpdate(ArrayList, x, Col) 
-{
-  if (!ArrayList || !x || !x[Col])
-  {
-    return
-  }
-  
-  if (ArrayList[x[Col]]) {
-    ArrayList[x[Col]]++;
-  }
 
-  else 
-  {
-     ArrayList[x[Col]] = 1;
-  }
-}
 
