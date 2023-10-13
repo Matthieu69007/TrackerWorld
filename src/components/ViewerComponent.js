@@ -489,7 +489,7 @@ function Viewercomponentcode() {
   function HandleZoomChange(z)
   {
     SetMapZoom(z)
-    SetCityMarkers(GetCityMarkers(CityList,z, nextCityId))
+    SetCityMarkers(GetCityMarkers(CityList,z, nextCityId, SetModalImageURL))
   }
  
   const MapContainer = require('react-leaflet').MapContainer
@@ -526,13 +526,16 @@ function Viewercomponentcode() {
     // Keep track of bounds in state to trigger renders
     const [bounds, setBounds] = useState(parentMap.getBounds())
     const onChange = useCallback(() => {
-      setBounds(parentMap.getBounds())
-      // Update the minimap's view to match the parent map's center and zoom
-      minimap.setView(parentMap.getCenter(), zoom - 5)
+      if (parentMap)
+      {
+        setBounds(parentMap.getBounds())
+        // Update the minimap's view to match the parent map's center and zoom
+        minimap.setView(parentMap.getCenter(), zoom - 5)
+      }
     }, [minimap, parentMap, zoom])
 
     // Listen to events on the parent map
-    const handlers = useMemo(() => ({ move: onChange, zoom: onChange }), [])
+    const handlers = useMemo(() => ({ move: onChange, zoom: onChange, pan:onChange }), [])
     useEventHandlers({ instance: parentMap }, handlers)
 
     return <Rectangle bounds={bounds} pathOptions={BOUNDS_STYLE} />
