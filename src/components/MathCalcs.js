@@ -32,8 +32,7 @@ export function RoundPow(v, P)
   {
     if (!PowLut[P])
     {
-      PowLut[P]=Math.pow(10, P);
-      console.log(PowLut)
+      PowLut[P]=Math.pow(10, P);      
     }
     let Div = PowLut[P];
     return Math.round(v * Div) / Div;

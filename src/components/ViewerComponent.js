@@ -67,6 +67,7 @@ function AddPoint(CoordsArray,PrevPos, NextPos)
   return SplitCoords
 }
 
+
 function GetPolylines(Options, Sets)
 {
   const Polyline = require('react-leaflet').Polyline
@@ -80,9 +81,8 @@ function GetCityPopup(City, OnClickHandler)
 {
   const Popup = require('react-leaflet').Popup
   const ImgUrl = typeof City.AlternateImage!== "undefined"?'https://images.traceacrosstheworld.com/'+City.AlternateImage:'../img/Etapes/'+City.ImageName+'.jpg'
-  const ImgCity =<img class="PopupImage" src={ImgUrl} alt={City.MainPoint} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):0} />;
+  const ImgCity =<img className="PopupImage" src={ImgUrl} alt={City.MainPoint} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):null} />;
 
-  console.log(OnClickHandler)
   return <Popup>
             <Card >
               
@@ -106,9 +106,8 @@ function GetSelfiePopup(Selfie, OnClickHandler)
 {
   const Popup = require('react-leaflet').Popup
   const ImgUrl = 'https://images.traceacrosstheworld.com/'+Selfie.Image
-  const ImgSelfie =<img class="PopupImage" src={ImgUrl} alt={Selfie.Date} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):0} />;
+  const ImgSelfie =<img className="PopupImage" src={ImgUrl} alt={Selfie.Date} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):null} />;
 
-  console.log("onclickhandler :"+OnClickHandler)
   return <Popup>
             <Card >
               <CardContent>
@@ -145,7 +144,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity, OnClickHandler)
   {
     return CityList.map((value)=>{
       
-      return <Marker Key={"CityMarker_"+currentCity} position={value.Position} icon={icon} >
+      return <Marker key={"CityMarker_"+currentCity} position={value.Position} icon={icon} >
               {GetCityPopup(value, OnClickHandler)}
             </Marker>
     })
@@ -280,6 +279,26 @@ function Viewercomponentcode() {
   const [MapCenter,SetMapCenter] = useState({lat:4.820163386, lng:45.75749697})
   const [ModalImageURL,SetModalImageURL] = useState(null);
 
+
+  function FixMapCenter(map, ev)
+  {
+    let C = ev.sourceTarget.getCenter()
+    if (C.lng > 180 || C.lng < -180)
+    {
+      while (C.lng < -180)
+      {
+        C.lng += 360
+      }
+      while (C.lng > 180)
+      {
+        C.lng -= 360
+      }
+      
+      map.setView(C,ev.sourceTarget.getZoom(), {animate:false});
+      SetMapCenter(C)
+    }
+  }
+
   useEffect(async () => {
     let previousData =[] 
     let previousDataSet =[] 
@@ -387,9 +406,7 @@ function Viewercomponentcode() {
           TraceDataSet.push(TraceData)
         }
         SetActualTrack(<>{GetPolylines(TracelineColor,TraceDataSet)}</>)
-        console.log("Hijacking tracks")
-        console.log(previousDataSet)
-
+        
         /*if (TracksPoints)
         {let TracksPointsArray=TracksPoints
         
@@ -410,16 +427,13 @@ function Viewercomponentcode() {
           )
         }
         let TraceDist=GetTraceSetDistance(TraceDataSet)
-        //console.log("Trace Distance "+ RoundPow (TraceDist,1) + "km")
         let NextDist=GetTraceSetDistance(nextDataSet)
-        //console.log("Remaining Distance "+ RoundPow (NextDist,1) + "km")
-        //console.log(Object.keys( Bearers).length ,Countries.length)
         let PopupInfo = 
         {
-          kmdone:RoundPow (TraceDist,1),
-          RemainingKm:RoundPow (NextDist,1),
-          CountriesCount:Object.keys(Countries).length,
-          BearerCount:Object.keys( Bearers)?.length
+          kmdone : RoundPow (TraceDist,1),
+          RemainingKm : RoundPow (NextDist,1),
+          CountriesCount : Object.keys(Countries).length,
+          BearerCount : Object.keys( Bearers)?.length
         }
         SetTraceMarker(<>{GetTraceMarker(coordinates, PopupInfo)}</>)
         
@@ -454,33 +468,28 @@ function Viewercomponentcode() {
 
   function MapEventhandler(Props)
   {
-    const map=useMapEvent(
+    const map=useMapEvent
+    (
       {
+        moveend (ev)
+          {
+            FixMapCenter(map,ev)
+          },
         zoom(ev) {
           if (ev.type=="zoom")
           {
             Props.ZoomEventHandler(ev.sourceTarget.getZoom())
-            let C = ev.sourceTarget.getCenter()
-            if (C.lng > 180 || C.lng < -180)
-            {
-              console.log(C)
-              while (C.lng < -180)
-              {
-                C.lng += 360
-              }
-              while (C.lng > 180)
-              {
-                C.lng -= 360
-              }
-              
-              map.setView(C,ev.sourceTarget.getZoom(), {animate:false});
-              SetMapCenter(C)
-            }
+            FixMapCenter(map, ev)
             
+          }
+          else
+          {
+            console.log("unhanded",ev)
           }
         }
         
       }
+      
     )
 
     return <></>
@@ -507,12 +516,12 @@ function Viewercomponentcode() {
 
   const BOUNDS_STYLE = { weight: 1 }
 
-  function MinimapBounds({ parentMap, zoom }) 
+  function MinimapBounds({ parentMap, zoom , center}) 
   {
     const useMap = require('react-leaflet').useMap
     const useEventHandlers = require('react-leaflet').useMapEvents
     const Rectangle = require('react-leaflet').Rectangle
-    const minimap = useMap()
+    const [minimap] = useState(useMap())
 
     // Clicking a point on the minimap sets the parent's map center
     const onClick = useCallback(
@@ -521,21 +530,26 @@ function Viewercomponentcode() {
       },
       [parentMap],
     )
-    useMapEvent('click', onClick)
+   // useMapEvent('click', onClick)
+    //useMapEvent('moveend', onClick)
 
     // Keep track of bounds in state to trigger renders
     const [bounds, setBounds] = useState(parentMap.getBounds())
-    const onChange = useCallback(() => {
+    function onChange() 
+    {
       if (parentMap)
       {
-        setBounds(parentMap.getBounds())
+        //setBounds(parentMap.getBounds())
         // Update the minimap's view to match the parent map's center and zoom
-        minimap.setView(parentMap.getCenter(), zoom - 5)
+        //minimap.setView(parentMap.getCenter(), zoom - 5)
       }
-    }, [minimap, parentMap, zoom])
+      return null
+    }
+    const HandleChange = useEffect(()=>{onChange()}
+    , [minimap, parentMap, zoom])
 
     // Listen to events on the parent map
-    const handlers = useMemo(() => ({ move: onChange, zoom: onChange, pan:onChange }), [])
+    const handlers = useMemo(() => ({ movestart:HandleChange, moveend: HandleChange, zoom: HandleChange, touchmove:HandleChange }), [])
     useEventHandlers({ instance: parentMap }, handlers)
 
     return <Rectangle bounds={bounds} pathOptions={BOUNDS_STYLE} />
@@ -544,7 +558,7 @@ function Viewercomponentcode() {
   function MinimapControl({ position, zoom }) 
   {
     const useMap = require('react-leaflet').useMap
-    const parentMap = useMap()
+    const [parentMap ]= useState( useMap())
     const mapZoom = zoom || 0
 
     // Memoize the minimap so it's not affected by position changes
@@ -561,7 +575,8 @@ function Viewercomponentcode() {
           zoomControl={false}>
           <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'/>
           
-          <MinimapBounds parentMap={parentMap} zoom={mapZoom} />
+          <MinimapBounds parentMap={parentMap} zoom={mapZoom} center={position} />
+          
         </MapContainer>
       ),
       [],
@@ -608,12 +623,12 @@ function Viewercomponentcode() {
   const ExitFullScreenText=<Translate description="Quitter le modeplein écran">Quitter le mode plein écran</Translate>
   
   return (<>
-    <ModalImage open={ModalImageURL!==null} ImageURL={ModalImageURL} onClose={() => {SetModalImageURL(null)}}/>
-    <Stack direction='column' spacing={3} alignItems="center">
+    <ModalImage key="modal" open={ModalImageURL!==null} ImageURL={ModalImageURL} onClose={() => {SetModalImageURL(null)}}/>
+    <Stack key="stach" direction='column' spacing={3} alignItems="center">
       
       <MapContainer className="MapStyle"  center={MapCenter} zoom={MapZoom} scrollWheelZoom={true}
         fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 
-        minimap={true} style={{'z-index':0}}
+        minimap={true} style={{'zindex':0}}
       >
        <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -624,7 +639,7 @@ function Viewercomponentcode() {
         {CityMarkers}
         {ActualTrack}
         {AdditionalMarkers}
-        <MapEventhandler ZoomEventHandler={HandleZoomChange} />
+        <MapEventhandler ZoomEventHandler={HandleZoomChange} MoveEventHandler={HandleZoomChange}/>
         <MinimapControl position="topright" />
 
       </MapContainer>
