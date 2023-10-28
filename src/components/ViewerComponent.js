@@ -217,7 +217,7 @@ function Viewercomponentcode(Props)
     
       <MapContainer id="Map" className="MapStyle"  center={MapCenter} zoom={MapZoom} scrollWheelZoom={true}
         fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 
-        minimap={true} style={{'zindex':0}}         
+        minimap={true} style={{'zIndex':0}}         
       >
         
        <TileLayer
