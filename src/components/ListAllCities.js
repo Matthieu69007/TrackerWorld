@@ -7,8 +7,8 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { urlConsigneParcours } from "./URLSConsts";
 
-const urlConsigneParcours = "https://sheets.googleapis.com/v4/spreadsheets/1FNX9RpTH7WgQKxqpfvGJ7koBMNxcFUtTRvzAIoD8iyI/values/ConsigneParcours!A:H/?key=AIzaSyCfXHtG7ylyNenz8ncsqAuS4njElL2dm68"
 
 export default function ListAllCities() {
     const [citiesData, setCitiesData] = useState(null);
