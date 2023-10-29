@@ -50,9 +50,6 @@ const config = {
           customCss: [
             require.resolve('./src/css/custom.css'),
             require.resolve("leaflet/dist/leaflet.css"),
-            require.resolve('leaflet-fullscreen/dist/leaflet.fullscreen.css'),
-            require.resolve("leaflet-dialog/Leaflet.Dialog.css"),
-            
           ]
         },
       }),

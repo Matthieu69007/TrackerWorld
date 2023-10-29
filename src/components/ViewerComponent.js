@@ -27,7 +27,7 @@ function Viewercomponentcode(Props)
   const TileLayer = require('react-leaflet').TileLayer
   const useMapEvent = require('react-leaflet').useMapEvent
   const FS = require('leaflet-fullscreen')
-
+  const fsccss = require('leaflet-fullscreen/dist/leaflet.fullscreen.css')
   function FixMapCenter(map, ev)
   {
     let C = ev.sourceTarget.getCenter()
