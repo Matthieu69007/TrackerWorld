@@ -6,8 +6,7 @@ import { useMap } from 'react-leaflet'
 
 export default function DialogPicture(Props)
 {
-  const Dialog = require('leaflet-dialog')
-  const Style =  require.resolve("leaflet-dialog/Leaflet.Dialog.css")
+  const Dialog = require('./Leaflet.Dialog.js')
   const L  = require('leaflet')
   const useLeafletContext = require('@react-leaflet/core').useLeafletContext
   const context = useLeafletContext()
@@ -42,7 +41,7 @@ export default function DialogPicture(Props)
           }).addTo(Map).close()
       SetDialogImage( d)      
     }
-    else if (false && X!==DialogImage.options.size[0] )
+    else if (X!==DialogImage.options.size[0] )
     {
 
       DialogImage.setSize([X,Y]).setLocation([YOffset,XOffset])

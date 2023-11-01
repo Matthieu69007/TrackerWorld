@@ -50,6 +50,8 @@ const config = {
           customCss: [
             require.resolve('./src/css/custom.css'),
             require.resolve("leaflet/dist/leaflet.css"),
+            require.resolve("./src/Components/Map/Leaflet.Dialog.css"),
+            require.resolve("./src/css/fontawesome-free-6.4.2-web/css/all.css"),
           ]
         },
       }),

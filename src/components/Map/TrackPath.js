@@ -260,6 +260,11 @@ function HandleMapContainerResize(ev,SetFullScreen)
   console.log("Resising",ev.newSize.x==screen.width)
 }
 
+function HandleMapDialogClose(ev,SetModalImageURL)
+{
+  //console.log("Dialog closed:",ev)
+  SetModalImageURL(null)
+}
 
 
 export default function TracePath(Props)
@@ -276,6 +281,7 @@ export default function TracePath(Props)
   const [MapIsFullScreen,SetMapIsFullScreen]=useState(false)
   const [ModalImageURL,SetModalImageURL]=useState(Props.ModalImageURL)
   const MapResizeEvents = useMapEvent("resize",(ev)=>{HandleMapContainerResize(ev,SetMapIsFullScreen)})
+  const MapDialogCloseEvent = useMapEvent("dialog:closed",(ev)=>{HandleMapDialogClose(ev,SetModalImageURL)})
 
   function HandleImageClick(URL)
   {
