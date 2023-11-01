@@ -29,9 +29,19 @@
                     }
                 },
                 {
+                  "type": "local",
+                  "name": "sbs github.io build folder",
+                  "description": "A local folder",
+  
+                  "dir": "D:\\Projets\\01 - Perso\\WorldTracker MD\\TrackerWorld-sbs",
+                  "mappings": {
+                      "/build/**": "/"
+                  }
+              },
+                {
 
                   "type": "local",
-                  "name": "sbs hp build folder",
+                  "name": "Trace Across the world build folder",
                   "description": "A SMB shared network folder",
         
                   "dir": "D:\\Projets\\01 - Perso\\WorldTracker MD\\Matthieu69007.github.io",
