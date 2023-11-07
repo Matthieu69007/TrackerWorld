@@ -87,9 +87,9 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity, OnClickHandler)
   
   if (CityList && ZoomLevel >4)
   {
-    return CityList.map((value)=>{
+    return CityList.map((value,index)=>{
       
-      return <Marker key={"CityMarker_"+currentCity} position={value.Position} icon={icon} >
+      return <Marker key={"CityMarker_"+index} position={value.Position} icon={icon} >
               {GetCityPopup(value, OnClickHandler)}
             </Marker>
     })
@@ -184,7 +184,7 @@ function GetSelfieMarkers(SelfieList, OnClickHandler)
 
     return SelfieList.map((value)=>{
       
-      return <Marker Key={"SelfieMarker_"+Math.random()} position={value.Position} icon={icon} >
+      return <Marker key={"SelfieMarker_"+Math.random()} position={value.Position} icon={icon} >
               {GetSelfiePopup(value,OnClickHandler)}
             </Marker>
     })
@@ -215,16 +215,16 @@ function GetTraceMarker(Position, PopupInformation)
                 {/*<MDXTranslator Page='TracePopup' Infos={PopupInformation} />*/}
                 <Grid container  spacing={0}>
                   <Grid item>
-                    <Translate description="Porteurs(ses)" >Porteurs(ses) :</Translate>{PopupInformation.BearerCount}
+                    <Translate description="Porteurs(ses)" >Porteurs(ses) :</Translate> {PopupInformation.BearerCount}
                   </Grid>
                   <Grid item >
-                    <Translate description="km parcourus" >km parcourus :</Translate>{PopupInformation.kmdone}
+                    <Translate description="km parcourus" >km parcourus :</Translate> {PopupInformation.kmdone}
                   </Grid>
                   <Grid item >
-                    <Translate description="km restant" >km restant :</Translate>{PopupInformation.RemainingKm}
+                    <Translate description="km restant" >km restant :</Translate> {PopupInformation.RemainingKm}
                   </Grid>
                    <Grid item>
-                    <Translate description="Pays visités" >Pays visités :</Translate>{PopupInformation.CountriesCount}
+                    <Translate description="Pays visités" >Pays visités :</Translate> {PopupInformation.CountriesCount}
                   </Grid>
                   </Grid>
             
@@ -303,12 +303,12 @@ export default function TracePath(Props)
     let previousDataSet =[] 
     let nextData = []
     let nextDataSet = []
-    
         
     await fetch(urlNextcity)
       .then((x) => x.json())
       .then((x) => {
         SetNextCityId((x?.values && parseFloat(x.values[1][3])) || 1);
+        //SetNextCityId(6);
         
       });
 
@@ -333,14 +333,15 @@ export default function TracePath(Props)
                         
                       })
           const cityId = parseFloat(x.values[i][0]-1);
-          if (cityId >= (NextCityId-1) && cityId <= NextCityId) {
+          if (cityId >= (NextCityId-2) && cityId <= NextCityId-1) 
+          {
             if (AddPoint(previousData,PrevCoords,coordinates))
             {
               previousDataSet.push(previousData)
               previousData = new Array(coordinates)
             }
           }
-          if (cityId >= NextCityId) {
+          if (cityId >= NextCityId-1) {
             if (AddPoint(nextData,PrevCoords,coordinates))
             {
               nextDataSet.push(nextData)
@@ -416,7 +417,7 @@ export default function TracePath(Props)
         let dY = bounds[1][0]-bounds[0][0]
         let zX = Math.log(360/dX)/Math.log(2)
         let zY = Math.log(180/dY)/Math.log(2)
-        console.log(dX,dY,zX,zY)
+        //console.log(dX,dY,zX,zY)
         Map.setZoom(Math.round(Math.min(zX,zY)))
 
         if (previousDataSet[0])
@@ -430,6 +431,9 @@ export default function TracePath(Props)
             </>
           )
         }
+        //console.log("Next",nextDataSet)
+        //console.log("Coord.",coordinates)
+        nextDataSet[0].unshift(coordinates)
         let TraceDist=GetTraceSetDistance(TraceDataSet)
         let NextDist=GetTraceSetDistance(nextDataSet)
         let PopupInfo = 

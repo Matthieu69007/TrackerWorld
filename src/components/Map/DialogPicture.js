@@ -1,4 +1,5 @@
 import { Map } from '@mui/icons-material'
+import { Box } from '@mui/material'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -51,8 +52,9 @@ export default function DialogPicture(Props)
     
     if (MapIsFullScreen && DialogImage && Props?.URL)
       {
-        console.log("opening FSDialog", Props.URL)
-        DialogImage.setContent("<Box sx={style}><img src='"+Props.URL+"' width='100%'/></Box>")
+        let Size = DialogImage.options.size
+        console.log("opening FSDialog", Props.URL, Size)
+        DialogImage.setContent("<div style='align-self: center;display: flex;justify-content: center;flex-wrap: nowrap;'><img src='"+Props.URL+"' style='max-width:"+Size[0]+"px; max-height:"+Size[1]+"px; width:fit-content; height:fit-content; object-fit:contain;' /></div>")
         DialogImage.open().unfreeze()
       }
       else if (!MapIsFullScreen && DialogImage && DialogImage.is)
