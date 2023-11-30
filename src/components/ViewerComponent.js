@@ -194,7 +194,7 @@ function Viewercomponentcode(Props)
       >
         
         <Box sx={style}>
-          <img src={props.ImageURL} width='100%'/>
+          <img src={props.imageurl} width='100%'/>
         </Box>
         
       </Modal>
@@ -210,10 +210,10 @@ function Viewercomponentcode(Props)
   
   //const EnterFullScreenText=<Translate description="Visualiser en plein écran">Visualiser en plein écran</Translate>
   //const ExitFullScreenText=<Translate description="Quitter le modeplein écran">Quitter le mode plein écran</Translate>
-  console.log("Modal Image params:",ModalImageURL)
+  //console.log("Modal Image params:",ModalImageURL)
   return (<>
     <Stack key="stach" direction='column' spacing={3} alignItems="center">
-      <ModalImage key="modal" open={ModalImageURL} ImageURL={ModalImageURL} onClose={() => {SetModalImageURL(null)}}/>
+      <ModalImage key="modal" open={ModalImageURL?ModalImageURL:false} imageurl={ModalImageURL} onClose={() => {SetModalImageURL(null)}}/>
     
       <MapContainer id="Map" className="MapStyle"  center={MapCenter} zoom={MapZoom} scrollWheelZoom={true}
         fullscreenControl={{pseudoFullscreen: false,title:{'false':'FullScreen mode','true':'Windowed mode'}}} 

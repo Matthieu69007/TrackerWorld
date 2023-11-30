@@ -28,11 +28,17 @@ export default function NextCityNameOnly() {
         })
     }, []);
     
-    
-    return (<>
-            <Typography gutterBottom variant="body1" component="div">
+    if (nextCityData)
+    {
+        return (
+            <Typography gutterBottom variant="body1" >
               <Translate desc='Prochaine étape :'>Prochaine étape :</Translate> {' '}
               <strong>{nextCityData?.city_accent}, {nextCityData?.country}</strong>
             </Typography>
-          </>)
+          )
+    }
+    else
+    {
+        return null
+    }
   }

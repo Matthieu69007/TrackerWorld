@@ -40,8 +40,7 @@ export default function Itinerary() {
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <br />
-                    <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', maxHeight: '40vh', minHeight: '5vh' }}>
+                    <div className="text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', maxHeight: '80%', minHeight: '5vh' }}>
                         <div>
                             <ListAllCities />
                         </div>

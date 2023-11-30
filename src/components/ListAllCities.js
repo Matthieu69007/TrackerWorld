@@ -59,29 +59,36 @@ export default function ListAllCities() {
     } else {
         cols = 5;
     }
+    let images = null
+
+    if (citiesData?.Places)
+    {
+        images=<ImageList cols={cols} sx={{ width: '100%', height: '40vh' }} >
+        
+            {citiesData?.Places?.map((item) => (
+            <ImageListItem key={item.srcImg+Math.random()}>
+                <img
+                    src={`${item.srcImg}?w=248&fit=crop&auto=format`}
+                    srcSet={`${item.srcImg}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    alt={item.city}
+                    loading="lazy"
+                    onClick={() => window.open(item.URLCredit, "URLCredit")}
+                />
+                <ImageListItemBar
+                    title={item.place}
+                    subtitle={<span>{item.city_accent},{item.country}</span>}
+                    position="below"
+                />
+            </ImageListItem>
+            ))}
+            </ImageList>
+    
+    }
+
 
     return (
-      <Container maxWidth="lg">
-        <br/>
-        <Typography variant="body2" color="text.secondary"></Typography>
-        <ImageList cols={cols} sx={{ width: '100%', height: '40vh' }}>
-            {citiesData?.Places?.map((item) => (
-                <ImageListItem key={item.srcImg+Math.random()}>
-                    <img
-                        src={`${item.srcImg}?w=248&fit=crop&auto=format`}
-                        srcSet={`${item.srcImg}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        alt={item.city}
-                        loading="lazy"
-                        onClick={() => window.open(item.URLCredit, "URLCredit")}
-                    />
-                    <ImageListItemBar
-                        title={item.place}
-                        subtitle={<span>{item.city_accent},{item.country}</span>}
-                        position="below"
-                    />
-                </ImageListItem>
-            ))}
-        </ImageList>
+      <Container maxWidth="lg" >
+        {images}
       </Container>
     );
 }

@@ -257,7 +257,7 @@ function GetTraceSetDistance(TS)
 function HandleMapContainerResize(ev,SetFullScreen)
 {
   SetFullScreen(ev.newSize.x==screen.width)
-  console.log("Resising",ev.newSize.x==screen.width)
+  //console.log("Resizing",ev.newSize.x==screen.width)
 }
 
 function HandleMapDialogClose(ev,SetModalImageURL)
@@ -475,13 +475,18 @@ export default function TracePath(Props)
 
   if (TraceMarker)
   {
+    let DP=null
+    if (ModalImageURL)
+    {
+      DP=<DialogPicture FullScreenMode={MapIsFullScreen} URL={ModalImageURL} ShowDialogCallback={Props.ShowDialogCallback}/>
+    }
     return <>
       {TraceMarker}
       {Tracks}
       {CityMarkers}
       {ActualTrack}
       {AdditionalMarkers}
-      <DialogPicture FullScreenMode={MapIsFullScreen} URL={ModalImageURL} ShowDialogCallback={Props.ShowDialogCallback}/>
+      {DP}
     </>       
 
   }
