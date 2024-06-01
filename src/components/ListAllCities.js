@@ -19,7 +19,8 @@ export default function ListAllCities() {
                 ]
             }
             for (let i = 1; i < x.values.length; i++) {
-                let city = x.values[i][1]
+                let city = x.values[i][1].startsWith("https://")?x.values[i][1]: '../img/Etapes/'+ x.values[i][1] +'.jpg'
+                console.log(x.values[i][1],city.startsWith("https://"))
                 let country = x.values[i][2]
                 let place = x.values[i][3]
                 let city_accent = x.values[i][6]
@@ -29,7 +30,7 @@ export default function ListAllCities() {
                     "city": city,
                     "country": country,
                     "place": place,
-                    "srcImg":'../img/Etapes/'+ city +'.jpg',
+                    "srcImg": city,
                     "etape" : i,
                     "city_accent": city_accent,
                     "URLCredit": URLCredit

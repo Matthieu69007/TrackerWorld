@@ -112,7 +112,7 @@ function GetCityMarkers(CityList, ZoomLevel, currentCity, OnClickHandler)
 function GetCityPopup(City, OnClickHandler)
 {
   const Popup = require('react-leaflet').Popup
-  const ImgUrl = typeof City.AlternateImage!== "undefined"?'https://images.traceacrosstheworld.com/'+City.AlternateImage:'../img/Etapes/'+City.ImageName+'.jpg'
+  const ImgUrl = typeof City.AlternateImage!== "undefined"?'https://images.traceacrosstheworld.com/'+City.AlternateImage:City.ImageName.startsWith("https://")?City.ImageName:'../img/Etapes/'+City.ImageName+'.jpg'
   const ImgCity =<img className="PopupImage" src={ImgUrl} alt={City.MainPoint} onClick={()=>OnClickHandler?OnClickHandler(ImgUrl):null} />;
 
   return <Popup>
