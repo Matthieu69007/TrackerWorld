@@ -18,26 +18,7 @@
       ],
         "targets": [
             {
-                {
-                    "type": "local",
-                    "name": "sbs dell build folder",
-                    "description": "A local folder",
-    
-                    "dir": "C:\\Users\\stephane\\Documents\\MD\\Matthieu69007.github.io",
-                    "mappings": {
-                        "/build/**": "/"
-                    }
-                },
-                {
-                  "type": "local",
-                  "name": "sbs github.io build folder",
-                  "description": "A local folder",
-  
-                  "dir": "D:\\Projets\\01 - Perso\\WorldTracker MD\\TrackerWorld-sbs",
-                  "mappings": {
-                      "/build/**": "/"
-                  }
-              },
+
                 {
 
                   "type": "local",
